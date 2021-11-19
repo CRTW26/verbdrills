@@ -1,8 +1,6 @@
 import '@testing-library/jest-dom'
-import { render, cleanup } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import Index from './index'
-
-afterEach(cleanup)
 
 it('renders', () => {
   const { asFragment } = render(<Index />)
