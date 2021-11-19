@@ -7,7 +7,8 @@
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write .",
     "lint": "eslint . --ext ts --ext tsx --ext js",
-    "test": "jest",
+    "test:unit": "jest",
+    "test:integration": "cypress open --project .",
     "test-all": "yarn lint && yarn type-check && yarn test"
   },
   "husky": {
@@ -36,8 +37,10 @@
     "@typescript-eslint/eslint-plugin": "^4.14.2",
     "@typescript-eslint/parser": "^4.14.2",
     "babel-jest": "^27.0.2",
+    "cypress": "^9.0.0",
     "eslint": "^7.19.0",
     "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-react": "^7.19.0",
     "husky": "^4.2.3",
     "identity-obj-proxy": "^3.0.0",
