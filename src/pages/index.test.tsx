@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom'
 import { render } from '@testing-library/react'
-import Index from './index'
+import Index from 'pages/index'
 
 it('renders', () => {
   const { asFragment } = render(<Index />)

@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { TitleBar } from '../src/features/home'
+import { TitleBar, Description } from '../features/home'
 
 export const Index: React.FC = () => (
   <div className="container">
@@ -16,15 +16,11 @@ export const Index: React.FC = () => (
 
     <main>
       <TitleBar text="verbdrills" />
+
+      <Description text={'Master verb conjugation'} />
     </main>
 
-    <style jsx>
-      {`
-        p {
-          // font-size: 16px;
-        }
-      `}
-    </style>
+    <style jsx>{``}</style>
   </div>
 )
 
