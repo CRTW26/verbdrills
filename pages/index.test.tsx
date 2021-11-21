@@ -8,8 +8,8 @@ it('renders', () => {
   expect(asFragment()).toMatchSnapshot()
 })
 
-it('should contain text "Hello World"', () => {
+it('should contain text "verbdrills"', () => {
   const { getByTestId } = render(<Index />)
 
-  expect(getByTestId('title')).toHaveTextContent('Hello World')
+  expect(getByTestId('title-bar')).toHaveTextContent('verbdrills')
 })

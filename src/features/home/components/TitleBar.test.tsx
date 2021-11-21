@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom'
 import { render } from '@testing-library/react'
-import TitleBar from './TitleBar'
+import { TitleBar } from 'features/home'
 
 describe('<TitleBar>', () => {
   test('should render', () => {

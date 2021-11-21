@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { TitleBar } from '../src/features/home'
 
 export const Index: React.FC = () => (
   <div className="container">
@@ -14,7 +15,7 @@ export const Index: React.FC = () => (
     </Head>
 
     <main>
-      <h1 data-testid="title">Hello World</h1>
+      <TitleBar text="verbdrills" />
     </main>
 
     <style jsx>
