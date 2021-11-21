@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+<DocumentFragment>
+  <div
+    class="jsx-2085888330 container"
+  >
+    <main
+      class="jsx-2085888330"
+    >
+      <div
+        class="title-bar"
+        data-testid="title-bar"
+      >
+        <h1>
+          verbdrills
+        </h1>
+      </div>
+      <div
+        class="description"
+        data-testid="description"
+      >
+        <h3>
+          Master verb conjugation
+        </h3>
+        <button
+          data-testid="btn--train"
+        >
+          PRACTICE
+        </button>
+      </div>
+    </main>
+  </div>
+</DocumentFragment>
+`;
