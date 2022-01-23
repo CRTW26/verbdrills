@@ -3,31 +3,37 @@
 exports[`renders 1`] = `
 <DocumentFragment>
   <div
-    class="jsx-2085888330 container"
+    class="jsx-3252123747 container"
   >
     <main
-      class="jsx-2085888330"
+      class="jsx-3252123747"
     >
       <div
-        class="title-bar"
-        data-testid="title-bar"
+        class="jsx-3252123747 content"
       >
-        <h1>
-          verbdrills
-        </h1>
-      </div>
-      <div
-        class="description"
-        data-testid="description"
-      >
-        <h3>
-          Master verb conjugation
-        </h3>
-        <button
-          data-testid="btn--train"
+        <div
+          class="jsx-415365710 title-bar"
+          data-testid="title-bar"
         >
-          PRACTICE
-        </button>
+          <h1
+            class="jsx-415365710"
+          >
+            verbdrills
+          </h1>
+        </div>
+        <div
+          class="description"
+          data-testid="description"
+        >
+          <h3>
+            Master verb conjugation
+          </h3>
+          <button
+            data-testid="btn--train"
+          >
+            PRACTICE
+          </button>
+        </div>
       </div>
     </main>
   </div>

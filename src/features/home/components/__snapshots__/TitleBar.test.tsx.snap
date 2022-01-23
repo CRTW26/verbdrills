@@ -3,10 +3,12 @@
 exports[`<TitleBar> should render 1`] = `
 <DocumentFragment>
   <div
-    class="title-bar"
+    class="jsx-415365710 title-bar"
     data-testid="title-bar"
   >
-    <h1>
+    <h1
+      class="jsx-415365710"
+    >
       verbdrills
     </h1>
   </div>
