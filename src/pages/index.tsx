@@ -1,10 +1,11 @@
+import { GameConfigurationForm } from 'features/game-configuration'
 import Head from 'next/head'
-import { TitleBar, Description } from '../features/home'
+import { TitleBar } from 'features/home'
 
 export const Index: React.FC = () => (
   <div className="container">
     <Head>
-      <title>Create Next App</title>
+      <title>verbdills</title>
       <link rel="icon" href="/favicon.ico" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -15,12 +16,27 @@ export const Index: React.FC = () => (
     </Head>
 
     <main>
-      <TitleBar text="verbdrills" />
+      <div className="content">
+        <TitleBar text="verbdrills" />
 
-      <Description text={'Master verb conjugation'} />
+        <GameConfigurationForm />
+      </div>
     </main>
 
-    <style jsx>{``}</style>
+    <style jsx>{`
+      main {
+        margin: 2rem;
+      }
+
+      .content {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 1200px;
+      }
+    `}</style>
   </div>
 )
 

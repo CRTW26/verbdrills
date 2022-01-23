@@ -10,6 +10,7 @@ exports[`<Description /> should render 1`] = `
       Nail verb conjugation to help you on your journey to being a language master
     </h3>
     <button
+      class="jsx-3131124250 "
       data-testid="btn--train"
     >
       PRACTICE
