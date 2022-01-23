@@ -21,7 +21,7 @@ const TENSES = [
 ]
 
 const ConfigurationForm: React.FC = () => {
-  const { formValues, onChange } = useForm({
+  const { onChange } = useForm({
     language: '',
     verbset: '',
     tense: '',

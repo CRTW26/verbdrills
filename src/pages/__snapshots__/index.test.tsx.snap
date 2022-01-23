@@ -39,6 +39,7 @@ exports[`renders 1`] = `
             </label>
             <select
               class="jsx-2574848865 select"
+              name="language"
             >
               <option
                 class="jsx-2574848865"
@@ -70,6 +71,7 @@ exports[`renders 1`] = `
             </label>
             <select
               class="jsx-2574848865 select"
+              name="verbset"
             >
               <option
                 class="jsx-2574848865"
@@ -101,6 +103,7 @@ exports[`renders 1`] = `
             </label>
             <select
               class="jsx-2574848865 select"
+              name="tense"
             >
               <option
                 class="jsx-2574848865"
