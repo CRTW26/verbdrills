@@ -12,28 +12,126 @@ exports[`renders 1`] = `
         class="jsx-3252123747 content"
       >
         <div
-          class="jsx-415365710 title-bar"
+          class="jsx-4194154277 title-bar"
           data-testid="title-bar"
         >
           <h1
-            class="jsx-415365710"
+            class="jsx-4194154277"
           >
             verbdrills
           </h1>
-        </div>
-        <div
-          class="description"
-          data-testid="description"
-        >
-          <h3>
-            Master verb conjugation
-          </h3>
-          <button
-            data-testid="btn--train"
+          <h2
+            class="jsx-4194154277"
           >
-            PRACTICE
-          </button>
+            Master verb conjugation
+          </h2>
         </div>
+        <form
+          class="jsx-3069584140 configuration-form"
+        >
+          <div
+            class="jsx-3069584140 configuration-form__field"
+          >
+            <label
+              class="jsx-3069584140"
+            >
+              Select a language
+            </label>
+            <select
+              class="jsx-2574848865 select"
+            >
+              <option
+                class="jsx-2574848865"
+                value="Spanish"
+              >
+                Spanish
+              </option>
+              <option
+                class="jsx-2574848865"
+                value="German"
+              >
+                German
+              </option>
+              <option
+                class="jsx-2574848865"
+                value="French"
+              >
+                French
+              </option>
+            </select>
+          </div>
+          <div
+            class="jsx-3069584140 configuration-form__field"
+          >
+            <label
+              class="jsx-3069584140"
+            >
+              Select a verb set
+            </label>
+            <select
+              class="jsx-2574848865 select"
+            >
+              <option
+                class="jsx-2574848865"
+                value="regular"
+              >
+                regular
+              </option>
+              <option
+                class="jsx-2574848865"
+                value="irregular"
+              >
+                irregular
+              </option>
+              <option
+                class="jsx-2574848865"
+                value="all"
+              >
+                all
+              </option>
+            </select>
+          </div>
+          <div
+            class="jsx-3069584140 configuration-form__field"
+          >
+            <label
+              class="jsx-3069584140"
+            >
+              Select a tense
+            </label>
+            <select
+              class="jsx-2574848865 select"
+            >
+              <option
+                class="jsx-2574848865"
+                value="present"
+              >
+                present
+              </option>
+              <option
+                class="jsx-2574848865"
+                value="preterite"
+              >
+                preterite
+              </option>
+              <option
+                class="jsx-2574848865"
+                value="imperfect"
+              >
+                imperfect
+              </option>
+            </select>
+          </div>
+          <div
+            class="jsx-3069584140 configuration-form__field"
+          >
+            <button
+              class="jsx-3131124250 btn btn--primary"
+            >
+              Train
+            </button>
+          </div>
+        </form>
       </div>
     </main>
   </div>

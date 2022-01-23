@@ -22,7 +22,7 @@
     }
   },
   "rules": {
-    "max-len": 1,
+    "max-len": ["error", { "ignoreUrls": true, "ignoreStrings": true }],
     "react/react-in-jsx-scope": 0,
     "react/display-name": 0,
     "react/prop-types": 0,
