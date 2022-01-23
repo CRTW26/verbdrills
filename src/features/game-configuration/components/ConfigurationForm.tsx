@@ -1,5 +1,6 @@
 import Button from 'shared/components/Button'
 import Select from 'shared/components/Select'
+import useForm from '../hooks/useForm'
 
 const LANGUAGES = [
   { value: 'Spanish' },
@@ -20,21 +21,27 @@ const TENSES = [
 ]
 
 const ConfigurationForm: React.FC = () => {
+  const { formValues, onChange } = useForm({
+    language: '',
+    verbset: '',
+    tense: '',
+  })
+
   return (
     <form className="configuration-form">
       <div className="configuration-form__field">
         <label>Select a language</label>
-        <Select options={LANGUAGES} />
+        <Select options={LANGUAGES} name="language" onChange={onChange} />
       </div>
-
+      {console.log(formValues)}
       <div className="configuration-form__field">
         <label>Select a verb set</label>
-        <Select options={VERBSETS} />
+        <Select options={VERBSETS} name="verbset" onChange={onChange} />
       </div>
 
       <div className="configuration-form__field">
         <label>Select a tense</label>
-        <Select options={TENSES} />
+        <Select options={TENSES} name="tense" onChange={onChange} />
       </div>
 
       <div className="configuration-form__field">
