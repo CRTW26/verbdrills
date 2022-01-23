@@ -33,7 +33,7 @@ const ConfigurationForm: React.FC = () => {
         <label>Select a language</label>
         <Select options={LANGUAGES} name="language" onChange={onChange} />
       </div>
-      {console.log(formValues)}
+
       <div className="configuration-form__field">
         <label>Select a verb set</label>
         <Select options={VERBSETS} name="verbset" onChange={onChange} />
