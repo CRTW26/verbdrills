@@ -15,12 +15,27 @@ export const Index: React.FC = () => (
     </Head>
 
     <main>
-      <TitleBar text="verbdrills" />
+      <div className="content">
+        <TitleBar text="verbdrills" />
 
-      <Description text={'Master verb conjugation'} />
+        <Description text={'Master verb conjugation'} />
+      </div>
     </main>
 
-    <style jsx>{``}</style>
+    <style jsx>{`
+      main {
+        margin: 2rem;
+      }
+
+      .content {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 1200px;
+      }
+    `}</style>
   </div>
 )
 
