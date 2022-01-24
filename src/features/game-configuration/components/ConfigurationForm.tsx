@@ -1,5 +1,6 @@
 import Button from 'shared/components/Button'
 import Select from 'shared/components/Select'
+import { AppState } from 'shared/types'
 import useForm from '../hooks/useForm'
 
 const LANGUAGES = [
@@ -20,7 +21,11 @@ const TENSES = [
   { value: 'imperfect' },
 ]
 
-const ConfigurationForm: React.FC = () => {
+interface Props {
+  onClick: (value: AppState) => void
+}
+
+const ConfigurationForm: React.FC<Props> = ({ onClick }) => {
   const { onChange } = useForm({
     language: '',
     verbset: '',
@@ -45,7 +50,11 @@ const ConfigurationForm: React.FC = () => {
       </div>
 
       <div className="configuration-form__field">
-        <Button className="btn btn--primary" text="Train" />
+        <Button
+          className="btn btn--primary"
+          text="Train"
+          onClick={() => onClick(AppState.GAME_PLAY)}
+        />
       </div>
 
       <style jsx>{`
