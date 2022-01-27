@@ -33,11 +33,10 @@ export const Index: React.FC = () => {
 
         {appState === AppState.GAME_PLAY && (
           <div className="content">
-            <GamePlay />
-
-            <Button
-              className="btn btn--primary"
-              text="End game"
+            <GamePlay
+              infinitive="hablar"
+              conjugation="yo"
+              translation="to speak"
               onClick={() => setAppState(AppState.GAME_RESULT)}
             />
           </div>

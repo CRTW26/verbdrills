@@ -1,7 +1,20 @@
 import React from 'react'
+import Button from 'shared/components/Button'
 import Input from 'shared/components/Input'
 
-const GamePlay: React.FC = () => {
+interface Props {
+  infinitive: string
+  conjugation: string
+  translation: string
+  onClick: () => void
+}
+
+const GamePlay: React.FC<Props> = ({
+  infinitive,
+  conjugation,
+  translation,
+  onClick,
+}) => {
   const handleChange = (): void => {
     console.log('changed')
   }
@@ -11,14 +24,20 @@ const GamePlay: React.FC = () => {
       <h1>Countdown will go here </h1>
 
       <div className="card">
-        <div className="card__verb-display">
-          <h2 className="infinitive">VERB</h2>
-          <h2 className="conjugation">CONJUGATION</h2>
-          <h3 className="translation">translation</h3>
+        <div className="card__child card__verb-display">
+          <h2 className="infinitive">{infinitive}</h2>
+          <h2 className="conjugation">{conjugation}</h2>
+          <h3 className="translation">{translation}</h3>
         </div>
 
-        <div className="card__input">
+        <div className="card__child card__input">
           <Input onChange={handleChange} />
+
+          <Button
+            className="btn btn--primary"
+            text="End game"
+            onClick={onClick}
+          />
         </div>
       </div>
 
@@ -33,6 +52,14 @@ const GamePlay: React.FC = () => {
           text-align: center;
           background-color: #bfd7ea24;
           border-radius: 5px;
+        }
+
+        .card__child {
+          margin: 1rem 0;
+        }
+
+        .card__input {
+          padding: 1rem;
         }
       `}</style>
     </>

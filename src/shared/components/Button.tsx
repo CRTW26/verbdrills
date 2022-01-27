@@ -16,6 +16,7 @@ const Button: React.FC<Props> = ({ text, ...rest }) => {
           border-radius: 5px;
           padding: 0.5rem 1rem;
           width: 100%;
+          margin: 1rem 0;
         }
 
         .btn--primary {
