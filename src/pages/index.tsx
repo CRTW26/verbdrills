@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { TitleBar } from 'features/home'
 import { AppState } from 'shared/types'
 import Button from 'shared/components/Button'
+import GamePlay from 'features/game-play/components/GamePlay'
 
 export const Index: React.FC = () => {
   const [appState, setAppState] = useState(AppState.GAME_CONFIGURATION)
@@ -32,10 +33,10 @@ export const Index: React.FC = () => {
 
         {appState === AppState.GAME_PLAY && (
           <div className="content">
-            <h1>This is the game play</h1>
-            <Button
-              className="btn btn--primary"
-              text="End game"
+            <GamePlay
+              infinitive="hablar"
+              conjugation="yo"
+              translation="to speak"
               onClick={() => setAppState(AppState.GAME_RESULT)}
             />
           </div>
