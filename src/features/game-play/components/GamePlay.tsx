@@ -1,6 +1,8 @@
 import React from 'react'
 import Button from 'shared/components/Button'
 import Input from 'shared/components/Input'
+import { useTimer } from '../hooks/useTimer'
+import Timer from './Timer'
 
 interface Props {
   infinitive: string
@@ -15,13 +17,15 @@ const GamePlay: React.FC<Props> = ({
   translation,
   onClick,
 }) => {
+  const { timeLeft, isTimerExpired } = useTimer(10)
+
   const handleChange = (): void => {
     console.log('changed')
   }
 
   return (
     <>
-      <h1>Countdown will go here </h1>
+      <Timer timeRemaining={timeLeft} isTimerExpired={isTimerExpired} />
 
       <div className="card">
         <div className="card__child card__verb-display">
