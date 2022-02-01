@@ -17,7 +17,7 @@ const GamePlay: React.FC<Props> = ({
   translation,
   onClick,
 }) => {
-  const { timeLeft, isTimerExpired } = useTimer(10)
+  const { timeLeft, isTimerExpired } = useTimer(10, onClick)
 
   const handleChange = (): void => {
     console.log('changed')

@@ -10,7 +10,10 @@ describe('useTimer', () => {
 
   test('should set isTimerExpired to be true once time has elapsed', () => {
     jest.useFakeTimers()
-    const { result } = renderHook(() => useTimer(1))
+
+    const onExpiration = jest.fn()
+
+    const { result } = renderHook(() => useTimer(1, onExpiration))
 
     expect(result.current.isTimerExpired).toBeFalsy()
 
@@ -19,5 +22,21 @@ describe('useTimer', () => {
     })
 
     expect(result.current.isTimerExpired).toBeTruthy()
+  })
+
+  test('should call onExpiration when time has elapsed', () => {
+    jest.useFakeTimers()
+
+    const onExpiration = jest.fn()
+
+    const { result } = renderHook(() => useTimer(1, onExpiration))
+
+    expect(result.current.isTimerExpired).toBeFalsy()
+
+    act(() => {
+      jest.advanceTimersByTime(1000)
+    })
+
+    expect(onExpiration).toHaveBeenCalled()
   })
 })

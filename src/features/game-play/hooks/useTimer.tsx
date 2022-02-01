@@ -5,7 +5,11 @@ type useTimer = {
   isTimerExpired: boolean
 }
 
-const useTimer = (timer: number, interval = 1000): useTimer => {
+const useTimer = (
+  timer: number,
+  onExpiration: () => void,
+  interval = 1000
+): useTimer => {
   const [timeLeft, setTimeLeft] = useState(timer)
 
   const isTimerExpired = timeLeft === 0
@@ -13,6 +17,8 @@ const useTimer = (timer: number, interval = 1000): useTimer => {
   useEffect(() => {
     if (isTimerExpired) {
       console.log('finished')
+      onExpiration()
+
       return
     }
 
