@@ -22,11 +22,11 @@ const TENSES = [
 ]
 
 interface Props {
-  onClick: (value: AppState) => void
+  onClick: () => void
 }
 
 const ConfigurationForm: React.FC<Props> = ({ onClick }) => {
-  const { onChange } = useForm({
+  const { onChange, formValues } = useForm({
     language: '',
     verbset: '',
     tense: '',
@@ -53,7 +53,8 @@ const ConfigurationForm: React.FC<Props> = ({ onClick }) => {
         <Button
           className="btn btn--primary"
           text="Train"
-          onClick={() => onClick(AppState.GAME_PLAY)}
+          onClick={onClick}
+          type="button"
         />
       </div>
 

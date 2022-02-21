@@ -16,14 +16,14 @@ const useTimer = (
 
   useEffect(() => {
     if (isTimerExpired) {
-      console.log('finished')
+      // console.log('finished')
       onExpiration()
 
       return
     }
 
     const countdown = setInterval(() => {
-      console.log(timeLeft)
+      // console.log(timeLeft)
       setTimeLeft(timeLeft - 1)
     }, interval)
 

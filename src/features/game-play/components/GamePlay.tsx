@@ -1,46 +1,62 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Button from 'shared/components/Button'
 import Input from 'shared/components/Input'
-import { useTimer } from '../hooks/useTimer'
 import Timer from './Timer'
 
-interface Props {
+interface Verb {
   infinitive: string
-  conjugation: string
+  person: string
   translation: string
-  onClick: () => void
+  answer: string
+}
+
+interface Props {
+  verb: Verb
+  score: number
+  validateInput: (guess, answer) => void
+  onExpiration: () => void
 }
 
 const GamePlay: React.FC<Props> = ({
-  infinitive,
-  conjugation,
-  translation,
-  onClick,
+  verb,
+  score,
+  validateInput,
+  onExpiration,
 }) => {
-  const { timeLeft, isTimerExpired } = useTimer(10, onClick)
+  const [guess, setGuess] = useState('')
 
-  const handleChange = (): void => {
-    console.log('changed')
+  const { infinitive, person, translation, answer } = verb
+
+  const handleChange = (e): void => {
+    setGuess(e.target.value)
   }
+
+  useEffect(() => {
+    setGuess('')
+  }, [score])
 
   return (
     <>
-      <Timer timeRemaining={timeLeft} isTimerExpired={isTimerExpired} />
+      <Timer onExpiration={onExpiration} />
+
+      <div>
+        <h2>{score}</h2>
+      </div>
 
       <div className="card">
         <div className="card__child card__verb-display">
           <h2 className="infinitive">{infinitive}</h2>
-          <h2 className="conjugation">{conjugation}</h2>
+          <h2 className="person">{person}</h2>
           <h3 className="translation">{translation}</h3>
         </div>
 
         <div className="card__child card__input">
-          <Input onChange={handleChange} />
+          <Input value={guess} onChange={handleChange} />
 
           <Button
             className="btn btn--primary"
             text="End game"
-            onClick={onClick}
+            onClick={() => validateInput(guess, answer)}
           />
         </div>
       </div>

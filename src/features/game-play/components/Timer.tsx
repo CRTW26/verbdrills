@@ -1,14 +1,16 @@
 import React from 'react'
+import { useTimer } from '../hooks/useTimer'
 
 interface Props {
-  timeRemaining: number
-  isTimerExpired: boolean
+  onExpiration: () => void
 }
 
-const Timer: React.FC<Props> = ({ timeRemaining, isTimerExpired }) => {
+const Timer: React.FC<Props> = ({ onExpiration }) => {
+  const { timeLeft, isTimerExpired } = useTimer(10, onExpiration)
+
   return (
     <div>
-      <h3>{isTimerExpired ? "Time's up!" : timeRemaining}</h3>
+      <h3>{isTimerExpired ? "Time's up!" : timeLeft}</h3>
     </div>
   )
 }
