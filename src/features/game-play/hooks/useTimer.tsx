@@ -16,7 +16,6 @@ const useTimer = (
 
   useEffect(() => {
     if (isTimerExpired) {
-      // console.log('finished')
       onExpiration()
 
       return

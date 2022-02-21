@@ -31,9 +31,28 @@ const GamePlay: React.FC<Props> = ({
     setGuess(e.target.value)
   }
 
+  const submitGuess = () => {
+    validateInput(guess, answer)
+  }
+
+  const handleEnterPress = (e) => {
+    if (e.keyCode === 13) {
+      submitGuess()
+    }
+  }
+
   useEffect(() => {
     setGuess('')
   }, [score])
+
+  // TODO: look into useEffect taking snapshot of state. This uses initial state
+  // useEffect(() => {
+  //   window.addEventListener('keypress', handleEnterPress)
+
+  //   return () => {
+  //     window.removeEventListener('keypress', handleEnterPress)
+  //   }
+  // }, [])
 
   return (
     <>
@@ -51,12 +70,16 @@ const GamePlay: React.FC<Props> = ({
         </div>
 
         <div className="card__child card__input">
-          <Input value={guess} onChange={handleChange} />
+          <Input
+            value={guess}
+            onChange={handleChange}
+            onKeyDown={handleEnterPress}
+          />
 
           <Button
             className="btn btn--primary"
-            text="End game"
-            onClick={() => validateInput(guess, answer)}
+            text="Guess"
+            onClick={submitGuess}
           />
         </div>
       </div>

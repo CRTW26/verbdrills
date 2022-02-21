@@ -11,6 +11,16 @@
         "aceptáis",
         "aceptan"
       ]
+    },
+    {
+      "infinitive": "hablar",
+      "translation": "to speak",
+      "present": ["hablo", "hablas", "habla", "hablamos", "habláis", "hablan"]
+    },
+    {
+      "infinitive": "ayudar",
+      "translation": "to help",
+      "present": ["ayudo", "ayudas", "ayuda", "ayudamos", "ayudáis", "ayudan"]
     }
   ]
 }
