@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 enum VerbPersonIndexes {
   FIRST_SING = 0,
@@ -22,11 +22,31 @@ const PERSON = {
   Ustedes: 'THIRD_PLUR',
 }
 
-const getRandomNumber = (max) => {
+type Verb = {
+  infinitive: string
+  translation: string
+  present: Array<string>
+}
+
+type GameVerb = {
+  infinitive: string
+  translation: string
+  person: string
+  answer: string
+}
+
+type UseGame = {
+  getVerb: () => GameVerb
+  validateInput: (input: string, answer: string) => void
+  resetGame: () => void
+  score: number
+}
+
+const getRandomNumber = (max: number): number => {
   return Math.floor(Math.random() * max)
 }
 
-const useGame = ({ verbs }) => {
+const useGame = ({ verbs }: { verbs: Array<Verb> }): UseGame => {
   const [score, setScore] = useState(0)
 
   const TOTAL_VERBS = verbs.length

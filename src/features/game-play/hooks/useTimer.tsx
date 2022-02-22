@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 type useTimer = {
   timeLeft: number
@@ -22,7 +22,6 @@ const useTimer = (
     }
 
     const countdown = setInterval(() => {
-      // console.log(timeLeft)
       setTimeLeft(timeLeft - 1)
     }, interval)
 
