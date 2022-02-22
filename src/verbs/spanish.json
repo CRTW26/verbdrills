@@ -10,17 +10,65 @@
         "aceptamos",
         "aceptáis",
         "aceptan"
+      ],
+      "preterite": [
+        "acepté",
+        "aceptaste",
+        "aceptó",
+        "aceptamos",
+        "aceptasteis",
+        "aceptaron"
+      ],
+      "imperfect": [
+        "aceptaba",
+        "aceptabas",
+        "aceptaba",
+        "aceptabamos",
+        "aceptabais",
+        "aceptaban"
       ]
     },
     {
       "infinitive": "hablar",
       "translation": "to speak",
-      "present": ["hablo", "hablas", "habla", "hablamos", "habláis", "hablan"]
+      "present": ["hablo", "hablas", "habla", "hablamos", "habláis", "hablan"],
+      "preterite": [
+        "hablé",
+        "hablaste",
+        "habló",
+        "hablamos",
+        "hablasteis",
+        "hablaron"
+      ],
+      "imperfect": [
+        "hablaba",
+        "hablabas",
+        "hablaba",
+        "hablabamos",
+        "hablabais",
+        "hablaban"
+      ]
     },
     {
       "infinitive": "ayudar",
       "translation": "to help",
-      "present": ["ayudo", "ayudas", "ayuda", "ayudamos", "ayudáis", "ayudan"]
+      "present": ["ayudo", "ayudas", "ayuda", "ayudamos", "ayudáis", "ayudan"],
+      "preterite": [
+        "ayudè",
+        "ayudaste",
+        "ayudó",
+        "ayudamos",
+        "ayudasteis",
+        "ayudaron"
+      ],
+      "imperfect": [
+        "ayudaba",
+        "ayudabas",
+        "ayudaba",
+        "ayudabamos",
+        "ayudabais",
+        "ayudaaban"
+      ]
     }
   ]
 }
