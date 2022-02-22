@@ -70,7 +70,7 @@ const useGame = ({ verbs }: { verbs: Array<Verb> }): UseGame => {
     }
   }
 
-  const validateInput = (input, answer) => {
+  const validateInput = (input: string, answer: string) => {
     if (input.toLowerCase() === answer) {
       setScore(score + 1)
     }

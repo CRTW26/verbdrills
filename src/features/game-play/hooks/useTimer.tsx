@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-type useTimer = {
+type UseTimer = {
   timeLeft: number
   isTimerExpired: boolean
 }
@@ -9,7 +9,7 @@ const useTimer = (
   timer: number,
   onExpiration: () => void,
   interval = 1000
-): useTimer => {
+): UseTimer => {
   const [timeLeft, setTimeLeft] = useState(timer)
 
   const isTimerExpired = timeLeft === 0

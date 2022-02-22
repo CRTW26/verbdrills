@@ -27,7 +27,7 @@ const GamePlay: React.FC<Props> = ({
 
   const { infinitive, person, translation, answer } = verb
 
-  const handleChange = (e): void => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setGuess(e.target.value)
   }
 
@@ -35,8 +35,8 @@ const GamePlay: React.FC<Props> = ({
     validateInput(guess, answer)
   }
 
-  const handleEnterPress = (e) => {
-    if (e.keyCode === 13) {
+  const handleEnterPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
       submitGuess()
     }
   }
