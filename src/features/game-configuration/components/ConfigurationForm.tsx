@@ -1,6 +1,5 @@
 import Button from 'shared/components/Button'
 import Select from 'shared/components/Select'
-import { AppState } from 'shared/types'
 import useForm from '../hooks/useForm'
 
 const LANGUAGES = [
@@ -26,7 +25,7 @@ interface Props {
 }
 
 const ConfigurationForm: React.FC<Props> = ({ onClick }) => {
-  const { onChange, formValues } = useForm({
+  const { onChange } = useForm({
     language: '',
     verbset: '',
     tense: '',

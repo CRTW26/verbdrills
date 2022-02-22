@@ -13,7 +13,7 @@ interface Verb {
 interface Props {
   verb: Verb
   score: number
-  validateInput: (guess, answer) => void
+  validateInput: (guess: string, answer: string) => void
   onExpiration: () => void
 }
 
