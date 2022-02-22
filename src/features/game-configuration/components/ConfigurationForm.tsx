@@ -21,10 +21,10 @@ const TENSES = [
 ]
 
 interface Props {
-  onClick: () => void
+  onSubmit: () => void
 }
 
-const ConfigurationForm: React.FC<Props> = ({ onClick }) => {
+const ConfigurationForm: React.FC<Props> = ({ onSubmit }) => {
   const { onChange } = useForm({
     language: '',
     verbset: '',
@@ -52,7 +52,7 @@ const ConfigurationForm: React.FC<Props> = ({ onClick }) => {
         <Button
           className="btn btn--primary"
           text="Train"
-          onClick={onClick}
+          onClick={onSubmit}
           type="button"
         />
       </div>

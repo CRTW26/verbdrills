@@ -45,7 +45,7 @@ export const Index: React.FC = () => {
           <div className="content">
             <TitleBar text="verbdrills" />
 
-            <GameConfigurationForm onClick={initiateGamePlay} />
+            <GameConfigurationForm onSubmit={initiateGamePlay} />
           </div>
         )}
 
