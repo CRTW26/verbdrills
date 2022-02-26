@@ -141,6 +141,18 @@ exports[`renders 1`] = `
               >
                 imperfect
               </option>
+              <option
+                class="jsx-2574848865"
+                value="future"
+              >
+                future
+              </option>
+              <option
+                class="jsx-2574848865"
+                value="conditional"
+              >
+                conditional
+              </option>
             </select>
           </div>
           <div
