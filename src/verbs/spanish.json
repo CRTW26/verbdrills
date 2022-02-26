@@ -1,8 +1,45 @@
 {
   "regular": [
     {
+      "infinitive": "acabar",
+      "translation": "to had finished",
+      "present": ["acabo", "acabas", "acaba", "acabamos", "acabáis", "acaban"],
+      "future": [
+        "acabaré",
+        "acabarás",
+        "acabará",
+        "acabaremos",
+        "acabaréis",
+        "acabarán"
+      ],
+      "imperfect": [
+        "acababa",
+        "acababas",
+        "acababa",
+        "acabábamos",
+        "acababais",
+        "acababan"
+      ],
+      "preterite": [
+        "acabé",
+        "acabaste",
+        "acabó",
+        "acabamos",
+        "acabasteis",
+        "acabaron"
+      ],
+      "conditional": [
+        "acabaría",
+        "acabarías",
+        "acabaría",
+        "acabaríamos",
+        "acabaríais",
+        "acabarían"
+      ]
+    },
+    {
       "infinitive": "aceptar",
-      "translation": "to accept",
+      "translation": "to had accepted",
       "present": [
         "acepto",
         "aceptas",
@@ -10,6 +47,22 @@
         "aceptamos",
         "aceptáis",
         "aceptan"
+      ],
+      "future": [
+        "aceptaré",
+        "aceptarás",
+        "aceptará",
+        "aceptaremos",
+        "aceptaréis",
+        "aceptarán"
+      ],
+      "imperfect": [
+        "aceptaba",
+        "aceptabas",
+        "aceptaba",
+        "aceptábamos",
+        "aceptabais",
+        "aceptaban"
       ],
       "preterite": [
         "acepté",
@@ -19,19 +72,220 @@
         "aceptasteis",
         "aceptaron"
       ],
+      "conditional": [
+        "aceptaría",
+        "aceptarías",
+        "aceptaría",
+        "aceptaríamos",
+        "aceptaríais",
+        "aceptarían"
+      ]
+    },
+    {
+      "infinitive": "amar",
+      "translation": "to had loved",
+      "present": ["amo", "amas", "ama", "amamos", "amáis", "aman"],
+      "future": ["amaré", "amarás", "amará", "amaremos", "amaréis", "amarán"],
       "imperfect": [
-        "aceptaba",
-        "aceptabas",
-        "aceptaba",
-        "aceptabamos",
-        "aceptabais",
-        "aceptaban"
+        "amaba",
+        "amabas",
+        "amaba",
+        "amábamos",
+        "amabais",
+        "amaban"
+      ],
+      "preterite": ["amé", "amaste", "amó", "amamos", "amasteis", "amaron"],
+      "conditional": [
+        "amaría",
+        "amarías",
+        "amaría",
+        "amaríamos",
+        "amaríais",
+        "amarían"
+      ]
+    },
+    {
+      "infinitive": "ayudar",
+      "translation": "to had helped",
+      "present": ["ayudo", "ayudas", "ayuda", "ayudamos", "ayudáis", "ayudan"],
+      "future": [
+        "ayudaré",
+        "ayudarás",
+        "ayudará",
+        "ayudaremos",
+        "ayudaréis",
+        "ayudarán"
+      ],
+      "imperfect": [
+        "ayudaba",
+        "ayudabas",
+        "ayudaba",
+        "ayudábamos",
+        "ayudabais",
+        "ayudaban"
+      ],
+      "preterite": [
+        "ayudé",
+        "ayudaste",
+        "ayudó",
+        "ayudamos",
+        "ayudasteis",
+        "ayudaron"
+      ],
+      "conditional": [
+        "ayudaría",
+        "ayudarías",
+        "ayudaría",
+        "ayudaríamos",
+        "ayudaríais",
+        "ayudarían"
+      ]
+    },
+    {
+      "infinitive": "bailar",
+      "translation": "to had danced",
+      "present": ["bailo", "bailas", "baila", "bailamos", "bailáis", "bailan"],
+      "future": [
+        "bailaré",
+        "bailarás",
+        "bailará",
+        "bailaremos",
+        "bailaréis",
+        "bailarán"
+      ],
+      "imperfect": [
+        "bailaba",
+        "bailabas",
+        "bailaba",
+        "bailábamos",
+        "bailabais",
+        "bailaban"
+      ],
+      "preterite": [
+        "bailé",
+        "bailaste",
+        "bailó",
+        "bailamos",
+        "bailasteis",
+        "bailaron"
+      ],
+      "conditional": [
+        "bailaría",
+        "bailarías",
+        "bailaría",
+        "bailaríamos",
+        "bailaríais",
+        "bailarían"
+      ]
+    },
+    {
+      "infinitive": "cocinar",
+      "translation": "to had cooked",
+      "present": [
+        "cocino",
+        "cocinas",
+        "cocina",
+        "cocinamos",
+        "cocináis",
+        "cocinan"
+      ],
+      "future": [
+        "cocinaré",
+        "cocinarás",
+        "cocinará",
+        "cocinaremos",
+        "cocinaréis",
+        "cocinarán"
+      ],
+      "imperfect": [
+        "cocinaba",
+        "cocinabas",
+        "cocinaba",
+        "cocinábamos",
+        "cocinabais",
+        "cocinaban"
+      ],
+      "preterite": [
+        "cociné",
+        "cocinaste",
+        "cocinó",
+        "cocinamos",
+        "cocinasteis",
+        "cocinaron"
+      ],
+      "conditional": [
+        "cocinaría",
+        "cocinarías",
+        "cocinaría",
+        "cocinaríamos",
+        "cocinaríais",
+        "cocinarían"
+      ]
+    },
+    {
+      "infinitive": "dibujar",
+      "translation": "to had drawn",
+      "present": [
+        "dibujo",
+        "dibujas",
+        "dibuja",
+        "dibujamos",
+        "dibujáis",
+        "dibujan"
+      ],
+      "future": [
+        "dibujaré",
+        "dibujarás",
+        "dibujará",
+        "dibujaremos",
+        "dibujaréis",
+        "dibujarán"
+      ],
+      "imperfect": [
+        "dibujaba",
+        "dibujabas",
+        "dibujaba",
+        "dibujábamos",
+        "dibujabais",
+        "dibujaban"
+      ],
+      "preterite": [
+        "dibujé",
+        "dibujaste",
+        "dibujó",
+        "dibujamos",
+        "dibujasteis",
+        "dibujaron"
+      ],
+      "conditional": [
+        "dibujaría",
+        "dibujarías",
+        "dibujaría",
+        "dibujaríamos",
+        "dibujaríais",
+        "dibujarían"
       ]
     },
     {
       "infinitive": "hablar",
-      "translation": "to speak",
+      "translation": "to had spoken",
       "present": ["hablo", "hablas", "habla", "hablamos", "habláis", "hablan"],
+      "future": [
+        "hablaré",
+        "hablarás",
+        "hablará",
+        "hablaremos",
+        "hablaréis",
+        "hablarán"
+      ],
+      "imperfect": [
+        "hablaba",
+        "hablabas",
+        "hablaba",
+        "hablábamos",
+        "hablabais",
+        "hablaban"
+      ],
       "preterite": [
         "hablé",
         "hablaste",
@@ -40,34 +294,728 @@
         "hablasteis",
         "hablaron"
       ],
-      "imperfect": [
-        "hablaba",
-        "hablabas",
-        "hablaba",
-        "hablabamos",
-        "hablabais",
-        "hablaban"
+      "conditional": [
+        "hablaría",
+        "hablarías",
+        "hablaría",
+        "hablaríamos",
+        "hablaríais",
+        "hablarían"
       ]
     },
     {
-      "infinitive": "ayudar",
-      "translation": "to help",
-      "present": ["ayudo", "ayudas", "ayuda", "ayudamos", "ayudáis", "ayudan"],
-      "preterite": [
-        "ayudè",
-        "ayudaste",
-        "ayudó",
-        "ayudamos",
-        "ayudasteis",
-        "ayudaron"
+      "infinitive": "limpiar",
+      "translation": "to had cleaned",
+      "present": [
+        "limpio",
+        "limpias",
+        "limpia",
+        "limpiamos",
+        "limpiáis",
+        "limpian"
+      ],
+      "future": [
+        "limpiaré",
+        "limpiarás",
+        "limpiará",
+        "limpiaremos",
+        "limpiaréis",
+        "limpiarán"
       ],
       "imperfect": [
-        "ayudaba",
-        "ayudabas",
-        "ayudaba",
-        "ayudabamos",
-        "ayudabais",
-        "ayudaaban"
+        "limpiaba",
+        "limpiabas",
+        "limpiaba",
+        "limpiábamos",
+        "limpiabais",
+        "limpiaban"
+      ],
+      "preterite": [
+        "limpié",
+        "limpiaste",
+        "limpió",
+        "limpiamos",
+        "limpiasteis",
+        "limpiaron"
+      ],
+      "conditional": [
+        "limpiaría",
+        "limpiarías",
+        "limpiaría",
+        "limpiaríamos",
+        "limpiaríais",
+        "limpiarían"
+      ]
+    },
+    {
+      "infinitive": "llorar",
+      "translation": "to had cried",
+      "present": ["lloro", "lloras", "llora", "lloramos", "lloráis", "lloran"],
+      "future": [
+        "lloraré",
+        "llorarás",
+        "llorará",
+        "lloraremos",
+        "lloraréis",
+        "llorarán"
+      ],
+      "imperfect": [
+        "lloraba",
+        "llorabas",
+        "lloraba",
+        "llorábamos",
+        "llorabais",
+        "lloraban"
+      ],
+      "preterite": [
+        "lloré",
+        "lloraste",
+        "lloró",
+        "lloramos",
+        "llorasteis",
+        "lloraron"
+      ],
+      "conditional": [
+        "lloraría",
+        "llorarías",
+        "lloraría",
+        "lloraríamos",
+        "lloraríais",
+        "llorarían"
+      ]
+    },
+    {
+      "infinitive": "participar",
+      "translation": "to had participated",
+      "present": [
+        "participo",
+        "participas",
+        "participa",
+        "participamos",
+        "participáis",
+        "participan"
+      ],
+      "future": [
+        "participaré",
+        "participarás",
+        "participará",
+        "participaremos",
+        "participaréis",
+        "participarán"
+      ],
+      "imperfect": [
+        "participaba",
+        "participabas",
+        "participaba",
+        "participábamos",
+        "participabais",
+        "participaban"
+      ],
+      "preterite": [
+        "participé",
+        "participaste",
+        "participó",
+        "participamos",
+        "participasteis",
+        "participaron"
+      ],
+      "conditional": [
+        "participaría",
+        "participarías",
+        "participaría",
+        "participaríamos",
+        "participaríais",
+        "participarían"
+      ]
+    },
+    {
+      "infinitive": "trabajar",
+      "translation": "to had worked",
+      "present": [
+        "trabajo",
+        "trabajas",
+        "trabaja",
+        "trabajamos",
+        "trabajáis",
+        "trabajan"
+      ],
+      "future": [
+        "trabajaré",
+        "trabajarás",
+        "trabajará",
+        "trabajaremos",
+        "trabajaréis",
+        "trabajarán"
+      ],
+      "imperfect": [
+        "trabajaba",
+        "trabajabas",
+        "trabajaba",
+        "trabajábamos",
+        "trabajabais",
+        "trabajaban"
+      ],
+      "preterite": [
+        "trabajé",
+        "trabajaste",
+        "trabajó",
+        "trabajamos",
+        "trabajasteis",
+        "trabajaron"
+      ],
+      "conditional": [
+        "trabajaría",
+        "trabajarías",
+        "trabajaría",
+        "trabajaríamos",
+        "trabajaríais",
+        "trabajarían"
+      ]
+    },
+    {
+      "infinitive": "usar",
+      "translation": "to had used",
+      "present": ["uso", "usas", "usa", "usamos", "usáis", "usan"],
+      "future": ["usaré", "usarás", "usará", "usaremos", "usaréis", "usarán"],
+      "imperfect": [
+        "usaba",
+        "usabas",
+        "usaba",
+        "usábamos",
+        "usabais",
+        "usaban"
+      ],
+      "preterite": ["usé", "usaste", "usó", "usamos", "usasteis", "usaron"],
+      "conditional": [
+        "usaría",
+        "usarías",
+        "usaría",
+        "usaríamos",
+        "usaríais",
+        "usarían"
+      ]
+    },
+    {
+      "infinitive": "aprender",
+      "translation": "to had learned",
+      "present": [
+        "aprendo",
+        "aprendes",
+        "aprende",
+        "aprendemos",
+        "aprendéis",
+        "aprenden"
+      ],
+      "future": [
+        "aprenderé",
+        "aprenderás",
+        "aprenderá",
+        "aprenderemos",
+        "aprenderéis",
+        "aprenderán"
+      ],
+      "imperfect": [
+        "aprendía",
+        "aprendías",
+        "aprendía",
+        "aprendíamos",
+        "aprendíais",
+        "aprendían"
+      ],
+      "preterite": [
+        "aprendí",
+        "aprendiste",
+        "aprendió",
+        "aprendimos",
+        "aprendisteis",
+        "aprendieron"
+      ],
+      "conditional": [
+        "aprendería",
+        "aprenderías",
+        "aprendería",
+        "aprenderíamos",
+        "aprenderíais",
+        "aprenderían"
+      ]
+    },
+    {
+      "infinitive": "beber",
+      "translation": "to had drunk",
+      "present": ["bebo", "bebes", "bebe", "bebemos", "bebéis", "beben"],
+      "future": [
+        "beberé",
+        "beberás",
+        "beberá",
+        "beberemos",
+        "beberéis",
+        "beberán"
+      ],
+      "imperfect": [
+        "bebía",
+        "bebías",
+        "bebía",
+        "bebíamos",
+        "bebíais",
+        "bebían"
+      ],
+      "preterite": [
+        "bebí",
+        "bebiste",
+        "bebió",
+        "bebimos",
+        "bebisteis",
+        "bebieron"
+      ],
+      "conditional": [
+        "bebería",
+        "beberías",
+        "bebería",
+        "beberíamos",
+        "beberíais",
+        "beberían"
+      ]
+    },
+    {
+      "infinitive": "comer",
+      "translation": "to had eaten",
+      "conditional": [
+        "comería",
+        "comerías",
+        "comería",
+        "comeríamos",
+        "comeríais",
+        "comerían"
+      ],
+      "present": ["como", "comes", "come", "comemos", "coméis", "comen"],
+      "future": [
+        "comeré",
+        "comerás",
+        "comerá",
+        "comeremos",
+        "comeréis",
+        "comerán"
+      ],
+      "imperfect": [
+        "comía",
+        "comías",
+        "comía",
+        "comíamos",
+        "comíais",
+        "comían"
+      ],
+      "preterite": [
+        "comí",
+        "comiste",
+        "comió",
+        "comimos",
+        "comisteis",
+        "comieron"
+      ]
+    },
+    {
+      "infinitive": "comprender",
+      "translation": "to had understood",
+      "present": [
+        "comprendo",
+        "comprendes",
+        "comprende",
+        "comprendemos",
+        "comprendéis",
+        "comprenden"
+      ],
+      "future": [
+        "comprenderé",
+        "comprenderás",
+        "comprenderá",
+        "comprenderemos",
+        "comprenderéis",
+        "comprenderán"
+      ],
+      "imperfect": [
+        "comprendía",
+        "comprendías",
+        "comprendía",
+        "comprendíamos",
+        "comprendíais",
+        "comprendían"
+      ],
+      "preterite": [
+        "comprendí",
+        "comprendiste",
+        "comprendió",
+        "comprendimos",
+        "comprendisteis",
+        "comprendieron"
+      ],
+      "conditional": [
+        "comprendería",
+        "comprenderías",
+        "comprendería",
+        "comprenderíamos",
+        "comprenderíais",
+        "comprenderían"
+      ]
+    },
+    {
+      "infinitive": "depender",
+      "translation": "to had depended",
+      "present": [
+        "dependo",
+        "dependes",
+        "depende",
+        "dependemos",
+        "dependéis",
+        "dependen"
+      ],
+      "future": [
+        "dependeré",
+        "dependerás",
+        "dependerá",
+        "dependeremos",
+        "dependeréis",
+        "dependerán"
+      ],
+      "imperfect": [
+        "dependía",
+        "dependías",
+        "dependía",
+        "dependíamos",
+        "dependíais",
+        "dependían"
+      ],
+      "preterite": [
+        "dependí",
+        "dependiste",
+        "dependió",
+        "dependimos",
+        "dependisteis",
+        "dependieron"
+      ],
+      "conditional": [
+        "dependería",
+        "dependerías",
+        "dependería",
+        "dependeríamos",
+        "dependeríais",
+        "dependerían"
+      ]
+    },
+    {
+      "infinitive": "romper",
+      "translation": "to had broken",
+      "present": ["rompo", "rompes", "rompe", "rompemos", "rompéis", "rompen"],
+      "future": [
+        "romperé",
+        "romperás",
+        "romperá",
+        "romperemos",
+        "romperéis",
+        "romperán"
+      ],
+      "imperfect": [
+        "rompía",
+        "rompías",
+        "rompía",
+        "rompíamos",
+        "rompíais",
+        "rompían"
+      ],
+      "preterite": [
+        "rompí",
+        "rompiste",
+        "rompió",
+        "rompimos",
+        "rompisteis",
+        "rompieron"
+      ],
+      "conditional": [
+        "rompería",
+        "romperías",
+        "rompería",
+        "romperíamos",
+        "romperíais",
+        "romperían"
+      ]
+    },
+    {
+      "infinitive": "temer",
+      "translation": "to had feared",
+      "present": ["temo", "temes", "teme", "tememos", "teméis", "temen"],
+      "future": [
+        "temeré",
+        "temerás",
+        "temerá",
+        "temeremos",
+        "temeréis",
+        "temerán"
+      ],
+      "imperfect": [
+        "temía",
+        "temías",
+        "temía",
+        "temíamos",
+        "temíais",
+        "temían"
+      ],
+      "preterite": [
+        "temí",
+        "temiste",
+        "temió",
+        "temimos",
+        "temisteis",
+        "temieron"
+      ],
+      "conditional": [
+        "temería",
+        "temerías",
+        "temería",
+        "temeríamos",
+        "temeríais",
+        "temerían"
+      ]
+    },
+    {
+      "infinitive": "vender",
+      "translation": "to had sold",
+      "present": ["vendo", "vendes", "vende", "vendemos", "vendéis", "venden"],
+      "future": [
+        "venderé",
+        "venderás",
+        "venderá",
+        "venderemos",
+        "venderéis",
+        "venderán"
+      ],
+      "imperfect": [
+        "vendía",
+        "vendías",
+        "vendía",
+        "vendíamos",
+        "vendíais",
+        "vendían"
+      ],
+      "preterite": [
+        "vendí",
+        "vendiste",
+        "vendió",
+        "vendimos",
+        "vendisteis",
+        "vendieron"
+      ],
+      "conditional": [
+        "vendería",
+        "venderías",
+        "vendería",
+        "venderíamos",
+        "venderíais",
+        "venderían"
+      ]
+    },
+    {
+      "infinitive": "abrir",
+      "translation": "to had opened",
+      "present": ["abro", "abres", "abre", "abrimos", "abrís", "abren"],
+      "future": [
+        "abriré",
+        "abrirás",
+        "abrirá",
+        "abriremos",
+        "abriréis",
+        "abrirán"
+      ],
+      "imperfect": [
+        "abría",
+        "abrías",
+        "abría",
+        "abríamos",
+        "abríais",
+        "abrían"
+      ],
+      "preterite": [
+        "abrí",
+        "abriste",
+        "abrió",
+        "abrimos",
+        "abristeis",
+        "abrieron"
+      ],
+      "conditional": [
+        "abriría",
+        "abrirías",
+        "abriría",
+        "abriríamos",
+        "abriríais",
+        "abrirían"
+      ]
+    },
+    {
+      "infinitive": "admitir",
+      "translation": "to had admitted",
+      "present": [
+        "admito",
+        "admites",
+        "admite",
+        "admitimos",
+        "admitís",
+        "admiten"
+      ],
+      "future": [
+        "admitiré",
+        "admitirás",
+        "admitirá",
+        "admitiremos",
+        "admitiréis",
+        "admitirán"
+      ],
+      "imperfect": [
+        "admitía",
+        "admitías",
+        "admitía",
+        "admitíamos",
+        "admitíais",
+        "admitían"
+      ],
+      "preterite": [
+        "admití",
+        "admitiste",
+        "admitió",
+        "admitimos",
+        "admitisteis",
+        "admitieron"
+      ],
+      "conditional": [
+        "admitiría",
+        "admitirías",
+        "admitiría",
+        "admitiríamos",
+        "admitiríais",
+        "admitirían"
+      ]
+    },
+    {
+      "infinitive": "insistir",
+      "translation": "to had insisted",
+      "present": [
+        "insisto",
+        "insistes",
+        "insiste",
+        "insistimos",
+        "insistís",
+        "insisten"
+      ],
+      "future": [
+        "insistiré",
+        "insistirás",
+        "insistirá",
+        "insistiremos",
+        "insistiréis",
+        "insistirán"
+      ],
+      "imperfect": [
+        "insistía",
+        "insistías",
+        "insistía",
+        "insistíamos",
+        "insistíais",
+        "insistían"
+      ],
+      "preterite": [
+        "insistí",
+        "insististe",
+        "insistió",
+        "insistimos",
+        "insististeis",
+        "insistieron"
+      ],
+      "conditional": [
+        "insistiría",
+        "insistirías",
+        "insistiría",
+        "insistiríamos",
+        "insistiríais",
+        "insistirían"
+      ]
+    },
+    {
+      "infinitive": "decidir",
+      "translation": "to had decided",
+      "present": [
+        "decido",
+        "decides",
+        "decide",
+        "decidimos",
+        "decidís",
+        "deciden"
+      ],
+      "future": [
+        "decidiré",
+        "decidirás",
+        "decidirá",
+        "decidiremos",
+        "decidiréis",
+        "decidirán"
+      ],
+      "imperfect": [
+        "decidía",
+        "decidías",
+        "decidía",
+        "decidíamos",
+        "decidíais",
+        "decidían"
+      ],
+      "preterite": [
+        "decidí",
+        "decidiste",
+        "decidió",
+        "decidimos",
+        "decidisteis",
+        "decidieron"
+      ],
+      "conditional": [
+        "decidiría",
+        "decidirías",
+        "decidiría",
+        "decidiríamos",
+        "decidiríais",
+        "decidirían"
+      ]
+    },
+    {
+      "infinitive": "vivir",
+      "translation": "to had lived",
+      "present": ["vivo", "vives", "vive", "vivimos", "vivís", "viven"],
+      "future": [
+        "viviré",
+        "vivirás",
+        "vivirá",
+        "viviremos",
+        "viviréis",
+        "vivirán"
+      ],
+      "imperfect": [
+        "vivía",
+        "vivías",
+        "vivía",
+        "vivíamos",
+        "vivíais",
+        "vivían"
+      ],
+      "preterite": [
+        "viví",
+        "viviste",
+        "vivió",
+        "vivimos",
+        "vivisteis",
+        "vivieron"
+      ],
+      "conditional": [
+        "viviría",
+        "vivirías",
+        "viviría",
+        "viviríamos",
+        "viviríais",
+        "vivirían"
       ]
     }
   ]

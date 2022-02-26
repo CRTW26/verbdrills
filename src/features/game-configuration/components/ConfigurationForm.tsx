@@ -21,6 +21,8 @@ const TENSES = [
   { value: 'present' },
   { value: 'preterite' },
   { value: 'imperfect' },
+  { value: 'future' },
+  { value: 'conditional' },
 ]
 
 interface Props {
