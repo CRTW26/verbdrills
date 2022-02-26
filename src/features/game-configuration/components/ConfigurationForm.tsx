@@ -3,29 +3,32 @@ import Select from 'shared/components/Select'
 import useForm from '../hooks/useForm'
 
 const LANGUAGES = [
+  { value: 'Select a language' },
   { value: 'Spanish' },
   { value: 'German' },
   { value: 'French' },
 ]
 
 const VERBSETS = [
+  { value: 'Select verbset' },
   { value: 'regular' },
   { value: 'irregular' },
   { value: 'all' },
 ]
 
 const TENSES = [
+  { value: 'Select tense' },
   { value: 'present' },
   { value: 'preterite' },
   { value: 'imperfect' },
 ]
 
 interface Props {
-  onSubmit: () => void
+  onSubmit: (formValues) => void
 }
 
 const ConfigurationForm: React.FC<Props> = ({ onSubmit }) => {
-  const { onChange } = useForm({
+  const { formValues, isValid, onChange } = useForm({
     language: '',
     verbset: '',
     tense: '',
@@ -52,8 +55,9 @@ const ConfigurationForm: React.FC<Props> = ({ onSubmit }) => {
         <Button
           className="btn btn--primary"
           text="Train"
-          onClick={onSubmit}
+          onClick={() => onSubmit(formValues)}
           type="button"
+          disabled={isValid}
         />
       </div>
 

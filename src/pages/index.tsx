@@ -15,12 +15,19 @@ export const Index: React.FC = () => {
     verbs: verbs.regular,
   })
 
-  const [currentVerb, setCurrentVerb] = useState(getVerb())
+  const [currentVerb, setCurrentVerb] = useState({
+    infinitive: '',
+    person: '',
+    translation: '',
+    answer: '',
+  })
 
-  const initiateGamePlay = () => {
+  const initiateGamePlay = (formValues) => {
     resetGame()
 
     setAppState(AppState.GAME_PLAY)
+
+    setCurrentVerb(getVerb())
   }
 
   useEffect(() => {

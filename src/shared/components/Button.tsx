@@ -19,6 +19,14 @@ const Button: React.FC<Props> = ({ text, ...rest }) => {
           margin: 1rem 0;
         }
 
+        .btn:hover {
+          cursor: pointer;
+        }
+
+        .btn:disabled {
+          opacity: 0.2;
+        }
+
         .btn--primary {
           background: #e0ff4f;
           color: #0b3954;

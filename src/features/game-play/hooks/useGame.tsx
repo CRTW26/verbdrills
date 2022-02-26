@@ -35,10 +35,17 @@ type GameVerb = {
   answer: string
 }
 
+type GameConfiguration = {
+  language: string
+  verbSet: string
+  tense: string
+}
+
 type UseGame = {
   getVerb: () => GameVerb
   validateInput: (input: string, answer: string) => void
   resetGame: () => void
+  setGameConfiguration: (gameConfiguration: GameConfiguration) => void
   score: number
 }
 
@@ -47,6 +54,12 @@ const getRandomNumber = (max: number): number => {
 }
 
 const useGame = ({ verbs }: { verbs: Array<Verb> }): UseGame => {
+  const [gameConfiguration, setGameConfiguration] = useState({
+    language: '',
+    verbSet: '',
+    tense: '',
+  })
+
   const [score, setScore] = useState(0)
 
   const TOTAL_VERBS = verbs.length
@@ -60,7 +73,10 @@ const useGame = ({ verbs }: { verbs: Array<Verb> }): UseGame => {
 
     const infinitive = verb.infinitive
     const translation = verb.translation
-    const answer = verbs[verbIndex].present[VerbPersonIndexes[PERSON[person]]]
+    const answer =
+      verbs[verbIndex]?.[gameConfiguration.verbSet]?.[
+        VerbPersonIndexes[PERSON[person]]
+      ]
 
     return {
       infinitive,
@@ -84,6 +100,7 @@ const useGame = ({ verbs }: { verbs: Array<Verb> }): UseGame => {
     getVerb,
     validateInput,
     resetGame,
+    setGameConfiguration,
     score,
   }
 }
