@@ -75,3 +75,7 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+*:focus {
+  outline: 2px solid #ff6663;
+}
