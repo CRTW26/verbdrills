@@ -1,19 +1,20 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
+import { GameConfiguration } from 'shared/types'
 
 type UseForm = {
-  formValues: Record<string, string>
+  formValues: GameConfiguration
   isValid: boolean
-  onChange: (ev) => void
+  onChange: (ev: React.ChangeEvent<HTMLSelectElement>) => void
 }
 
-const useForm = (initialValues: Record<string, string>): UseForm => {
+const useForm = (initialValues: GameConfiguration): UseForm => {
   const [formValues, setFormValues] = useState(initialValues)
 
   const validateFields = () => {
     return Object.values(formValues).includes('')
   }
 
-  const onChange = (ev) => {
+  const onChange = (ev: React.ChangeEvent<HTMLSelectElement>) => {
     setFormValues({
       ...formValues,
       [ev.currentTarget.name]: ev.currentTarget.value,

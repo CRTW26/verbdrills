@@ -35,12 +35,6 @@ type GameVerb = {
   answer: string
 }
 
-// type GameConfiguration = {
-//   language: string
-//   verbSet: string
-//   tense: string
-// }
-
 type UseGame = {
   getVerb: (tense) => GameVerb
   validateInput: (input: string, answer: string) => void
@@ -57,7 +51,7 @@ const useGame = ({ verbs }: { verbs: Array<Verb> }): UseGame => {
 
   const TOTAL_VERBS = verbs.length
 
-  const getVerb = (tense) => {
+  const getVerb = (tense: string) => {
     const personOptions = Object.keys(PERSON)
     const personIndex = getRandomNumber(Object.keys(PERSON).length)
     const person = personOptions[personIndex]

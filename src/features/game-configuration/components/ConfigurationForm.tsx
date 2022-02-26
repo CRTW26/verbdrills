@@ -1,5 +1,6 @@
 import Button from 'shared/components/Button'
 import Select from 'shared/components/Select'
+import { GameConfiguration } from 'shared/types'
 
 const LANGUAGES = [
   { value: 'Select a language' },
@@ -23,10 +24,10 @@ const TENSES = [
 ]
 
 interface Props {
-  formValues
-  isValid
-  onChange
-  onSubmit: (formValues) => void
+  formValues: GameConfiguration
+  isValid: boolean
+  onChange: (ev: React.ChangeEvent<HTMLSelectElement>) => void
+  onSubmit: (formValues: GameConfiguration) => void
 }
 
 const ConfigurationForm: React.FC<Props> = ({
