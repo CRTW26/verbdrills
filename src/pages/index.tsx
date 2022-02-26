@@ -7,9 +7,16 @@ import Button from 'shared/components/Button'
 import GamePlay from 'features/game-play/components/GamePlay'
 import verbs from 'verbs/spanish.json'
 import { useGame } from 'features/game-play/hooks/useGame'
+import useForm from 'features/game-configuration/hooks/useForm'
 
 export const Index: React.FC = () => {
   const [appState, setAppState] = useState(AppState.GAME_CONFIGURATION)
+
+  const { formValues, isValid, onChange } = useForm({
+    language: '',
+    verbset: '',
+    tense: '',
+  })
 
   const { getVerb, validateInput, resetGame, score } = useGame({
     verbs: verbs.regular,
@@ -22,16 +29,16 @@ export const Index: React.FC = () => {
     answer: '',
   })
 
-  const initiateGamePlay = (formValues) => {
+  const initiateGamePlay = () => {
     resetGame()
 
     setAppState(AppState.GAME_PLAY)
 
-    setCurrentVerb(getVerb())
+    setCurrentVerb(getVerb(formValues.tense))
   }
 
   useEffect(() => {
-    setCurrentVerb(getVerb())
+    setCurrentVerb(getVerb(formValues.tense))
   }, [score])
 
   return (
@@ -52,7 +59,12 @@ export const Index: React.FC = () => {
           <div className="content">
             <TitleBar text="verbdrills" />
 
-            <GameConfigurationForm onSubmit={initiateGamePlay} />
+            <GameConfigurationForm
+              onSubmit={initiateGamePlay}
+              formValues={formValues}
+              isValid={isValid}
+              onChange={onChange}
+            />
           </div>
         )}
 

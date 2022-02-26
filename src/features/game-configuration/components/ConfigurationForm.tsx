@@ -1,6 +1,5 @@
 import Button from 'shared/components/Button'
 import Select from 'shared/components/Select'
-import useForm from '../hooks/useForm'
 
 const LANGUAGES = [
   { value: 'Select a language' },
@@ -24,16 +23,18 @@ const TENSES = [
 ]
 
 interface Props {
+  formValues
+  isValid
+  onChange
   onSubmit: (formValues) => void
 }
 
-const ConfigurationForm: React.FC<Props> = ({ onSubmit }) => {
-  const { formValues, isValid, onChange } = useForm({
-    language: '',
-    verbset: '',
-    tense: '',
-  })
-
+const ConfigurationForm: React.FC<Props> = ({
+  formValues,
+  isValid,
+  onChange,
+  onSubmit,
+}) => {
   return (
     <form className="configuration-form">
       <div className="configuration-form__field">
