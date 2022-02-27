@@ -36,7 +36,7 @@ type GameVerb = {
 }
 
 type UseGame = {
-  getVerb: (tense, verbset) => GameVerb
+  getVerb: (tense: string, verbset: string) => GameVerb
   validateInput: (input: string, answer: string) => void
   resetGame: () => void
   score: number
