@@ -19,7 +19,7 @@ export const Index: React.FC = () => {
   })
 
   const { getVerb, validateInput, resetGame, score } = useGame({
-    verbs: verbs.regular,
+    verbs: verbs,
   })
 
   const [currentVerb, setCurrentVerb] = useState({
@@ -34,11 +34,11 @@ export const Index: React.FC = () => {
 
     setAppState(AppState.GAME_PLAY)
 
-    setCurrentVerb(getVerb(formValues.tense))
+    setCurrentVerb(getVerb(formValues.tense, formValues.verbset))
   }
 
   useEffect(() => {
-    setCurrentVerb(getVerb(formValues.tense))
+    setCurrentVerb(getVerb(formValues.tense, formValues.verbset))
   }, [score])
 
   return (
