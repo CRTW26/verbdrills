@@ -22,7 +22,7 @@ describe('useForm', () => {
         name: 'test',
         value: 'updated',
       },
-    }
+    } as React.ChangeEvent<HTMLSelectElement>
 
     const { result } = renderHook(() => useForm(initialValues))
 
