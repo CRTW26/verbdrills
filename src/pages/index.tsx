@@ -33,13 +33,11 @@ export const Index: React.FC = () => {
     resetGame()
 
     setAppState(AppState.GAME_PLAY)
-
-    setCurrentVerb(getVerb(formValues.tense, formValues.verbset))
   }
 
   useEffect(() => {
     setCurrentVerb(getVerb(formValues.tense, formValues.verbset))
-  }, [score])
+  }, [score, formValues])
 
   return (
     <div className="container">
