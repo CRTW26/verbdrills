@@ -14,6 +14,12 @@ const TitleBar: React.FC<Props> = ({ text }) => {
         h2 {
           color: #ff6663;
         }
+
+        @media screen and (min-width: 320px) {
+          .title-bar {
+            padding-bottom: 2rem;
+          }
+        }
       `}</style>
     </div>
   )
