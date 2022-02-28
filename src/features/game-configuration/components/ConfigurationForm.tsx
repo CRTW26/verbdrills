@@ -66,23 +66,8 @@ const ConfigurationForm: React.FC<Props> = ({
       </div>
 
       <style jsx>{`
-        .configuration-form {
-          max-width: 250px;
-          padding: 1rem;
-          display: flex;
-          flex-direction: column;
-          background-color: #bfd7ea24;
-          border-radius: 5px;
-        }
-
         .configuration-form__field {
           margin: 0.5rem 0;
-        }
-
-        @media screen and (min-width: 320px) {
-          .configuration-form {
-            max-width: 600px;
-          }
         }
       `}</style>
     </form>

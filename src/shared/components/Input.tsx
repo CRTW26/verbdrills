@@ -11,7 +11,7 @@ const Input: React.FC<Props> = ({ onChange, ...rest }) => {
 
       <style jsx>{`
         input {
-          min-width: 200px;
+          width: 100%;
           padding: 0.5rem 1rem;
         }
       `}</style>

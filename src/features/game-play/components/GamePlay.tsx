@@ -55,57 +55,40 @@ const GamePlay: React.FC<Props> = ({
   // }, [])
 
   return (
-    <>
+    <div className="game-play">
       <Timer onExpiration={onExpiration} />
 
       <div>
         <h2>{score}</h2>
       </div>
 
-      <div className="card">
-        <div className="card__child card__verb-display">
-          <h2 className="infinitive">{infinitive}</h2>
-          <h2 className="person">{person}</h2>
-          <h3 className="translation">{translation}</h3>
-        </div>
+      <div className="card__child card__verb-display">
+        <h2 className="infinitive">{infinitive}</h2>
+        <h2 className="person">{person}</h2>
+        <h3 className="translation">{translation}</h3>
+      </div>
 
-        <div className="card__child card__input">
-          <Input
-            value={guess}
-            onChange={handleChange}
-            onKeyDown={handleEnterPress}
-          />
+      <div className="card__child card__input">
+        <Input
+          value={guess}
+          onChange={handleChange}
+          onKeyDown={handleEnterPress}
+        />
 
-          <Button
-            className="btn btn--primary"
-            text="Guess"
-            onClick={submitGuess}
-          />
-        </div>
+        <Button
+          className="btn btn--primary"
+          text="Guess"
+          onClick={submitGuess}
+        />
       </div>
 
       <style jsx>{`
-        .card {
-          min-height: 350px;
-          width: 250px;
-          padding: 1rem;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+        .game-play {
+          width: 100%;
           text-align: center;
-          background-color: #bfd7ea24;
-          border-radius: 5px;
-        }
-
-        .card__child {
-          margin: 1rem 0;
-        }
-
-        .card__input {
-          padding: 1rem;
         }
       `}</style>
-    </>
+    </div>
   )
 }
 

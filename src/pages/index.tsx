@@ -96,12 +96,20 @@ export const Index: React.FC = () => {
         }
 
         .content {
-          margin: 0 auto;
+          width: 250px;
+          padding: 1rem;
           display: flex;
           flex-direction: column;
-          justify-content: center;
           align-items: center;
-          max-width: 1200px;
+          background-color: #bfd7ea24;
+          border-radius: 5px;
+        }
+
+        @media screen and (min-width: 320px) {
+          .content {
+            height: 700px;
+            width: 600px;
+          }
         }
       `}</style>
     </div>

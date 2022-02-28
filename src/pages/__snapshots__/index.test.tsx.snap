@@ -3,13 +3,13 @@
 exports[`renders 1`] = `
 <DocumentFragment>
   <div
-    class="jsx-1640196075 container"
+    class="jsx-208276224 container"
   >
     <main
-      class="jsx-1640196075"
+      class="jsx-208276224"
     >
       <div
-        class="jsx-1640196075 content"
+        class="jsx-208276224 content"
       >
         <div
           class="jsx-964221634 title-bar"
@@ -27,13 +27,13 @@ exports[`renders 1`] = `
           </h2>
         </div>
         <form
-          class="jsx-1861256264 configuration-form"
+          class="jsx-595701558 configuration-form"
         >
           <div
-            class="jsx-1861256264 configuration-form__field"
+            class="jsx-595701558 configuration-form__field"
           >
             <label
-              class="jsx-1861256264"
+              class="jsx-595701558"
             >
               Select a language
             </label>
@@ -68,10 +68,10 @@ exports[`renders 1`] = `
             </select>
           </div>
           <div
-            class="jsx-1861256264 configuration-form__field"
+            class="jsx-595701558 configuration-form__field"
           >
             <label
-              class="jsx-1861256264"
+              class="jsx-595701558"
             >
               Select a verb set
             </label>
@@ -106,10 +106,10 @@ exports[`renders 1`] = `
             </select>
           </div>
           <div
-            class="jsx-1861256264 configuration-form__field"
+            class="jsx-595701558 configuration-form__field"
           >
             <label
-              class="jsx-1861256264"
+              class="jsx-595701558"
             >
               Select a tense
             </label>
@@ -156,7 +156,7 @@ exports[`renders 1`] = `
             </select>
           </div>
           <div
-            class="jsx-1861256264 configuration-form__field"
+            class="jsx-595701558 configuration-form__field"
           >
             <button
               class="jsx-1098515908 btn btn--primary"
