@@ -1,15 +1,16 @@
 import '@testing-library/jest-dom'
 import { render } from '@testing-library/react'
 import Index from 'pages/index'
+import verbs from '../../public/verbs/spanish.json'
 
 it('renders', () => {
-  const { asFragment } = render(<Index />)
+  const { asFragment } = render(<Index verbs={verbs} />)
 
   expect(asFragment()).toMatchSnapshot()
 })
 
 it('should contain text "verbdrills"', () => {
-  const { getByTestId } = render(<Index />)
+  const { getByTestId } = render(<Index verbs={verbs} />)
 
   expect(getByTestId('title-bar')).toHaveTextContent('verbdrills')
 })

@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from 'react'
+import fs from 'fs'
 import { GameConfigurationForm } from 'features/game-configuration'
 import Head from 'next/head'
 import { TitleBar } from 'features/home'
 import { AppState } from 'shared/types'
 import Button from 'shared/components/Button'
 import GamePlay from 'features/game-play/components/GamePlay'
-import verbs from 'verbs/spanish.json'
 import { useGame } from 'features/game-play/hooks/useGame'
 import useForm from 'features/game-configuration/hooks/useForm'
+import { GetStaticProps } from 'next'
 
-export const Index: React.FC = () => {
+interface Props {
+  verbs
+}
+
+export const Index: React.FC<Props> = ({ verbs }) => {
   const [appState, setAppState] = useState(AppState.GAME_CONFIGURATION)
 
   const { formValues, isValid, onChange } = useForm({
@@ -114,6 +119,18 @@ export const Index: React.FC = () => {
       `}</style>
     </div>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const data = fs.readFileSync('public/verbs/spanish.json', 'utf8')
+
+  const verbs = JSON.parse(data)
+
+  return {
+    props: {
+      verbs,
+    },
+  }
 }
 
 export default Index
