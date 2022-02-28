@@ -101,6 +101,7 @@ export const Index: React.FC<Props> = ({ verbs }) => {
         }
 
         .content {
+          margin: 0 auto;
           width: 250px;
           padding: 1rem;
           display: flex;
