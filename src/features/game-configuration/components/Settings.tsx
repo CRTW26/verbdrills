@@ -16,15 +16,23 @@ const Settings: React.FC<Props> = ({ defaultTime }) => {
       <div className="timer-setting">
         <h3>Timer</h3>
 
-        <button onClick={() => setTime(time + 1)} disabled={time > 9}>
+        <button
+          onClick={() => setTime(time + 1)}
+          disabled={time > 9}
+          data-testid="button-increment"
+        >
           <FaChevronUp color="#e0ff4f" fontSize={'2rem'} />
         </button>
 
-        <p>
+        <p data-testid="time">
           {time} {`minute${time > 1 ? 's' : ''}`}
         </p>
 
-        <button onClick={() => setTime(time - 1)} disabled={time < 2}>
+        <button
+          onClick={() => setTime(time - 1)}
+          disabled={time < 2}
+          data-testid="button-decrement"
+        >
           <FaChevronDown color="#e0ff4f" fontSize={'2rem'} />
         </button>
       </div>
