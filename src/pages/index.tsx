@@ -11,6 +11,7 @@ import useForm from 'features/game-configuration/hooks/useForm'
 import { GetStaticProps } from 'next'
 import Modal from 'shared/components/Modal'
 import { VscGear } from 'react-icons/vsc'
+import Settings from 'features/game-configuration/components/Settings'
 
 interface Props {
   verbs
@@ -104,7 +105,7 @@ export const Index: React.FC<Props> = ({ verbs }) => {
 
         {isTimerModalVisible && (
           <Modal onClose={() => setIsTimerModalVisible(false)}>
-            <h1>hello</h1>
+            <Settings defaultTime={1} />
           </Modal>
         )}
       </main>
