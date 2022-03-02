@@ -115,6 +115,9 @@ export const Index: React.FC<Props> = ({ verbs }) => {
         }
 
         button {
+          position: absolute;
+          top: 20px;
+          right: 12px;
           background: none;
           border: none;
         }
@@ -125,7 +128,7 @@ export const Index: React.FC<Props> = ({ verbs }) => {
 
         .content {
           margin: 0 auto;
-          padding: 1rem;
+          padding: 1.5rem;
           display: flex;
           flex-direction: column;
           align-items: center;
