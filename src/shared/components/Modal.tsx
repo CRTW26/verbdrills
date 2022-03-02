@@ -10,14 +10,17 @@ const Modal: React.FC<Props> = ({ children, onClose }) => {
   return (
     <div className="modal">
       <div className="modal__inner">
-        <button onClick={onClose}>
+        <button onClick={onClose} className="modal-close">
           <VscChromeClose color="#e0ff4f" fontSize={'2rem'} />
         </button>
         {children}
       </div>
 
       <style jsx>{`
-        button {
+        .modal-close {
+          position: absolute;
+          top: 4px;
+          right: 4px;
           background: none;
           border: none;
         }
@@ -52,6 +55,7 @@ const Modal: React.FC<Props> = ({ children, onClose }) => {
           background: #0b3954;
           opacity: 1;
           width: 100%;
+          padding: 1rem;
         }
 
         @media screen and (min-width: 720px) {
