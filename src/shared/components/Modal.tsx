@@ -1,15 +1,31 @@
 import React from 'react'
+import { VscChromeClose } from 'react-icons/vsc'
 
 interface Props {
-  children
+  children: JSX.Element
+  onClose: () => void
 }
 
-const Modal: React.FC<Props> = ({ children }) => {
+const Modal: React.FC<Props> = ({ children, onClose }) => {
   return (
     <div className="modal">
-      <div className="modal__inner">{children}</div>
+      <div className="modal__inner">
+        <button onClick={onClose}>
+          <VscChromeClose color="#e0ff4f" fontSize={'2rem'} />
+        </button>
+        {children}
+      </div>
 
       <style jsx>{`
+        button {
+          background: none;
+          border: none;
+        }
+
+        button:hover {
+          cursor: pointer;
+        }
+
         .modal {
           position: fixed;
           display: flex;
@@ -33,7 +49,8 @@ const Modal: React.FC<Props> = ({ children }) => {
 
         .modal__inner {
           position: absolute;
-          background: white;
+          background: #0b3954;
+          opacity: 1;
           width: 100%;
         }
 

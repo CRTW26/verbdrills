@@ -103,7 +103,7 @@ export const Index: React.FC<Props> = ({ verbs }) => {
         )}
 
         {isTimerModalVisible && (
-          <Modal>
+          <Modal onClose={() => setIsTimerModalVisible(false)}>
             <h1>hello</h1>
           </Modal>
         )}
