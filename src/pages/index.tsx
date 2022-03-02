@@ -9,6 +9,7 @@ import GamePlay from 'features/game-play/components/GamePlay'
 import { useGame } from 'features/game-play/hooks/useGame'
 import useForm from 'features/game-configuration/hooks/useForm'
 import { GetStaticProps } from 'next'
+import Modal from 'shared/components/Modal'
 
 interface Props {
   verbs
@@ -93,6 +94,10 @@ export const Index: React.FC<Props> = ({ verbs }) => {
             />
           </div>
         )}
+
+        <Modal>
+          <h1>hello</h1>
+        </Modal>
       </main>
 
       <style jsx>{`
