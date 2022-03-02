@@ -95,19 +95,18 @@ export const Index: React.FC<Props> = ({ verbs }) => {
           </div>
         )}
 
-        <Modal>
+        {/* <Modal>
           <h1>hello</h1>
-        </Modal>
+        </Modal> */}
       </main>
 
       <style jsx>{`
         main {
-          margin: 2rem;
+          margin: 2rem 1rem;
         }
 
         .content {
           margin: 0 auto;
-          width: 250px;
           padding: 1rem;
           display: flex;
           flex-direction: column;
@@ -116,10 +115,10 @@ export const Index: React.FC<Props> = ({ verbs }) => {
           border-radius: 5px;
         }
 
-        @media screen and (min-width: 320px) {
+        @media screen and (min-width: 480px) {
           .content {
             height: 700px;
-            width: 600px;
+            max-width: 600px;
           }
         }
       `}</style>
