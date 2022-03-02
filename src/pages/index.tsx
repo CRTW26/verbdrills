@@ -10,6 +10,7 @@ import { useGame } from 'features/game-play/hooks/useGame'
 import useForm from 'features/game-configuration/hooks/useForm'
 import { GetStaticProps } from 'next'
 import Modal from 'shared/components/Modal'
+import { VscGear } from 'react-icons/vsc'
 
 interface Props {
   verbs
@@ -17,6 +18,8 @@ interface Props {
 
 export const Index: React.FC<Props> = ({ verbs }) => {
   const [appState, setAppState] = useState(AppState.GAME_CONFIGURATION)
+
+  const [isTimerModalVisible, setIsTimerModalVisible] = useState(false)
 
   const { formValues, isValid, onChange } = useForm({
     language: '',
@@ -59,6 +62,10 @@ export const Index: React.FC<Props> = ({ verbs }) => {
       </Head>
 
       <main>
+        <button onClick={() => setIsTimerModalVisible(true)}>
+          <VscGear color="#e0ff4f" fontSize={'2rem'} />
+        </button>
+
         {appState === AppState.GAME_CONFIGURATION && (
           <div className="content">
             <TitleBar text="verbdrills" />
@@ -95,14 +102,25 @@ export const Index: React.FC<Props> = ({ verbs }) => {
           </div>
         )}
 
-        {/* <Modal>
-          <h1>hello</h1>
-        </Modal> */}
+        {isTimerModalVisible && (
+          <Modal>
+            <h1>hello</h1>
+          </Modal>
+        )}
       </main>
 
       <style jsx>{`
         main {
-          margin: 2rem 1rem;
+          margin: 1rem;
+        }
+
+        button {
+          background: none;
+          border: none;
+        }
+
+        button:hover {
+          cursor: pointer;
         }
 
         .content {
