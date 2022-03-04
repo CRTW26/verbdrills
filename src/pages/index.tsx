@@ -45,6 +45,12 @@ export const Index: React.FC<Props> = ({ verbs }) => {
     setAppState(AppState.GAME_PLAY)
   }
 
+  const handleSaveSettings = (duration: number) => {
+    setTimer(duration)
+
+    setIsTimerModalVisible(false)
+  }
+
   useEffect(() => {
     setCurrentVerb(getVerb(formValues.tense, formValues.verbset))
   }, [score, formValues])
@@ -106,7 +112,7 @@ export const Index: React.FC<Props> = ({ verbs }) => {
 
         {isTimerModalVisible && (
           <Modal onClose={() => setIsTimerModalVisible(false)}>
-            <Settings defaultTime={1} onTimerChange={setTimer} />
+            <Settings defaultTime={1} onSave={handleSaveSettings} />
           </Modal>
         )}
       </main>

@@ -4,7 +4,7 @@ import Settings from './Settings'
 describe('<Settings />', () => {
   test('should render', () => {
     const { asFragment } = render(
-      <Settings defaultTime={1} onTimerChange={jest.fn()} />
+      <Settings defaultTime={1} onSave={jest.fn()} />
     )
 
     expect(asFragment).toMatchSnapshot()
@@ -12,7 +12,7 @@ describe('<Settings />', () => {
 
   test('should increment timer', () => {
     const { getByTestId } = render(
-      <Settings defaultTime={1} onTimerChange={jest.fn()} />
+      <Settings defaultTime={1} onSave={jest.fn()} />
     )
 
     expect(getByTestId('time').textContent).toEqual('1 minute')
@@ -24,7 +24,7 @@ describe('<Settings />', () => {
 
   test('should decrement timer', () => {
     const { getByTestId } = render(
-      <Settings defaultTime={2} onTimerChange={jest.fn()} />
+      <Settings defaultTime={2} onSave={jest.fn()} />
     )
 
     expect(getByTestId('time').textContent).toEqual('2 minutes')
