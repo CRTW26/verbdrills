@@ -14,6 +14,7 @@ describe('<GamePlay />', () => {
       <GamePlay
         verb={verb}
         score={0}
+        duration={1}
         validateInput={jest.fn()}
         onExpiration={jest.fn()}
       />

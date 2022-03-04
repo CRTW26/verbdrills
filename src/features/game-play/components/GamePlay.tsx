@@ -13,17 +13,17 @@ interface Verb {
 interface Props {
   verb: Verb
   score: number
+  duration: number
   validateInput: (guess: string, answer: string) => void
   onExpiration: () => void
-  timer: number
 }
 
 const GamePlay: React.FC<Props> = ({
   verb,
   score,
+  duration,
   validateInput,
   onExpiration,
-  timer,
 }) => {
   const [guess, setGuess] = useState('')
 
@@ -58,7 +58,7 @@ const GamePlay: React.FC<Props> = ({
 
   return (
     <div className="game-play">
-      <Timer onExpiration={onExpiration} timer={timer} />
+      <Timer onExpiration={onExpiration} duration={duration} />
 
       <div>
         <h2>{score}</h2>

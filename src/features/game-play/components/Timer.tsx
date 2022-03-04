@@ -2,12 +2,12 @@ import React from 'react'
 import { useTimer } from '../hooks/useTimer'
 
 interface Props {
-  timer: number
+  duration: number
   onExpiration: () => void
 }
 
-const Timer: React.FC<Props> = ({ timer, onExpiration }) => {
-  const { timeLeft, isTimerExpired } = useTimer(timer * 60, onExpiration)
+const Timer: React.FC<Props> = ({ duration, onExpiration }) => {
+  const { timeLeft, isTimerExpired } = useTimer(duration * 60, onExpiration)
 
   return (
     <div>

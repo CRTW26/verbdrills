@@ -14,12 +14,13 @@ import { VscGear } from 'react-icons/vsc'
 import Settings from 'features/game-configuration/components/Settings'
 
 interface Props {
+  // TODO: Add type
   verbs
 }
 
 export const Index: React.FC<Props> = ({ verbs }) => {
   const [appState, setAppState] = useState(AppState.GAME_CONFIGURATION)
-  const [timer, setTimer] = useState(1)
+  const [timerDuration, setTimerDuration] = useState(1)
   const [isTimerModalVisible, setIsTimerModalVisible] = useState(false)
 
   const { formValues, isValid, onChange } = useForm({
@@ -46,7 +47,7 @@ export const Index: React.FC<Props> = ({ verbs }) => {
   }
 
   const handleSaveSettings = (duration: number) => {
-    setTimer(duration)
+    setTimerDuration(duration)
 
     setIsTimerModalVisible(false)
   }
@@ -93,7 +94,7 @@ export const Index: React.FC<Props> = ({ verbs }) => {
               score={score}
               validateInput={validateInput}
               onExpiration={() => setAppState(AppState.GAME_RESULT)}
-              timer={timer}
+              duration={timerDuration}
             />
           </div>
         )}
