@@ -56,6 +56,10 @@ const Settings: React.FC<Props> = ({ defaultTime }) => {
           border: none;
         }
 
+        button:disabled {
+          opacity: 0.2;
+        }
+
         p {
           font-size: 1.5rem;
         }
