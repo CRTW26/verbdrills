@@ -19,7 +19,7 @@ interface Props {
 
 export const Index: React.FC<Props> = ({ verbs }) => {
   const [appState, setAppState] = useState(AppState.GAME_CONFIGURATION)
-
+  const [timer, setTimer] = useState(1)
   const [isTimerModalVisible, setIsTimerModalVisible] = useState(false)
 
   const { formValues, isValid, onChange } = useForm({
@@ -87,6 +87,7 @@ export const Index: React.FC<Props> = ({ verbs }) => {
               score={score}
               validateInput={validateInput}
               onExpiration={() => setAppState(AppState.GAME_RESULT)}
+              timer={timer}
             />
           </div>
         )}
@@ -105,7 +106,7 @@ export const Index: React.FC<Props> = ({ verbs }) => {
 
         {isTimerModalVisible && (
           <Modal onClose={() => setIsTimerModalVisible(false)}>
-            <Settings defaultTime={1} />
+            <Settings defaultTime={1} onTimerChange={setTimer} />
           </Modal>
         )}
       </main>

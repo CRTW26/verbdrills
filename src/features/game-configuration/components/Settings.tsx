@@ -4,9 +4,10 @@ import { FaChevronUp, FaChevronDown } from 'react-icons/fa'
 
 interface Props {
   defaultTime: number
+  onTimerChange: (time: number) => void
 }
 
-const Settings: React.FC<Props> = ({ defaultTime }) => {
+const Settings: React.FC<Props> = ({ defaultTime, onTimerChange }) => {
   const [time, setTime] = useState(defaultTime)
 
   return (
@@ -37,7 +38,11 @@ const Settings: React.FC<Props> = ({ defaultTime }) => {
         </button>
       </div>
 
-      <Button className="btn btn--primary" text="Save" />
+      <Button
+        className="btn btn--primary"
+        text="Save"
+        onClick={() => onTimerChange(time)}
+      />
 
       <style jsx>{`
         .timer-setting {

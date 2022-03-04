@@ -3,9 +3,7 @@ import Timer from './Timer'
 
 describe('<Timer />', () => {
   test('should render', () => {
-    const { asFragment } = render(
-      <Timer timeRemaining={0} isTimerExpired={true} />
-    )
+    const { asFragment } = render(<Timer timer={1} onExpiration={jest.fn()} />)
 
     expect(asFragment).toMatchSnapshot()
   })

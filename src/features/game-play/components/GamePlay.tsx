@@ -15,6 +15,7 @@ interface Props {
   score: number
   validateInput: (guess: string, answer: string) => void
   onExpiration: () => void
+  timer: number
 }
 
 const GamePlay: React.FC<Props> = ({
@@ -22,6 +23,7 @@ const GamePlay: React.FC<Props> = ({
   score,
   validateInput,
   onExpiration,
+  timer,
 }) => {
   const [guess, setGuess] = useState('')
 
@@ -56,7 +58,7 @@ const GamePlay: React.FC<Props> = ({
 
   return (
     <div className="game-play">
-      <Timer onExpiration={onExpiration} />
+      <Timer onExpiration={onExpiration} timer={timer} />
 
       <div>
         <h2>{score}</h2>

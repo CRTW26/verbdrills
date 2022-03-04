@@ -3,13 +3,17 @@ import Settings from './Settings'
 
 describe('<Settings />', () => {
   test('should render', () => {
-    const { asFragment } = render(<Settings defaultTime={1} />)
+    const { asFragment } = render(
+      <Settings defaultTime={1} onTimerChange={jest.fn()} />
+    )
 
     expect(asFragment).toMatchSnapshot()
   })
 
   test('should increment timer', () => {
-    const { getByTestId } = render(<Settings defaultTime={1} />)
+    const { getByTestId } = render(
+      <Settings defaultTime={1} onTimerChange={jest.fn()} />
+    )
 
     expect(getByTestId('time').textContent).toEqual('1 minute')
 
@@ -19,7 +23,9 @@ describe('<Settings />', () => {
   })
 
   test('should decrement timer', () => {
-    const { getByTestId } = render(<Settings defaultTime={2} />)
+    const { getByTestId } = render(
+      <Settings defaultTime={2} onTimerChange={jest.fn()} />
+    )
 
     expect(getByTestId('time').textContent).toEqual('2 minutes')
 
