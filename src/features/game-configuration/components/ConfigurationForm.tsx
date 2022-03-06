@@ -38,21 +38,47 @@ const ConfigurationForm: React.FC<Props> = ({
   onChange,
   onSubmit,
 }) => {
+  const { language, verbset, tense } = formValues
+
+  // TODO: Add types
+  const findValue = (array, selected) => {
+    return array.find((el) => el.value === selected)
+  }
+
   return (
     <form className="configuration-form">
       <div className="configuration-form__field">
         <label>Select a language</label>
-        <Select options={LANGUAGES} name="language" onChange={onChange} />
+        <Select
+          options={LANGUAGES}
+          name="language"
+          onChange={onChange}
+          value={
+            language ? findValue(LANGUAGES, language).value : LANGUAGES[0].value
+          }
+        />
       </div>
 
       <div className="configuration-form__field">
         <label>Select a verb set</label>
-        <Select options={VERBSETS} name="verbset" onChange={onChange} />
+        <Select
+          options={VERBSETS}
+          name="verbset"
+          onChange={onChange}
+          value={
+            language ? findValue(VERBSETS, verbset).value : VERBSETS[0].value
+          }
+        />
       </div>
 
       <div className="configuration-form__field">
         <label>Select a tense</label>
-        <Select options={TENSES} name="tense" onChange={onChange} />
+        <Select
+          options={TENSES}
+          name="tense"
+          onChange={onChange}
+          value={language ? findValue(TENSES, tense).value : TENSES[0].value}
+        />
       </div>
 
       <div className="configuration-form__field">
