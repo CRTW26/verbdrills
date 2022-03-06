@@ -13,6 +13,7 @@ const Input: React.FC<Props> = ({ onChange, ...rest }) => {
         input {
           width: 100%;
           padding: 0.5rem 1rem;
+          text-align: center;
         }
       `}</style>
     </>

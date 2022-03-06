@@ -3,7 +3,7 @@
 exports[`<Input /> should render 1`] = `
 <DocumentFragment>
   <input
-    class="jsx-3147318075 "
+    class="jsx-828487101 "
   />
 </DocumentFragment>
 `;
