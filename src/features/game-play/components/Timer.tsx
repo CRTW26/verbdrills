@@ -7,11 +7,14 @@ interface Props {
 }
 
 const Timer: React.FC<Props> = ({ duration, onExpiration }) => {
-  const { timeLeft, isTimerExpired } = useTimer(duration * 60, onExpiration)
+  const { timeLeft, isTimerExpired, makeTimeString } = useTimer(
+    duration * 60,
+    onExpiration
+  )
 
   return (
     <div>
-      <h3>{isTimerExpired ? "Time's up!" : timeLeft}</h3>
+      <h3>{isTimerExpired ? "Time's up!" : makeTimeString(timeLeft)}</h3>
     </div>
   )
 }

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 type UseTimer = {
   timeLeft: number
   isTimerExpired: boolean
+  makeTimeString: (timeRemaining: number) => string
 }
 
 const useTimer = (
@@ -28,8 +29,17 @@ const useTimer = (
     return () => clearInterval(countdown)
   }, [timeLeft, isTimerExpired])
 
+  const makeTimeString = (timeRemaining) => {
+    const minutes = Math.floor(timeRemaining / 60)
+
+    const seconds = timeRemaining - minutes * 60
+
+    return `${minutes}:${seconds === 0 ? '00' : seconds}`
+  }
+
   return {
     timeLeft,
+    makeTimeString,
     isTimerExpired,
   }
 }
