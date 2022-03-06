@@ -66,7 +66,7 @@ const ConfigurationForm: React.FC<Props> = ({
           name="verbset"
           onChange={onChange}
           value={
-            language ? findValue(VERBSETS, verbset).value : VERBSETS[0].value
+            verbset ? findValue(VERBSETS, verbset).value : VERBSETS[0].value
           }
         />
       </div>
@@ -77,7 +77,7 @@ const ConfigurationForm: React.FC<Props> = ({
           options={TENSES}
           name="tense"
           onChange={onChange}
-          value={language ? findValue(TENSES, tense).value : TENSES[0].value}
+          value={tense ? findValue(TENSES, tense).value : TENSES[0].value}
         />
       </div>
 
