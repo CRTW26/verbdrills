@@ -10,7 +10,7 @@ import { useGame } from 'features/game-play/hooks/useGame'
 import useForm from 'features/game-configuration/hooks/useForm'
 import { GetStaticProps } from 'next'
 import Modal from 'shared/components/Modal'
-import { VscGear } from 'react-icons/vsc'
+import { VscChromeClose, VscGear } from 'react-icons/vsc'
 import Settings from 'features/game-configuration/components/Settings'
 
 interface Props {
@@ -52,6 +52,10 @@ export const Index: React.FC<Props> = ({ verbs }) => {
     setIsTimerModalVisible(false)
   }
 
+  const handleGameCancel = () => {
+    setAppState(AppState.GAME_CONFIGURATION)
+  }
+
   useEffect(() => {
     setCurrentVerb(getVerb(formValues.tense, formValues.verbset))
   }, [score, formValues])
@@ -70,9 +74,17 @@ export const Index: React.FC<Props> = ({ verbs }) => {
       </Head>
 
       <main>
-        <button onClick={() => setIsTimerModalVisible(true)}>
-          <VscGear color="#e0ff4f" fontSize={'2rem'} />
-        </button>
+        {appState === AppState.GAME_CONFIGURATION && (
+          <button onClick={() => setIsTimerModalVisible(true)}>
+            <VscGear color="#e0ff4f" fontSize={'2rem'} />
+          </button>
+        )}
+
+        {appState === AppState.GAME_PLAY && (
+          <button onClick={handleGameCancel} className="modal-close">
+            <VscChromeClose color="#e0ff4f" fontSize={'2rem'} />
+          </button>
+        )}
 
         {appState === AppState.GAME_CONFIGURATION && (
           <div className="content">

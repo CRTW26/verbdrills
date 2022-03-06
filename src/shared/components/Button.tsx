@@ -31,6 +31,11 @@ const Button: React.FC<Props> = ({ text, ...rest }) => {
           background: #e0ff4f;
           color: #0b3954;
         }
+
+        .btn--secondary {
+          background: #ff6663;
+          color: #0b3954;
+        }
       `}</style>
     </>
   )

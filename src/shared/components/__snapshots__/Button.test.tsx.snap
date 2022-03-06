@@ -3,7 +3,7 @@
 exports[`<Button /> should render 1`] = `
 <DocumentFragment>
   <button
-    class="jsx-1098515908 "
+    class="jsx-347471370 "
   >
     Practice
   </button>
