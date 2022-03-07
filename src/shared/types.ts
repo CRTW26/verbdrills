@@ -9,3 +9,10 @@ export type GameConfiguration = {
   verbset: string
   tense: string
 }
+
+export type IncorrectAnswer = {
+  infinitive: string
+  person: string
+  answer: string
+  input: string
+}

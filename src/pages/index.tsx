@@ -29,9 +29,10 @@ export const Index: React.FC<Props> = ({ verbs }) => {
     tense: '',
   })
 
-  const { getVerb, validateInput, resetGame, score } = useGame({
-    verbs: verbs,
-  })
+  const { getVerb, validateInput, resetGame, score, incorrectAnswers } =
+    useGame({
+      verbs: verbs,
+    })
 
   const [currentVerb, setCurrentVerb] = useState({
     infinitive: '',

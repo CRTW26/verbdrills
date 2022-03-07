@@ -37,9 +37,10 @@ type GameVerb = {
 
 type UseGame = {
   getVerb: (tense: string, verbset: string) => GameVerb
-  validateInput: (input: string, answer: string) => void
+  validateInput: (input: string, answer: string, infinitive, person) => void
   resetGame: () => void
   score: number
+  incorrectAnswers
 }
 
 const getRandomNumber = (max: number): number => {
@@ -55,6 +56,7 @@ const useGame = ({
   }
 }): UseGame => {
   const [score, setScore] = useState(0)
+  const [incorrectAnswers, setIncorrectAnswers] = useState([])
 
   const getVerb = (tense: string, verbset: string) => {
     const personOptions = Object.keys(PERSON)
@@ -76,9 +78,14 @@ const useGame = ({
     }
   }
 
-  const validateInput = (input: string, answer: string) => {
+  const validateInput = (input: string, answer: string, infinitive, person) => {
     if (input.toLowerCase() === answer) {
       setScore(score + 1)
+    } else {
+      setIncorrectAnswers([
+        ...incorrectAnswers,
+        { infinitive, person, input, answer },
+      ])
     }
   }
 
@@ -92,6 +99,7 @@ const useGame = ({
     validateInput,
     resetGame,
     score,
+    incorrectAnswers,
   }
 }
 

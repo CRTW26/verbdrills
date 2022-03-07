@@ -14,7 +14,7 @@ interface Props {
   verb: Verb
   score: number
   duration: number
-  validateInput: (guess: string, answer: string) => void
+  validateInput: (guess: string, answer: string, infinitive, person) => void
   onExpiration: () => void
 }
 
@@ -34,7 +34,7 @@ const GamePlay: React.FC<Props> = ({
   }
 
   const submitGuess = () => {
-    validateInput(guess, answer)
+    validateInput(guess, answer, infinitive, person)
   }
 
   const handleEnterPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -58,7 +58,7 @@ const GamePlay: React.FC<Props> = ({
 
   return (
     <div className="game-play">
-      <Timer onExpiration={onExpiration} duration={duration} />
+      <Timer onExpiration={onExpiration} duration={0.1} />
 
       <div>
         <h2>{score}</h2>
