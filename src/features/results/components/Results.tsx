@@ -1,8 +1,10 @@
 import React from 'react'
 import Button from 'shared/components/Button'
+import { IncorrectAnswer } from 'shared/types'
 
 interface Props {
   score: number
+  incorrectAnswers: IncorrectAnswer[]
   onClick: () => void
 }
 

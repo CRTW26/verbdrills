@@ -117,6 +117,7 @@ export const Index: React.FC<Props> = ({ verbs }) => {
             <Results
               score={score}
               onClick={() => setAppState(AppState.GAME_CONFIGURATION)}
+              incorrectAnswers={incorrectAnswers}
             />
           </div>
         )}
