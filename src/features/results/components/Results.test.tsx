@@ -5,7 +5,7 @@ describe('<Results />', () => {
   test('should render', () => {
     const { asFragment } = render(
       <Results
-        score={10}
+        score={{ total: 10, correct: 5, incorrect: 5 }}
         onClick={jest.fn()}
         incorrectAnswers={[
           {

@@ -1,19 +1,29 @@
 import React from 'react'
 import Button from 'shared/components/Button'
-import { IncorrectAnswer } from 'shared/types'
+import { IncorrectAnswer, Score } from 'shared/types'
 
 interface Props {
-  score: number
+  score: Score
   incorrectAnswers: IncorrectAnswer[]
   onClick: () => void
 }
 
 const Results: React.FC<Props> = ({ score, onClick }) => {
+  const { total, correct, incorrect } = score
+
   return (
     <>
       <h1>You scored:</h1>
-      <h2>{score}</h2>
+      <h2>{correct}</h2>
       <Button className="btn btn--primary" text="Train" onClick={onClick} />
+
+      <div>
+        <h3>Stats</h3>
+        <h4>{`Total: ${total}`}</h4>
+        <h4>{`Correct: ${correct}`}</h4>
+        <h4>{`Incorrect: ${incorrect}`}</h4>
+        <h4>{`Percentage: ${(correct / total) * 100}`}</h4>
+      </div>
     </>
   )
 }

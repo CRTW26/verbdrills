@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { IncorrectAnswer, Score } from 'shared/types'
 
 enum VerbPersonIndexes {
   FIRST_SING = 0,
@@ -39,8 +40,8 @@ type UseGame = {
   getVerb: (tense: string, verbset: string) => GameVerb
   validateInput: (input: string, answer: string, infinitive, person) => void
   resetGame: () => void
-  score: number
-  incorrectAnswers
+  score: Score
+  incorrectAnswers: IncorrectAnswer[]
 }
 
 const getRandomNumber = (max: number): number => {
@@ -55,7 +56,11 @@ const useGame = ({
     irregular: Array<Verb>
   }
 }): UseGame => {
-  const [score, setScore] = useState(0)
+  const [score, setScore] = useState({
+    total: 0,
+    correct: 0,
+    incorrect: 0,
+  })
   const [incorrectAnswers, setIncorrectAnswers] = useState([])
 
   const getVerb = (tense: string, verbset: string) => {
@@ -85,8 +90,17 @@ const useGame = ({
     person: string
   ) => {
     if (input.toLowerCase() === answer) {
-      setScore(score + 1)
+      setScore({
+        ...score,
+        correct: score.correct + 1,
+        total: score.total + 1,
+      })
     } else {
+      setScore({
+        ...score,
+        incorrect: score.incorrect + 1,
+        total: score.total + 1,
+      })
       setIncorrectAnswers([
         ...incorrectAnswers,
         { infinitive, person, input, answer },
@@ -95,7 +109,11 @@ const useGame = ({
   }
 
   const resetGame = () => {
-    setScore(0)
+    setScore({
+      total: 0,
+      correct: 0,
+      incorrect: 0,
+    })
   }
 
   return {

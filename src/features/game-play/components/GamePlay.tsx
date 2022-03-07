@@ -63,7 +63,7 @@ const GamePlay: React.FC<Props> = ({
 
   return (
     <div className="game-play">
-      <Timer onExpiration={onExpiration} duration={0.1} />
+      <Timer onExpiration={onExpiration} duration={0.2} />
 
       <div>
         <h2>{score}</h2>

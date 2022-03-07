@@ -104,7 +104,7 @@ export const Index: React.FC<Props> = ({ verbs }) => {
           <div className="content">
             <GamePlay
               verb={currentVerb}
-              score={score}
+              score={score.correct}
               validateInput={validateInput}
               onExpiration={() => setAppState(AppState.GAME_RESULT)}
               duration={timerDuration}

@@ -16,3 +16,9 @@ export type IncorrectAnswer = {
   answer: string
   input: string
 }
+
+export type Score = {
+  total: number
+  correct: number
+  incorrect: number
+}
