@@ -98,7 +98,6 @@ const useGame = ({
     setScore(0)
   }
 
-  // console.log(gameConfiguration)
   return {
     getVerb,
     validateInput,
