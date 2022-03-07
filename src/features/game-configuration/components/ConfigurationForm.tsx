@@ -40,8 +40,10 @@ const ConfigurationForm: React.FC<Props> = ({
 }) => {
   const { language, verbset, tense } = formValues
 
-  // TODO: Add types
-  const findValue = (array, selected) => {
+  const findValue = (
+    array: Array<{ value: string }>,
+    selected: string
+  ): { value: string } => {
     return array.find((el) => el.value === selected)
   }
 
