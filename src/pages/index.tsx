@@ -4,7 +4,6 @@ import { GameConfigurationForm } from 'features/game-configuration'
 import Head from 'next/head'
 import { TitleBar } from 'features/home'
 import { AppState } from 'shared/types'
-import Button from 'shared/components/Button'
 import GamePlay from 'features/game-play/components/GamePlay'
 import { useGame } from 'features/game-play/hooks/useGame'
 import useForm from 'features/game-configuration/hooks/useForm'
@@ -12,6 +11,7 @@ import { GetStaticProps } from 'next'
 import Modal from 'shared/components/Modal'
 import { VscChromeClose, VscGear } from 'react-icons/vsc'
 import Settings from 'features/game-configuration/components/Settings'
+import Results from 'features/results/components/Results'
 
 interface Props {
   // TODO: Add type
@@ -114,11 +114,8 @@ export const Index: React.FC<Props> = ({ verbs }) => {
 
         {appState === AppState.GAME_RESULT && (
           <div className="content">
-            <h1>You scored:</h1>
-            <h2>{score}</h2>
-            <Button
-              className="btn btn--primary"
-              text="Train"
+            <Results
+              score={score}
               onClick={() => setAppState(AppState.GAME_CONFIGURATION)}
             />
           </div>

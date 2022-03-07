@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Results /> should render 1`] = `
+<DocumentFragment>
+  <h1>
+    You scored:
+  </h1>
+  <h2>
+    10
+  </h2>
+  <button
+    class="jsx-347471370 btn btn--primary"
+  >
+    Train
+  </button>
+</DocumentFragment>
+`;
