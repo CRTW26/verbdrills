@@ -78,7 +78,12 @@ const useGame = ({
     }
   }
 
-  const validateInput = (input: string, answer: string, infinitive, person) => {
+  const validateInput = (
+    input: string,
+    answer: string,
+    infinitive: string,
+    person: string
+  ) => {
     if (input.toLowerCase() === answer) {
       setScore(score + 1)
     } else {

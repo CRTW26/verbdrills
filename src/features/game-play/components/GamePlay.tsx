@@ -14,7 +14,12 @@ interface Props {
   verb: Verb
   score: number
   duration: number
-  validateInput: (guess: string, answer: string, infinitive, person) => void
+  validateInput: (
+    guess: string,
+    answer: string,
+    infinitive: string,
+    person: string
+  ) => void
   onExpiration: () => void
 }
 
