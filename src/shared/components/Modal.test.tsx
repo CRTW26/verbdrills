@@ -9,6 +9,6 @@ describe('<Modal />', () => {
       </Modal>
     )
 
-    expect(asFragment).toMatchSnapshot()
+    expect(asFragment()).toMatchSnapshot()
   })
 })

@@ -16,6 +16,6 @@ describe('<ConfigurationForm />', () => {
       />
     )
 
-    expect(asFragment).toMatchSnapshot()
+    expect(asFragment()).toMatchSnapshot()
   })
 })

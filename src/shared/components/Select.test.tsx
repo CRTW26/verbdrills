@@ -7,6 +7,6 @@ describe('<Select />', () => {
     const options = [{ value: 'yes' }, { value: 'no' }]
     const { asFragment } = render(<Select options={options} />)
 
-    expect(asFragment).toMatchSnapshot()
+    expect(asFragment()).toMatchSnapshot()
   })
 })

@@ -1,3 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Timer /> should render 1`] = `[Function]`;
+exports[`<Timer /> should render 1`] = `
+<DocumentFragment>
+  <div>
+    <h3>
+      1:00
+    </h3>
+  </div>
+</DocumentFragment>
+`;

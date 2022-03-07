@@ -7,6 +7,6 @@ describe('<Timer />', () => {
       <Timer duration={1} onExpiration={jest.fn()} />
     )
 
-    expect(asFragment).toMatchSnapshot()
+    expect(asFragment()).toMatchSnapshot()
   })
 })

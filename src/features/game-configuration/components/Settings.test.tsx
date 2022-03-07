@@ -7,7 +7,7 @@ describe('<Settings />', () => {
       <Settings defaultTime={1} onSave={jest.fn()} />
     )
 
-    expect(asFragment).toMatchSnapshot()
+    expect(asFragment()).toMatchSnapshot()
   })
 
   test('should increment timer', () => {

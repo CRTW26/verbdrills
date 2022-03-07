@@ -20,6 +20,6 @@ describe('<GamePlay />', () => {
       />
     )
 
-    expect(asFragment).toMatchSnapshot()
+    expect(asFragment()).toMatchSnapshot()
   })
 })
