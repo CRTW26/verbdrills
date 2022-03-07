@@ -59,7 +59,7 @@ export const Index: React.FC<Props> = ({ verbs }) => {
 
   useEffect(() => {
     setCurrentVerb(getVerb(formValues.tense, formValues.verbset))
-  }, [score, formValues])
+  }, [score.correct, formValues])
 
   return (
     <div className="container">

@@ -22,7 +22,7 @@ const Results: React.FC<Props> = ({ score, onClick }) => {
         <h4>{`Total: ${total}`}</h4>
         <h4>{`Correct: ${correct}`}</h4>
         <h4>{`Incorrect: ${incorrect}`}</h4>
-        <h4>{`Percentage: ${(correct / total) * 100}`}</h4>
+        <h4>{`Percentage: ${Math.round((correct / total) * 100)}`}</h4>
       </div>
     </>
   )
