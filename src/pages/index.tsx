@@ -59,7 +59,7 @@ export const Index: React.FC<Props> = ({ verbs }) => {
 
   useEffect(() => {
     setCurrentVerb(getVerb(formValues.tense, formValues.verbset))
-  }, [score.correct, formValues])
+  }, [score.correct, score.incorrect, formValues])
 
   return (
     <div className="container">
@@ -104,7 +104,7 @@ export const Index: React.FC<Props> = ({ verbs }) => {
           <div className="content">
             <GamePlay
               verb={currentVerb}
-              score={score.correct}
+              score={score}
               validateInput={validateInput}
               onExpiration={() => setAppState(AppState.GAME_RESULT)}
               duration={timerDuration}

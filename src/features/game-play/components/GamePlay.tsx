@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Button from 'shared/components/Button'
 import Input from 'shared/components/Input'
+import { Score } from 'shared/types'
 import Timer from './Timer'
 
 interface Verb {
@@ -12,7 +13,7 @@ interface Verb {
 
 interface Props {
   verb: Verb
-  score: number
+  score: Score
   duration: number
   validateInput: (
     guess: string,
@@ -50,7 +51,7 @@ const GamePlay: React.FC<Props> = ({
 
   useEffect(() => {
     setGuess('')
-  }, [score])
+  }, [score.correct, score.incorrect])
 
   // TODO: look into useEffect taking snapshot of state. This uses initial state
   // useEffect(() => {
@@ -66,7 +67,7 @@ const GamePlay: React.FC<Props> = ({
       <Timer onExpiration={onExpiration} duration={0.2} />
 
       <div>
-        <h2>{score}</h2>
+        <h2>{score.correct}</h2>
       </div>
 
       <div className="card__child card__verb-display">

@@ -15,9 +15,7 @@ exports[`<GamePlay /> should render 1`] = `
     >
       <h2
         class="jsx-2177346083"
-      >
-        0
-      </h2>
+      />
     </div>
     <div
       class="jsx-2177346083 card__child card__verb-display"

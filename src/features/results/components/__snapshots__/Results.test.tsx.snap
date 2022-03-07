@@ -2,10 +2,14 @@
 
 exports[`<Results /> should render 1`] = `
 <DocumentFragment>
-  <h1>
+  <h1
+    class="jsx-554271368"
+  >
     You scored:
   </h1>
-  <h2>
+  <h2
+    class="jsx-554271368"
+  >
     5
   </h2>
   <button
@@ -13,21 +17,33 @@ exports[`<Results /> should render 1`] = `
   >
     Train
   </button>
-  <div>
-    <h3>
+  <div
+    class="jsx-554271368 stats"
+  >
+    <h3
+      class="jsx-554271368"
+    >
       Stats
     </h3>
-    <h4>
+    <h4
+      class="jsx-554271368"
+    >
       Total: 10
     </h4>
-    <h4>
+    <h4
+      class="jsx-554271368"
+    >
       Correct: 5
     </h4>
-    <h4>
+    <h4
+      class="jsx-554271368"
+    >
       Incorrect: 5
     </h4>
-    <h4>
-      Percentage: 50
+    <h4
+      class="jsx-554271368"
+    >
+      Percentage: 50%
     </h4>
   </div>
 </DocumentFragment>
