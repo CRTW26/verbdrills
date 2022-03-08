@@ -6,9 +6,14 @@ interface Props {
   score: Score
   incorrectAnswers: IncorrectAnswer[]
   onClick: () => void
+  onShowIncorrectAnswers: () => void
 }
 
-const Results: React.FC<Props> = ({ score, onClick }) => {
+const Results: React.FC<Props> = ({
+  score,
+  onClick,
+  onShowIncorrectAnswers,
+}) => {
   const { total, correct, incorrect } = score
 
   return (
@@ -23,6 +28,7 @@ const Results: React.FC<Props> = ({ score, onClick }) => {
         <h4>{`Correct: ${correct}`}</h4>
         <h4>{`Incorrect: ${incorrect}`}</h4>
         <h4>{`Percentage: ${Math.round((correct / total) * 100)}%`}</h4>
+        <button onClick={onShowIncorrectAnswers}>Show incorrect answers</button>
       </div>
 
       <style jsx>{`

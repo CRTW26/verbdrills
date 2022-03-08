@@ -22,6 +22,8 @@ export const Index: React.FC<Props> = ({ verbs }) => {
   const [appState, setAppState] = useState(AppState.GAME_CONFIGURATION)
   const [timerDuration, setTimerDuration] = useState(1)
   const [isTimerModalVisible, setIsTimerModalVisible] = useState(false)
+  const [isIncorrectAnswersModalVisible, setIsIncorrectAnswersModalVisible] =
+    useState(false)
 
   const { formValues, isValid, onChange } = useForm({
     language: '',
@@ -118,6 +120,9 @@ export const Index: React.FC<Props> = ({ verbs }) => {
               score={score}
               onClick={() => setAppState(AppState.GAME_CONFIGURATION)}
               incorrectAnswers={incorrectAnswers}
+              onShowIncorrectAnswers={() =>
+                setIsIncorrectAnswersModalVisible(true)
+              }
             />
           </div>
         )}
@@ -125,6 +130,16 @@ export const Index: React.FC<Props> = ({ verbs }) => {
         {isTimerModalVisible && (
           <Modal onClose={() => setIsTimerModalVisible(false)}>
             <Settings defaultTime={1} onSave={handleSaveSettings} />
+          </Modal>
+        )}
+
+        {isIncorrectAnswersModalVisible && (
+          <Modal onClose={() => setIsIncorrectAnswersModalVisible(false)}>
+            <>
+              {incorrectAnswers.map((incorrectAnswer, index) => (
+                <div key={index}>{incorrectAnswer.input}</div>
+              ))}
+            </>
           </Modal>
         )}
       </main>
