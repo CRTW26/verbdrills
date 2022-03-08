@@ -64,7 +64,7 @@ const GamePlay: React.FC<Props> = ({
 
   return (
     <div className="game-play">
-      <Timer onExpiration={onExpiration} duration={0.2} />
+      <Timer onExpiration={onExpiration} duration={duration} />
 
       <div>
         <h2>{score.correct}</h2>
