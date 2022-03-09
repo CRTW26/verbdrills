@@ -12,6 +12,7 @@ import Modal from 'shared/components/Modal'
 import { VscChromeClose, VscGear } from 'react-icons/vsc'
 import Settings from 'features/game-configuration/components/Settings'
 import Results from 'features/results/components/Results'
+import IncorrectAnswers from 'features/results/components/IncorrectAnswers'
 
 interface Props {
   // TODO: Add type
@@ -135,11 +136,7 @@ export const Index: React.FC<Props> = ({ verbs }) => {
 
         {isIncorrectAnswersModalVisible && (
           <Modal onClose={() => setIsIncorrectAnswersModalVisible(false)}>
-            <>
-              {incorrectAnswers.map((incorrectAnswer, index) => (
-                <div key={index}>{incorrectAnswer.input}</div>
-              ))}
-            </>
+            <IncorrectAnswers incorrectAnswers={incorrectAnswers} />
           </Modal>
         )}
       </main>

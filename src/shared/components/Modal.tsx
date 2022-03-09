@@ -59,12 +59,9 @@ const Modal: React.FC<Props> = ({ children, onClose }) => {
         }
 
         @media screen and (min-width: 720px) {
-          .modal {
-            align-items: center;
-          }
-
           .modal__inner {
-            max-width: 400px;
+            margin-top: 8rem;
+            max-width: 600px;
           }
         }
       `}</style>

@@ -45,6 +45,11 @@ exports[`<Results /> should render 1`] = `
     >
       Percentage: 50%
     </h4>
+    <button
+      class="jsx-554271368"
+    >
+      Show incorrect answers
+    </button>
   </div>
 </DocumentFragment>
 `;

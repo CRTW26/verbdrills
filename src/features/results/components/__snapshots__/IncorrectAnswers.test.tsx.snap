@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<IncorrectAnswers /> should render 1`] = `
+<DocumentFragment>
+  <h3
+    class="jsx-762435235"
+  >
+    Incorrect answers
+  </h3>
+  <div
+    class="jsx-762435235 row"
+  >
+    <p
+      class="jsx-762435235"
+    >
+      Infinitive
+    </p>
+    <p
+      class="jsx-762435235"
+    >
+      Person
+    </p>
+    <p
+      class="jsx-762435235"
+    >
+      Your answer
+    </p>
+    <p
+      class="jsx-762435235"
+    >
+      Correct answers
+    </p>
+  </div>
+  <div
+    class="jsx-762435235 row"
+  >
+    <p
+      class="jsx-762435235"
+    >
+      hablar
+    </p>
+    <p
+      class="jsx-762435235"
+    >
+      yo
+    </p>
+    <p
+      class="jsx-762435235"
+    >
+      hable
+    </p>
+    <p
+      class="jsx-762435235"
+    >
+      hablar
+    </p>
+  </div>
+</DocumentFragment>
+`;
