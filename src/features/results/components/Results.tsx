@@ -28,13 +28,21 @@ const Results: React.FC<Props> = ({
         <h4>{`Correct: ${correct}`}</h4>
         <h4>{`Incorrect: ${incorrect}`}</h4>
         <h4>{`Percentage: ${Math.round((correct / total) * 100)}%`}</h4>
-        <button onClick={onShowIncorrectAnswers}>Show incorrect answers</button>
+        <Button
+          className="btn--link"
+          onClick={onShowIncorrectAnswers}
+          text="Show incorrect answers"
+        />
       </div>
 
       <style jsx>{`
         .stats {
           width: 100%;
           text-align: left;
+        }
+
+        h4 {
+          margin 0.5rem 0;
         }
       `}</style>
     </>

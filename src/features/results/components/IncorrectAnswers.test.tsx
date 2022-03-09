@@ -11,7 +11,7 @@ describe('<IncorrectAnswers />', () => {
           infinitive: 'hablar',
           person: 'yo',
           input: 'hable',
-          answer: 'hablar',
+          answer: 'hablo',
         },
       ],
     }

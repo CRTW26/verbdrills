@@ -44,7 +44,7 @@ exports[`<GamePlay /> should render 1`] = `
         value=""
       />
       <button
-        class="jsx-347471370 btn btn--primary"
+        class="jsx-767425152 btn btn--primary"
       >
         Guess
       </button>

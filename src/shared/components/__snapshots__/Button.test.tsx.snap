@@ -1,9 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Button /> should render 1`] = `
+exports[`<Button /> should render link button 1`] = `
 <DocumentFragment>
   <button
-    class="jsx-347471370 "
+    class="jsx-767425152 btn--link"
+  >
+    Practice
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Button /> should render primary button 1`] = `
+<DocumentFragment>
+  <button
+    class="jsx-767425152 btn--primary"
+  >
+    Practice
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Button /> should render secondary button 1`] = `
+<DocumentFragment>
+  <button
+    class="jsx-767425152 btn--secondary"
   >
     Practice
   </button>

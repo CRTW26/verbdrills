@@ -36,6 +36,18 @@ const Button: React.FC<Props> = ({ text, ...rest }) => {
           background: #ff6663;
           color: #0b3954;
         }
+
+        .btn--link {
+          background: none;
+          border: none;
+          padding: 0;
+          color: #e0ff4f;
+        }
+
+        .btn--link:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
       `}</style>
     </>
   )

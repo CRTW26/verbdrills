@@ -135,7 +135,7 @@ exports[`<ConfigurationForm /> should render 1`] = `
       class="jsx-595701558 configuration-form__field"
     >
       <button
-        class="jsx-347471370 btn btn--primary"
+        class="jsx-767425152 btn btn--primary"
         disabled=""
         type="button"
       >
