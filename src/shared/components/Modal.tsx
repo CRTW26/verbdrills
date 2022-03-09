@@ -61,7 +61,8 @@ const Modal: React.FC<Props> = ({ children, onClose }) => {
         @media screen and (min-width: 720px) {
           .modal__inner {
             margin-top: 8rem;
-            max-width: 600px;
+            max-width: 580px;
+            border-radius: 5px;
           }
         }
       `}</style>

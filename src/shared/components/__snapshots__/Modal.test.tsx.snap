@@ -3,13 +3,13 @@
 exports[`<Modal /> should render 1`] = `
 <DocumentFragment>
   <div
-    class="jsx-1277463556 modal"
+    class="jsx-2967749317 modal"
   >
     <div
-      class="jsx-1277463556 modal__inner"
+      class="jsx-2967749317 modal__inner"
     >
       <button
-        class="jsx-1277463556 modal-close"
+        class="jsx-2967749317 modal-close"
       >
         <svg
           color="#e0ff4f"
