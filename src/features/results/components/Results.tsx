@@ -27,7 +27,9 @@ const Results: React.FC<Props> = ({
         <h4>{`Total: ${total}`}</h4>
         <h4>{`Correct: ${correct}`}</h4>
         <h4>{`Incorrect: ${incorrect}`}</h4>
-        <h4>{`Percentage: ${Math.round((correct / total) * 100)}%`}</h4>
+        <h4>{`Percentage: ${
+          total > 0 ? Math.round((correct / total) * 100) : 0
+        }%`}</h4>
         <Button
           className="btn--link"
           onClick={onShowIncorrectAnswers}
