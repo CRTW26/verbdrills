@@ -56,13 +56,40 @@ const Modal: React.FC<Props> = ({ children, onClose }) => {
           opacity: 1;
           width: 100%;
           padding: 1rem;
+          animation: modalSlide 0.5s forwards;
+        }
+
+        @keyframes modalSlide {
+          from {
+            opacity: 0;
+            top: -50%;
+          }
+
+          to {
+            transform: translateY(0);
+            top: 0;
+            opacity: 1;
+          }
         }
 
         @media screen and (min-width: 720px) {
           .modal__inner {
-            margin-top: 8rem;
             max-width: 580px;
             border-radius: 5px;
+          }
+
+          @keyframes modalSlide {
+            from {
+              opacity: 0;
+              top: 0%;
+            }
+
+            to {
+              transform: translateY(0);
+              top: 50%;
+              transform: translateY(-50%);
+              opacity: 1;
+            }
           }
         }
       `}</style>
