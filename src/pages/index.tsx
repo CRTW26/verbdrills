@@ -3,7 +3,7 @@ import fs from 'fs'
 import { GameConfigurationForm } from 'features/game-configuration'
 import Head from 'next/head'
 import { TitleBar } from 'features/home'
-import { AppState } from 'shared/types'
+import { AppState, Verbs } from 'shared/types'
 import GamePlay from 'features/game-play/components/GamePlay'
 import { useGame } from 'features/game-play/hooks/useGame'
 import useForm from 'features/game-configuration/hooks/useForm'
@@ -15,8 +15,7 @@ import Results from 'features/results/components/Results'
 import IncorrectAnswers from 'features/results/components/IncorrectAnswers'
 
 interface Props {
-  // TODO: Add type
-  verbs
+  verbs: Verbs
 }
 
 export const Index: React.FC<Props> = ({ verbs }) => {

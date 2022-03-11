@@ -22,3 +22,18 @@ export type Score = {
   correct: number
   incorrect: number
 }
+
+export type Verb = {
+  infinitive: string
+  translation: string
+  present: string[]
+  preterite: string[]
+  imperfect: string[]
+  conditional: string[]
+  future: string[]
+}
+
+export interface Verbs {
+  regular: Verb[]
+  irregular: Verb[]
+}
