@@ -3,11 +3,11 @@ import Settings from './Settings'
 
 describe('<Settings />', () => {
   test('should render', () => {
-    const { asFragment } = render(
+    const { baseElement } = render(
       <Settings defaultTime={1} onSave={jest.fn()} />
     )
 
-    expect(asFragment()).toMatchSnapshot()
+    expect(baseElement).toMatchSnapshot()
   })
 
   test('should increment timer', () => {

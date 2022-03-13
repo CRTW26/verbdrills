@@ -1,11 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Timer /> should render 1`] = `
-<DocumentFragment>
+<body>
   <div>
-    <h3>
-      1:00
-    </h3>
+    <div>
+      <h3>
+        1:00
+      </h3>
+    </div>
   </div>
-</DocumentFragment>
+</body>
 `;

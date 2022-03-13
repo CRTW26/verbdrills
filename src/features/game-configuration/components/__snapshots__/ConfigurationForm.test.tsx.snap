@@ -1,147 +1,149 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ConfigurationForm /> should render 1`] = `
-<DocumentFragment>
-  <form
-    class="jsx-595701558 configuration-form"
-  >
-    <div
-      class="jsx-595701558 configuration-form__field"
+<body>
+  <div>
+    <form
+      class="jsx-595701558 configuration-form"
     >
-      <label
-        class="jsx-595701558"
+      <div
+        class="jsx-595701558 configuration-form__field"
       >
-        Select a language
-      </label>
-      <select
-        class="jsx-2574848865 select"
-        name="language"
-      >
-        <option
-          class="jsx-2574848865"
-          value="Select a language"
+        <label
+          class="jsx-595701558"
         >
           Select a language
-        </option>
-        <option
-          class="jsx-2574848865"
-          value="Spanish"
+        </label>
+        <select
+          class="jsx-2574848865 select"
+          name="language"
         >
-          Spanish
-        </option>
-        <option
-          class="jsx-2574848865"
-          value="German"
-        >
-          German
-        </option>
-        <option
-          class="jsx-2574848865"
-          value="French"
-        >
-          French
-        </option>
-      </select>
-    </div>
-    <div
-      class="jsx-595701558 configuration-form__field"
-    >
-      <label
-        class="jsx-595701558"
+          <option
+            class="jsx-2574848865"
+            value="Select a language"
+          >
+            Select a language
+          </option>
+          <option
+            class="jsx-2574848865"
+            value="Spanish"
+          >
+            Spanish
+          </option>
+          <option
+            class="jsx-2574848865"
+            value="German"
+          >
+            German
+          </option>
+          <option
+            class="jsx-2574848865"
+            value="French"
+          >
+            French
+          </option>
+        </select>
+      </div>
+      <div
+        class="jsx-595701558 configuration-form__field"
       >
-        Select a verb set
-      </label>
-      <select
-        class="jsx-2574848865 select"
-        name="verbset"
+        <label
+          class="jsx-595701558"
+        >
+          Select a verb set
+        </label>
+        <select
+          class="jsx-2574848865 select"
+          name="verbset"
+        >
+          <option
+            class="jsx-2574848865"
+            value="Select verbset"
+          >
+            Select verbset
+          </option>
+          <option
+            class="jsx-2574848865"
+            value="regular"
+          >
+            regular
+          </option>
+          <option
+            class="jsx-2574848865"
+            value="irregular"
+          >
+            irregular
+          </option>
+          <option
+            class="jsx-2574848865"
+            value="all"
+          >
+            all
+          </option>
+        </select>
+      </div>
+      <div
+        class="jsx-595701558 configuration-form__field"
       >
-        <option
-          class="jsx-2574848865"
-          value="Select verbset"
+        <label
+          class="jsx-595701558"
         >
-          Select verbset
-        </option>
-        <option
-          class="jsx-2574848865"
-          value="regular"
+          Select a tense
+        </label>
+        <select
+          class="jsx-2574848865 select"
+          name="tense"
         >
-          regular
-        </option>
-        <option
-          class="jsx-2574848865"
-          value="irregular"
-        >
-          irregular
-        </option>
-        <option
-          class="jsx-2574848865"
-          value="all"
-        >
-          all
-        </option>
-      </select>
-    </div>
-    <div
-      class="jsx-595701558 configuration-form__field"
-    >
-      <label
-        class="jsx-595701558"
+          <option
+            class="jsx-2574848865"
+            value="Select tense"
+          >
+            Select tense
+          </option>
+          <option
+            class="jsx-2574848865"
+            value="present"
+          >
+            present
+          </option>
+          <option
+            class="jsx-2574848865"
+            value="preterite"
+          >
+            preterite
+          </option>
+          <option
+            class="jsx-2574848865"
+            value="imperfect"
+          >
+            imperfect
+          </option>
+          <option
+            class="jsx-2574848865"
+            value="future"
+          >
+            future
+          </option>
+          <option
+            class="jsx-2574848865"
+            value="conditional"
+          >
+            conditional
+          </option>
+        </select>
+      </div>
+      <div
+        class="jsx-595701558 configuration-form__field"
       >
-        Select a tense
-      </label>
-      <select
-        class="jsx-2574848865 select"
-        name="tense"
-      >
-        <option
-          class="jsx-2574848865"
-          value="Select tense"
+        <button
+          class="jsx-767425152 btn btn--primary"
+          disabled=""
+          type="button"
         >
-          Select tense
-        </option>
-        <option
-          class="jsx-2574848865"
-          value="present"
-        >
-          present
-        </option>
-        <option
-          class="jsx-2574848865"
-          value="preterite"
-        >
-          preterite
-        </option>
-        <option
-          class="jsx-2574848865"
-          value="imperfect"
-        >
-          imperfect
-        </option>
-        <option
-          class="jsx-2574848865"
-          value="future"
-        >
-          future
-        </option>
-        <option
-          class="jsx-2574848865"
-          value="conditional"
-        >
-          conditional
-        </option>
-      </select>
-    </div>
-    <div
-      class="jsx-595701558 configuration-form__field"
-    >
-      <button
-        class="jsx-767425152 btn btn--primary"
-        disabled=""
-        type="button"
-      >
-        Train
-      </button>
-    </div>
-  </form>
-</DocumentFragment>
+          Train
+        </button>
+      </div>
+    </form>
+  </div>
+</body>
 `;

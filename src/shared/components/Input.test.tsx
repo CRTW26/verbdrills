@@ -3,8 +3,8 @@ import Input from './Input'
 
 describe('<Input />', () => {
   test('should render', () => {
-    const { asFragment } = render(<Input onChange={jest.fn()} />)
+    const { baseElement } = render(<Input onChange={jest.fn()} />)
 
-    expect(asFragment()).toMatchSnapshot()
+    expect(baseElement).toMatchSnapshot()
   })
 })

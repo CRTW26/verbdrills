@@ -1,22 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Select /> should render 1`] = `
-<DocumentFragment>
-  <select
-    class="jsx-2574848865 select"
-  >
-    <option
-      class="jsx-2574848865"
-      value="yes"
+<body>
+  <div>
+    <select
+      class="jsx-2574848865 select"
     >
-      yes
-    </option>
-    <option
-      class="jsx-2574848865"
-      value="no"
-    >
-      no
-    </option>
-  </select>
-</DocumentFragment>
+      <option
+        class="jsx-2574848865"
+        value="yes"
+      >
+        yes
+      </option>
+      <option
+        class="jsx-2574848865"
+        value="no"
+      >
+        no
+      </option>
+    </select>
+  </div>
+</body>
 `;

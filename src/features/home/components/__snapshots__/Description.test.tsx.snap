@@ -1,20 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Description /> should render 1`] = `
-<DocumentFragment>
-  <div
-    class="description"
-    data-testid="description"
-  >
-    <h3>
-      Nail verb conjugation to help you on your journey to being a language master
-    </h3>
-    <button
-      class="jsx-767425152 "
-      data-testid="btn--train"
+<body>
+  <div>
+    <div
+      class="description"
+      data-testid="description"
     >
-      PRACTICE
-    </button>
+      <h3>
+        Nail verb conjugation to help you on your journey to being a language master
+      </h3>
+      <button
+        class="jsx-767425152 "
+        data-testid="btn--train"
+      >
+        PRACTICE
+      </button>
+    </div>
   </div>
-</DocumentFragment>
+</body>
 `;

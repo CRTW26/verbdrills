@@ -7,9 +7,9 @@ describe('<Description />', () => {
     'Nail verb conjugation to help you on your journey to being a language master'
 
   test('should render', () => {
-    const { asFragment } = render(<Description text={text} />)
+    const { baseElement } = render(<Description text={text} />)
 
-    expect(asFragment()).toMatchSnapshot()
+    expect(baseElement).toMatchSnapshot()
   })
 
   test('should have correct heading', () => {

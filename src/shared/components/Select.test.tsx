@@ -5,8 +5,8 @@ import Select from './Select'
 describe('<Select />', () => {
   test('should render', () => {
     const options = [{ value: 'yes' }, { value: 'no' }]
-    const { asFragment } = render(<Select options={options} />)
+    const { baseElement } = render(<Select options={options} />)
 
-    expect(asFragment()).toMatchSnapshot()
+    expect(baseElement).toMatchSnapshot()
   })
 })

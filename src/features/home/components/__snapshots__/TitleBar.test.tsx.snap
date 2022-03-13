@@ -1,21 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TitleBar> should render 1`] = `
-<DocumentFragment>
-  <div
-    class="jsx-964221634 title-bar"
-    data-testid="title-bar"
-  >
-    <h1
-      class="jsx-964221634"
+<body>
+  <div>
+    <div
+      class="jsx-964221634 title-bar"
+      data-testid="title-bar"
     >
-      verbdrills
-    </h1>
-    <h2
-      class="jsx-964221634"
-    >
-      Master verb conjugation
-    </h2>
+      <h1
+        class="jsx-964221634"
+      >
+        verbdrills
+      </h1>
+      <h2
+        class="jsx-964221634"
+      >
+        Master verb conjugation
+      </h2>
+    </div>
   </div>
-</DocumentFragment>
+</body>
 `;

@@ -3,7 +3,7 @@ import ConfigurationForm from './ConfigurationForm'
 
 describe('<ConfigurationForm />', () => {
   test('should render', () => {
-    const { asFragment } = render(
+    const { baseElement } = render(
       <ConfigurationForm
         formValues={{
           language: 'Spanish',
@@ -16,6 +16,6 @@ describe('<ConfigurationForm />', () => {
       />
     )
 
-    expect(asFragment()).toMatchSnapshot()
+    expect(baseElement).toMatchSnapshot()
   })
 })

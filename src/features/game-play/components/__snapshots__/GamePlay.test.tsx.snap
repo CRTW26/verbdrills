@@ -1,54 +1,56 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<GamePlay /> should render 1`] = `
-<DocumentFragment>
-  <div
-    class="jsx-2177346083 game-play"
-  >
-    <div>
-      <h3>
-        1:00
-      </h3>
-    </div>
+<body>
+  <div>
     <div
-      class="jsx-2177346083"
+      class="jsx-2177346083 game-play"
     >
-      <h2
+      <div>
+        <h3>
+          1:00
+        </h3>
+      </div>
+      <div
         class="jsx-2177346083"
-      />
-    </div>
-    <div
-      class="jsx-2177346083 card__child card__verb-display"
-    >
-      <h2
-        class="jsx-2177346083 infinitive"
       >
-        hablar
-      </h2>
-      <h2
-        class="jsx-2177346083 person"
+        <h2
+          class="jsx-2177346083"
+        />
+      </div>
+      <div
+        class="jsx-2177346083 card__child card__verb-display"
       >
-        yo
-      </h2>
-      <h3
-        class="jsx-2177346083 translation"
+        <h2
+          class="jsx-2177346083 infinitive"
+        >
+          hablar
+        </h2>
+        <h2
+          class="jsx-2177346083 person"
+        >
+          yo
+        </h2>
+        <h3
+          class="jsx-2177346083 translation"
+        >
+          to speak
+        </h3>
+      </div>
+      <div
+        class="jsx-2177346083 card__child card__input"
       >
-        to speak
-      </h3>
-    </div>
-    <div
-      class="jsx-2177346083 card__child card__input"
-    >
-      <input
-        class="jsx-828487101 "
-        value=""
-      />
-      <button
-        class="jsx-767425152 btn btn--primary"
-      >
-        Guess
-      </button>
+        <input
+          class="jsx-828487101 "
+          value=""
+        />
+        <button
+          class="jsx-767425152 btn btn--primary"
+        >
+          Guess
+        </button>
+      </div>
     </div>
   </div>
-</DocumentFragment>
+</body>
 `;

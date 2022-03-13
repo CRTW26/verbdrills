@@ -18,8 +18,8 @@ describe('<IncorrectAnswers />', () => {
   })
 
   test('should render', () => {
-    const { asFragment } = render(<IncorrectAnswers {...props} />)
+    const { baseElement } = render(<IncorrectAnswers {...props} />)
 
-    expect(asFragment()).toMatchSnapshot()
+    expect(baseElement).toMatchSnapshot()
   })
 })

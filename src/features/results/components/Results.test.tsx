@@ -3,7 +3,7 @@ import Results from './Results'
 
 describe('<Results />', () => {
   test('should render', () => {
-    const { asFragment } = render(
+    const { baseElement } = render(
       <Results
         score={{ total: 10, correct: 5, incorrect: 5 }}
         onClick={jest.fn()}
@@ -18,6 +18,6 @@ describe('<Results />', () => {
       />
     )
 
-    expect(asFragment()).toMatchSnapshot()
+    expect(baseElement).toMatchSnapshot()
   })
 })

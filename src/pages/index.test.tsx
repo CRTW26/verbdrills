@@ -4,9 +4,9 @@ import Index from 'pages/index'
 import verbs from '../../public/verbs/spanish.json'
 
 it('renders', () => {
-  const { asFragment } = render(<Index verbs={verbs} />)
+  const { baseElement } = render(<Index verbs={verbs} />)
 
-  expect(asFragment()).toMatchSnapshot()
+  expect(baseElement).toMatchSnapshot()
 })
 
 it('should contain text "verbdrills"', () => {

@@ -4,9 +4,9 @@ import { TitleBar } from 'features/home'
 
 describe('<TitleBar>', () => {
   test('should render', () => {
-    const { asFragment } = render(<TitleBar text="verbdrills" />)
+    const { baseElement } = render(<TitleBar text="verbdrills" />)
 
-    expect(asFragment()).toMatchSnapshot()
+    expect(baseElement).toMatchSnapshot()
   })
 
   test('should have correct heading', () => {

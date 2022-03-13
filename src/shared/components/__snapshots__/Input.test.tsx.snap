@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Input /> should render 1`] = `
-<DocumentFragment>
-  <input
-    class="jsx-828487101 "
-  />
-</DocumentFragment>
+<body>
+  <div>
+    <input
+      class="jsx-828487101 "
+    />
+  </div>
+</body>
 `;

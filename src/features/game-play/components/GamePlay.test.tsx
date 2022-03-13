@@ -10,7 +10,7 @@ describe('<GamePlay />', () => {
       answer: 'acepto',
     }
 
-    const { asFragment } = render(
+    const { baseElement } = render(
       <GamePlay
         verb={verb}
         score={0}
@@ -20,6 +20,6 @@ describe('<GamePlay />', () => {
       />
     )
 
-    expect(asFragment()).toMatchSnapshot()
+    expect(baseElement).toMatchSnapshot()
   })
 })
