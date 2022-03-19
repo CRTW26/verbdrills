@@ -15,6 +15,12 @@ const Timer: React.FC<Props> = ({ duration, onExpiration }) => {
   return (
     <div>
       <h3>{isTimerExpired ? "Time's up!" : makeTimeString(timeLeft)}</h3>
+
+      <style jsx>{`
+        h3 {
+          text-align: left;
+        }
+      `}</style>
     </div>
   )
 }

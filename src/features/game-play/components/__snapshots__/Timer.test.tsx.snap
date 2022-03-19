@@ -3,8 +3,12 @@
 exports[`<Timer /> should render 1`] = `
 <body>
   <div>
-    <div>
-      <h3>
+    <div
+      class="jsx-1645246723"
+    >
+      <h3
+        class="jsx-1645246723"
+      >
         1:00
       </h3>
     </div>

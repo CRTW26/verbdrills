@@ -4,41 +4,45 @@ exports[`<GamePlay /> should render 1`] = `
 <body>
   <div>
     <div
-      class="jsx-2177346083 game-play"
+      class="jsx-984623468 game-play"
     >
-      <div>
-        <h3>
+      <div
+        class="jsx-1645246723"
+      >
+        <h3
+          class="jsx-1645246723"
+        >
           1:00
         </h3>
       </div>
       <div
-        class="jsx-2177346083"
+        class="jsx-984623468"
       >
         <h2
-          class="jsx-2177346083"
+          class="jsx-984623468"
         />
       </div>
       <div
-        class="jsx-2177346083 card__child card__verb-display"
+        class="jsx-984623468 verb"
       >
         <h2
-          class="jsx-2177346083 infinitive"
+          class="jsx-984623468 infinitive"
         >
           hablar
         </h2>
         <h2
-          class="jsx-2177346083 person"
+          class="jsx-984623468 person"
         >
           yo
         </h2>
         <h3
-          class="jsx-2177346083 translation"
+          class="jsx-984623468 translation"
         >
           to speak
         </h3>
       </div>
       <div
-        class="jsx-2177346083 card__child card__input"
+        class="jsx-984623468 card__child card__input"
       >
         <input
           class="jsx-828487101 "

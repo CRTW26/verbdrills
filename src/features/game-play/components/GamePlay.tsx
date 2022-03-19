@@ -70,7 +70,7 @@ const GamePlay: React.FC<Props> = ({
         <h2>{score.correct}</h2>
       </div>
 
-      <div className="card__child card__verb-display">
+      <div className="verb">
         <h2 className="infinitive">{infinitive}</h2>
         <h2 className="person">{person}</h2>
         <h3 className="translation">{translation}</h3>
@@ -94,6 +94,10 @@ const GamePlay: React.FC<Props> = ({
         .game-play {
           width: 100%;
           text-align: center;
+        }
+
+        .verb {
+          margin: 1rem 0 2rem;
         }
       `}</style>
     </div>
