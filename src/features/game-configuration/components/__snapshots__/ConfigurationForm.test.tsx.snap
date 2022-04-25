@@ -32,15 +32,15 @@ exports[`<ConfigurationForm /> should render 1`] = `
           </option>
           <option
             class="jsx-2574848865"
-            value="German"
+            value="German - coming soon"
           >
-            German
+            German - coming soon
           </option>
           <option
             class="jsx-2574848865"
-            value="French"
+            value="French - coming soon"
           >
-            French
+            French - coming soon
           </option>
         </select>
       </div>
