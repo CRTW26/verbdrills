@@ -5,8 +5,8 @@ import { GameConfiguration } from 'shared/types'
 const LANGUAGES = [
   { value: 'Select a language' },
   { value: 'Spanish' },
-  { value: 'German' },
-  { value: 'French' },
+  { value: 'German - coming soon' },
+  { value: 'French - coming soon' },
 ]
 
 const VERBSETS = [
