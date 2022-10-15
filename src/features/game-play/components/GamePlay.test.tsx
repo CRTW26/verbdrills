@@ -10,10 +10,16 @@ describe('<GamePlay />', () => {
       answer: 'acepto',
     }
 
+    const score = {
+      total: 12,
+      correct: 4,
+      incorrect: 8,
+    }
+
     const { baseElement } = render(
       <GamePlay
         verb={verb}
-        score={0}
+        score={score}
         duration={1}
         validateInput={jest.fn()}
         onExpiration={jest.fn()}
@@ -22,4 +28,8 @@ describe('<GamePlay />', () => {
 
     expect(baseElement).toMatchSnapshot()
   })
+
+  test('should set guess', () => {})
+
+  test('should validate guess', () => {})
 })
