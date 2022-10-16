@@ -7,7 +7,7 @@ import { AppState, Verbs } from 'shared/types'
 import { GamePlay } from 'features/game-play'
 import { useGame } from 'features/game-play/hooks/useGame'
 import useForm from 'features/game-configuration/hooks/useForm'
-import { GetStaticProps } from 'next'
+import { GetServerSideProps } from 'next'
 import Modal from 'shared/components/Modal'
 import { VscChromeClose, VscGear } from 'react-icons/vsc'
 import Settings from 'features/game-configuration/components/Settings'
@@ -194,7 +194,7 @@ export const Train: React.FC<Props> = ({ verbs }) => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const data = fs.readFileSync('public/verbs/spanish.json', 'utf8')
 
   const verbs = JSON.parse(data)

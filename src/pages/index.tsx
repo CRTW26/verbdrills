@@ -54,6 +54,8 @@ export const Index: React.FC<Props> = () => {
 
           <div className="container--right">
             <div className="description">
+              <h3>What is verbdrills?</h3>
+
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
                 tincidunt rutrum risus sit amet bibendum. Nulla purus nisl,
@@ -155,6 +157,10 @@ export const Index: React.FC<Props> = () => {
         }
 
         @media screen and (min-width: 820px) {
+          main {
+            padding: 0 3rem;
+          }
+
           .container--left {
             display: flex;
             justify-content: center;
