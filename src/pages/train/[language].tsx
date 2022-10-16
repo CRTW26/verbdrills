@@ -194,8 +194,28 @@ export const Train: React.FC<Props> = ({ verbs }) => {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const data = fs.readFileSync('public/verbs/spanish.json', 'utf8')
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+  const SUPPORTED_LANGUAGES = ['spanish']
+
+  if (typeof params?.language !== 'string') {
+    return {
+      redirect: {
+        destination: '/error',
+        permanent: false,
+      },
+    }
+  }
+
+  if (!SUPPORTED_LANGUAGES.includes(params?.language)) {
+    return {
+      redirect: {
+        destination: '/error',
+        permanent: false,
+      },
+    }
+  }
+
+  const data = fs.readFileSync(`public/verbs/${params?.language}.json`, 'utf8')
 
   const verbs = JSON.parse(data)
 
