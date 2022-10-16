@@ -6,6 +6,7 @@ import { GetStaticProps } from 'next'
 import Image from 'next/image'
 import Button from 'shared/components/Button'
 import router from 'next/router'
+import Layout from 'shared/components/Layout'
 
 interface Props {
   verbs: Verbs
@@ -17,7 +18,7 @@ export const Index: React.FC<Props> = () => {
   }
 
   return (
-    <div className="container">
+    <>
       <Head>
         <title>verbdills</title>
         <link
@@ -46,64 +47,50 @@ export const Index: React.FC<Props> = () => {
         />
       </Head>
 
-      <main>
-        <div>
-          <h1>VERBDRILLS</h1>
-          <h3>master verb conjugation</h3>
-        </div>
-
-        <div className="container test">
-          <div className="container--left">
-            <Image src={'/mockup.png'} width={267} height={499} />
-          </div>
-
-          <div className="container--right">
-            <div className="description">
-              <h3>What is verbdrills?</h3>
-
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                tincidunt rutrum risus sit amet bibendum. Nulla purus nisl,
-                porta sodales augue ut, malesuada dictum felis. Curabitur sit
-                amet molestie ligula, a hendrerit odio. Praesent et tellus quam.
-                In hac habitasse platea dictumst. Suspendisse consequat feugiat
-                tempus.
-              </p>
-
-              <p>
-                Donec ullamcorper arcu sit amet ullamcorper tincidunt. Quisque
-                tincidunt volutpat dolor. Cras ultrices accumsan tellus, eget
-                iaculis ante tincidunt consectetur.
-              </p>
+      <Layout>
+        <main>
+          <div className="container test">
+            <div className="container--left">
+              <Image src={'/mockup.png'} width={267} height={499} />
             </div>
 
-            <div className="cta">
-              <div className="cta-container">
-                <Button
-                  text="Launch app"
-                  className="btn btn--primary"
-                  onClick={handleAppLaunch}
-                />
+            <div className="container--right">
+              <div className="description">
+                <h3>What is verbdrills?</h3>
+
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                  tincidunt rutrum risus sit amet bibendum. Nulla purus nisl,
+                  porta sodales augue ut, malesuada dictum felis. Curabitur sit
+                  amet molestie ligula, a hendrerit odio. Praesent et tellus
+                  quam. In hac habitasse platea dictumst. Suspendisse consequat
+                  feugiat tempus.
+                </p>
+
+                <p>
+                  Donec ullamcorper arcu sit amet ullamcorper tincidunt. Quisque
+                  tincidunt volutpat dolor. Cras ultrices accumsan tellus, eget
+                  iaculis ante tincidunt consectetur.
+                </p>
+              </div>
+
+              <div className="cta">
+                <div className="cta-container">
+                  <Button
+                    text="Launch app"
+                    className="btn btn--primary"
+                    onClick={handleAppLaunch}
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </main>
+        </main>
+      </Layout>
 
       <style jsx>{`
         main {
           margin: 1rem;
-        }
-
-        h1 {
-          font-style: italic;
-          font-weight: 700;
-        }
-
-        h3 {
-          font-style: regular;
-          font-weight: 400;
-          color: #fff5d0;
         }
 
         button:hover {
@@ -182,7 +169,7 @@ export const Index: React.FC<Props> = () => {
           }
         }
       `}</style>
-    </div>
+    </>
   )
 }
 

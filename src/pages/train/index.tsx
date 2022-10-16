@@ -1,6 +1,7 @@
 import React from 'react'
 import router from 'next/router'
 import Button from 'shared/components/Button'
+import Layout from 'shared/components/Layout'
 
 const Train: React.FC = () => {
   const handleLanguageSelection = () => {
@@ -8,7 +9,7 @@ const Train: React.FC = () => {
   }
 
   return (
-    <>
+    <Layout>
       <div>Choose your language to get started</div>
 
       <Button
@@ -16,7 +17,7 @@ const Train: React.FC = () => {
         text="Spanish"
         onClick={handleLanguageSelection}
       />
-    </>
+    </Layout>
   )
 }
 

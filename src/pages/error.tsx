@@ -1,10 +1,11 @@
 import React from 'react'
+import Layout from 'shared/components/Layout'
 
 const Error: React.FC = () => {
   return (
-    <div>
+    <Layout>
       <h3>We're sorry an error has occurred.</h3>
-    </div>
+    </Layout>
   )
 }
 
