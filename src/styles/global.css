@@ -36,9 +36,15 @@ body {
   margin: 0;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #ff6663;
-  background: #0b3954;
+  background: #0f222d;
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    #5a646b 1px,
+    transparent 0
+  );
+  background-size: 30px 30px;
 }
 
 /* A elements that don't have a class get default styles */

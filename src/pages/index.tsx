@@ -1,67 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import fs from 'fs'
-import { GameConfigurationForm } from 'features/game-configuration'
 import Head from 'next/head'
-import { TitleBar } from 'features/home'
-import { AppState, Verbs } from 'shared/types'
-import { GamePlay } from 'features/game-play'
-import { useGame } from 'features/game-play/hooks/useGame'
-import useForm from 'features/game-configuration/hooks/useForm'
+import { Verbs } from 'shared/types'
 import { GetStaticProps } from 'next'
-import Modal from 'shared/components/Modal'
-import { VscChromeClose, VscGear } from 'react-icons/vsc'
-import Settings from 'features/game-configuration/components/Settings'
-import { Results, IncorrectAnswers } from 'features/results'
+import Image from 'next/image'
+import Button from 'shared/components/Button'
 
 interface Props {
   verbs: Verbs
 }
 
-export const Index: React.FC<Props> = ({ verbs }) => {
-  const [appState, setAppState] = useState(AppState.GAME_CONFIGURATION)
-  const [timerDuration, setTimerDuration] = useState(1)
-  const [isTimerModalVisible, setIsTimerModalVisible] = useState(false)
-  const [isIncorrectAnswersModalVisible, setIsIncorrectAnswersModalVisible] =
-    useState(false)
-
-  const { formValues, isValid, onChange } = useForm({
-    language: '',
-    verbset: '',
-    tense: '',
-  })
-
-  const { getVerb, validateInput, resetGame, score, incorrectAnswers } =
-    useGame({
-      verbs: verbs,
-    })
-
-  const [currentVerb, setCurrentVerb] = useState({
-    infinitive: '',
-    person: '',
-    translation: '',
-    answer: '',
-  })
-
-  const initiateGamePlay = () => {
-    resetGame()
-
-    setAppState(AppState.GAME_PLAY)
-  }
-
-  const handleSaveSettings = (duration: number) => {
-    setTimerDuration(duration)
-
-    setIsTimerModalVisible(false)
-  }
-
-  const handleGameCancel = () => {
-    setAppState(AppState.GAME_CONFIGURATION)
-  }
-
-  useEffect(() => {
-    setCurrentVerb(getVerb(formValues.tense, formValues.verbset))
-  }, [score.correct, score.incorrect, formValues])
-
+export const Index: React.FC<Props> = () => {
   return (
     <div className="container">
       <Head>
@@ -87,73 +36,38 @@ export const Index: React.FC<Props> = ({ verbs }) => {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,700&display=swap"
           rel="stylesheet"
         />
       </Head>
 
       <main>
-        {appState === AppState.GAME_CONFIGURATION && (
-          <button onClick={() => setIsTimerModalVisible(true)}>
-            <VscGear color="#e0ff4f" fontSize={'2rem'} />
-          </button>
-        )}
+        <div>
+          <h1>VERBDRILLS</h1>
+          <h3>master verb conjugation</h3>
+        </div>
 
-        {appState === AppState.GAME_PLAY && (
-          <button onClick={handleGameCancel} className="modal-close">
-            <VscChromeClose color="#e0ff4f" fontSize={'2rem'} />
-          </button>
-        )}
+        <div className="description">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            tincidunt rutrum risus sit amet bibendum. Nulla purus nisl, porta
+            sodales augue ut, malesuada dictum felis. Curabitur sit amet
+            molestie ligula, a hendrerit odio. Praesent et tellus quam. In hac
+            habitasse platea dictumst. Suspendisse consequat feugiat tempus.
+          </p>
 
-        {appState === AppState.GAME_CONFIGURATION && (
-          <div className="content">
-            <TitleBar text="verbdrills" />
+          <p>
+            Donec ullamcorper arcu sit amet ullamcorper tincidunt. Quisque
+            tincidunt volutpat dolor. Cras ultrices accumsan tellus, eget
+            iaculis ante tincidunt consectetur.
+          </p>
+        </div>
 
-            <GameConfigurationForm
-              onSubmit={initiateGamePlay}
-              formValues={formValues}
-              isValid={isValid}
-              onChange={onChange}
-            />
+        <div className="cta">
+          <div className="cta-container">
+            <Button text="Launch app" className="btn btn--primary" />
           </div>
-        )}
-
-        {appState === AppState.GAME_PLAY && (
-          <div className="content">
-            <GamePlay
-              verb={currentVerb}
-              score={score}
-              validateInput={validateInput}
-              onExpiration={() => setAppState(AppState.GAME_RESULT)}
-              duration={timerDuration}
-            />
-          </div>
-        )}
-
-        {appState === AppState.GAME_RESULT && (
-          <div className="content">
-            <Results
-              score={score}
-              onClick={() => setAppState(AppState.GAME_CONFIGURATION)}
-              incorrectAnswers={incorrectAnswers}
-              onShowIncorrectAnswers={() =>
-                setIsIncorrectAnswersModalVisible(true)
-              }
-            />
-          </div>
-        )}
-
-        {isTimerModalVisible && (
-          <Modal onClose={() => setIsTimerModalVisible(false)}>
-            <Settings defaultTime={1} onSave={handleSaveSettings} />
-          </Modal>
-        )}
-
-        {isIncorrectAnswersModalVisible && (
-          <Modal onClose={() => setIsIncorrectAnswersModalVisible(false)}>
-            <IncorrectAnswers incorrectAnswers={incorrectAnswers} />
-          </Modal>
-        )}
+        </div>
       </main>
 
       <style jsx>{`
@@ -161,16 +75,37 @@ export const Index: React.FC<Props> = ({ verbs }) => {
           margin: 1rem;
         }
 
-        button {
-          position: absolute;
-          top: 20px;
-          right: 12px;
-          background: none;
-          border: none;
+        h1 {
+          font-style: italic;
+          font-weight: 700;
+        }
+
+        h3 {
+          font-style: regular;
+          font-weight: 400;
+          color: #fff5d0;
         }
 
         button:hover {
           cursor: pointer;
+        }
+
+        .description {
+          margin-top: 2rem;
+        }
+
+        .description > p {
+          color: #fff5d0;
+          margin: 1rem 0;
+        }
+
+        .cta {
+          display: flex;
+          justify-content: flex-end;
+        }
+
+        .cta-container {
+          width: initial;
         }
 
         .content {
