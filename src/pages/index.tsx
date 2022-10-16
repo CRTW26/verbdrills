@@ -102,7 +102,7 @@ export const Index: React.FC<Props> = () => {
         }
 
         .test {
-          padding: 4rem 0;
+          padding: 1rem 0;
         }
 
         .container > div {
@@ -115,10 +115,6 @@ export const Index: React.FC<Props> = () => {
 
         .image {
           margin: 0 auto;
-        }
-
-        .description {
-          margin-top: 2rem;
         }
 
         .description > p {
@@ -153,8 +149,8 @@ export const Index: React.FC<Props> = () => {
         }
 
         @media screen and (min-width: 820px) {
-          main {
-            padding: 0 3rem;
+          .test {
+            padding: 4rem 0;
           }
 
           .container--left {

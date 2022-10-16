@@ -7,19 +7,28 @@ interface Props {
 const Layout: React.FC<Props> = ({ children }) => {
   return (
     <div className="layout">
-      <div className="header">
-        <h1>VERBDRILLS</h1>
+      <div className="container">
+        <div className="header">
+          <h1>VERBDRILLS</h1>
 
-        <h3>master verb conjugation</h3>
+          <h3>master verb conjugation</h3>
+        </div>
+
+        {children}
       </div>
-
-      {children}
 
       <style jsx>{`
         .layout {
-          // height: 100%;
           max-width: 1200px;
           margin: 2rem auto;
+        }
+
+        .container {
+          margin: 2rem 1rem;
+        }
+
+        .header {
+          text-align: center;
         }
 
         .header > h1 {
@@ -31,6 +40,12 @@ const Layout: React.FC<Props> = ({ children }) => {
           font-style: regular;
           font-weight: 400;
           color: #fff5d0;
+        }
+
+        @media screen and (min-width: 820px) {
+          .header {
+            text-align: left;
+          }
         }
       `}</style>
     </div>
