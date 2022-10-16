@@ -5,12 +5,17 @@ import { Verbs } from 'shared/types'
 import { GetStaticProps } from 'next'
 import Image from 'next/image'
 import Button from 'shared/components/Button'
+import router from 'next/router'
 
 interface Props {
   verbs: Verbs
 }
 
 export const Index: React.FC<Props> = () => {
+  const handleAppLaunch = () => {
+    router.push('/train')
+  }
+
   return (
     <div className="container">
       <Head>
@@ -74,7 +79,11 @@ export const Index: React.FC<Props> = () => {
 
             <div className="cta">
               <div className="cta-container">
-                <Button text="Launch app" className="btn btn--primary" />
+                <Button
+                  text="Launch app"
+                  className="btn btn--primary"
+                  onClick={handleAppLaunch}
+                />
               </div>
             </div>
           </div>
