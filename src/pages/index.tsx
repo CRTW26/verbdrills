@@ -47,25 +47,34 @@ export const Index: React.FC<Props> = () => {
           <h3>master verb conjugation</h3>
         </div>
 
-        <div className="description">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            tincidunt rutrum risus sit amet bibendum. Nulla purus nisl, porta
-            sodales augue ut, malesuada dictum felis. Curabitur sit amet
-            molestie ligula, a hendrerit odio. Praesent et tellus quam. In hac
-            habitasse platea dictumst. Suspendisse consequat feugiat tempus.
-          </p>
+        <div className="container test">
+          <div className="container--left">
+            <Image src={'/mockup.png'} width={267} height={499} />
+          </div>
 
-          <p>
-            Donec ullamcorper arcu sit amet ullamcorper tincidunt. Quisque
-            tincidunt volutpat dolor. Cras ultrices accumsan tellus, eget
-            iaculis ante tincidunt consectetur.
-          </p>
-        </div>
+          <div className="container--right">
+            <div className="description">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                tincidunt rutrum risus sit amet bibendum. Nulla purus nisl,
+                porta sodales augue ut, malesuada dictum felis. Curabitur sit
+                amet molestie ligula, a hendrerit odio. Praesent et tellus quam.
+                In hac habitasse platea dictumst. Suspendisse consequat feugiat
+                tempus.
+              </p>
 
-        <div className="cta">
-          <div className="cta-container">
-            <Button text="Launch app" className="btn btn--primary" />
+              <p>
+                Donec ullamcorper arcu sit amet ullamcorper tincidunt. Quisque
+                tincidunt volutpat dolor. Cras ultrices accumsan tellus, eget
+                iaculis ante tincidunt consectetur.
+              </p>
+            </div>
+
+            <div className="cta">
+              <div className="cta-container">
+                <Button text="Launch app" className="btn btn--primary" />
+              </div>
+            </div>
           </div>
         </div>
       </main>
@@ -88,6 +97,26 @@ export const Index: React.FC<Props> = () => {
 
         button:hover {
           cursor: pointer;
+        }
+
+        .container {
+          display: flex;
+        }
+
+        .test {
+          padding: 4rem 0;
+        }
+
+        .container > div {
+          flex: 1 0 50%;
+        }
+
+        .container--left {
+          display: none;
+        }
+
+        .image {
+          margin: 0 auto;
         }
 
         .description {
@@ -122,6 +151,19 @@ export const Index: React.FC<Props> = () => {
           .content {
             height: 700px;
             max-width: 600px;
+          }
+        }
+
+        @media screen and (min-width: 820px) {
+          .container--left {
+            display: flex;
+            justify-content: center;
+          }
+
+          .container--right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
           }
         }
       `}</style>
