@@ -14,7 +14,7 @@ interface Props {
 
 export const Index: React.FC<Props> = () => {
   const handleAppLaunch = () => {
-    router.push('/train')
+    router.push('/select')
   }
 
   return (
@@ -53,7 +53,7 @@ export const Index: React.FC<Props> = () => {
               <div className="cta">
                 <div className="cta-container">
                   <Button
-                    text="Launch app"
+                    text="Get started"
                     className="btn btn--primary"
                     onClick={handleAppLaunch}
                   />
