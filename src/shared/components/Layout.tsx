@@ -1,18 +1,25 @@
 import React, { ReactNode } from 'react'
+import { useRouter } from 'next/router'
 
 interface Props {
   children: ReactNode
 }
 
 const Layout: React.FC<Props> = ({ children }) => {
+  const router = useRouter()
+
+  const handleClick = () => {
+    router.push('/')
+  }
+
   return (
     <div className="layout">
       <div className="container">
-        <div className="header">
+        <button className="header" onClick={handleClick}>
           <h1>VERBDRILLS</h1>
 
           <h3>master verb conjugation</h3>
-        </div>
+        </button>
 
         {children}
       </div>
@@ -29,6 +36,10 @@ const Layout: React.FC<Props> = ({ children }) => {
 
         .header {
           text-align: center;
+          background: none;
+          border: none;
+          cursor: pointer;
+          color: #ff6663;
         }
 
         .header > h1 {
