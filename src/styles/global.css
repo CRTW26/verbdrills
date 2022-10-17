@@ -5,6 +5,30 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url('/fonts/Montserrat-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat-Bold';
+  src: url('/fonts/Montserrat-Bold.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat-ExtraLight';
+  src: url('/fonts/Montserrat-ExtraLight.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat-BoldItalic';
+  src: url('/fonts/Montserrat-BoldItalic.ttf') format('truetype');
+  font-display: swap;
+}
+
 /* Remove default margin */
 body,
 h1,
@@ -37,7 +61,7 @@ body {
   margin: 0;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat-Regular', Arial, sans-serif;
   color: #ff6663;
   background: #0f222d;
   background-image: radial-gradient(

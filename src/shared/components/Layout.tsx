@@ -32,13 +32,10 @@ const Layout: React.FC<Props> = ({ children }) => {
         }
 
         .header > h1 {
-          font-style: italic;
-          font-weight: 700;
+          font-family: 'Montserrat-BoldItalic';
         }
 
         .header > h3 {
-          font-style: regular;
-          font-weight: 400;
           color: #fff5d0;
         }
 
