@@ -1,16 +1,18 @@
 import React from 'react'
-import router from 'next/router'
+import { useRouter } from 'next/router'
 import Button from 'shared/components/Button'
 import Layout from 'shared/components/Layout'
 
 const Train: React.FC = () => {
+  const router = useRouter()
+
   const handleLanguageSelection = () => {
-    router.push('/train/spanish')
+    router.push(`/${router.query.language}/train`)
   }
 
   return (
     <Layout>
-      <div>Choose your language to get started</div>
+      <div>Choose your verbs</div>
 
       <Button
         className="btn btn--primary"
