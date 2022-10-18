@@ -3,7 +3,11 @@ import React, { useState } from 'react'
 type UseForm<T> = {
   formValues: T
   isValid: boolean
-  onChange: (ev: React.ChangeEvent<HTMLSelectElement>) => void
+  onChange: (
+    ev:
+      | React.ChangeEvent<HTMLSelectElement>
+      | React.MouseEvent<HTMLInputElement>
+  ) => void
 }
 
 const useForm = <FormValues,>(
@@ -15,7 +19,11 @@ const useForm = <FormValues,>(
     return Object.values(formValues).includes('')
   }
 
-  const onChange = (ev: React.ChangeEvent<HTMLSelectElement>) => {
+  const onChange = (
+    ev:
+      | React.ChangeEvent<HTMLSelectElement>
+      | React.MouseEvent<HTMLInputElement>
+  ) => {
     setFormValues({
       ...formValues,
       [ev.currentTarget.name]: ev.currentTarget.value,

@@ -19,8 +19,6 @@ const Train: React.FC = () => {
 
   return (
     <Layout>
-      <div>Choose your verbs</div>
-
       <GameConfigurationForm
         onSubmit={handleSubmit}
         formValues={formValues}

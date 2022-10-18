@@ -10,7 +10,6 @@ const LANGUAGES = [
 ]
 
 const VERBSETS = [
-  { value: 'Select verbset' },
   { value: 'regular' },
   { value: 'irregular' },
   { value: 'all' },
@@ -28,7 +27,11 @@ const TENSES = [
 interface Props {
   formValues: GameConfiguration
   isValid: boolean
-  onChange: (ev: React.ChangeEvent<HTMLSelectElement>) => void
+  onChange: (
+    ev:
+      | React.ChangeEvent<HTMLSelectElement>
+      | React.MouseEvent<HTMLInputElement>
+  ) => void
   onSubmit: (formValues: GameConfiguration) => void
 }
 
@@ -49,39 +52,41 @@ const ConfigurationForm: React.FC<Props> = ({
 
   return (
     <form className="configuration-form">
-      <div className="configuration-form__field">
-        <label>Select a language</label>
-        <Select
-          options={LANGUAGES}
-          name="language"
-          onChange={onChange}
-          value={
-            language ? findValue(LANGUAGES, language).value : LANGUAGES[0].value
-          }
-        />
-      </div>
+      <h3>What verbs would you like to train on?</h3>
 
       <div className="configuration-form__field">
-        <label>Select a verb set</label>
-        <Select
+        {/* <Select
           options={VERBSETS}
           name="verbset"
           onChange={onChange}
           value={
             verbset ? findValue(VERBSETS, verbset).value : VERBSETS[0].value
           }
-        />
+        /> */}
+        {VERBSETS.map(({ value }, index) => (
+          <div key={index} className="option">
+            <input
+              type="checkbox"
+              id={value}
+              name={value}
+              value={value}
+              onClick={onChange}
+            />
+            <label htmlFor={value}>{value}</label>
+          </div>
+        ))}
       </div>
 
-      <div className="configuration-form__field">
-        <label>Select a tense</label>
+      {/* <div className="configuration-form__field">
+        <label>What tense would you like to train on?</label>
+
         <Select
           options={TENSES}
           name="tense"
           onChange={onChange}
           value={tense ? findValue(TENSES, tense).value : TENSES[0].value}
         />
-      </div>
+      </div> */}
 
       <div className="configuration-form__field">
         <Button
@@ -95,7 +100,43 @@ const ConfigurationForm: React.FC<Props> = ({
 
       <style jsx>{`
         .configuration-form__field {
-          margin: 0.5rem 0;
+          display: flex;
+          justify-content: center;
+        }
+
+        .option {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 200px;
+          height 60px;
+          margin: 1rem;
+          cursor: pointer;
+          background: #e0ff4f;
+          color: #0b3954;
+          font-family: 'Montserrat-Bold';
+          transition: 0.2s ease-in-out 0s;
+        }
+
+        .option:hover {
+          transform: scale(1.1);
+        }
+
+        input:checked + label {
+          background: red;
+        }
+
+        .option label {
+          width: 100%;
+          height: 100%;
+          padding: 1rem 0;
+          position: relative;
+          text-align: center;
+        }
+
+        .option input {
+          visibility: hidden;
+          position: absolute;
         }
       `}</style>
     </form>
