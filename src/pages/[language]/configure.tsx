@@ -1,12 +1,19 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import Button from 'shared/components/Button'
 import Layout from 'shared/components/Layout'
+import { GameConfigurationForm } from 'features/game-configuration'
+import useForm from 'features/game-configuration/hooks/useForm'
 
 const Train: React.FC = () => {
   const router = useRouter()
 
-  const handleLanguageSelection = () => {
+  const { formValues, isValid, onChange } = useForm({
+    language: '',
+    verbset: '',
+    tense: '',
+  })
+
+  const handleSubmit = () => {
     router.push(`/${router.query.language}/train`)
   }
 
@@ -14,10 +21,11 @@ const Train: React.FC = () => {
     <Layout>
       <div>Choose your verbs</div>
 
-      <Button
-        className="btn btn--primary"
-        text="Spanish"
-        onClick={handleLanguageSelection}
+      <GameConfigurationForm
+        onSubmit={handleSubmit}
+        formValues={formValues}
+        isValid={isValid}
+        onChange={onChange}
       />
     </Layout>
   )

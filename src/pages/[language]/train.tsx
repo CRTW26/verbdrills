@@ -25,12 +25,6 @@ export const Train: React.FC<Props> = ({ verbs }) => {
   const [isIncorrectAnswersModalVisible, setIsIncorrectAnswersModalVisible] =
     useState(false)
 
-  const { formValues, isValid, onChange } = useForm({
-    language: '',
-    verbset: '',
-    tense: '',
-  })
-
   const { getVerb, validateInput, resetGame, score, incorrectAnswers } =
     useGame({
       verbs: verbs,
@@ -110,13 +104,6 @@ export const Train: React.FC<Props> = ({ verbs }) => {
           {appState === AppState.GAME_CONFIGURATION && (
             <div className="content">
               <TitleBar text="verbdrills" />
-
-              <GameConfigurationForm
-                onSubmit={initiateGamePlay}
-                formValues={formValues}
-                isValid={isValid}
-                onChange={onChange}
-              />
             </div>
           )}
 
