@@ -1,13 +1,7 @@
+import React, { useEffect, useState } from 'react'
 import Button from 'shared/components/Button'
-import Select from 'shared/components/Select'
 import { GameConfiguration } from 'shared/types'
-
-const LANGUAGES = [
-  { value: 'Select a language' },
-  { value: 'Spanish' },
-  { value: 'German - coming soon' },
-  { value: 'French - coming soon' },
-]
+import { removeItem } from 'shared/utils/array'
 
 const VERBSETS = [
   { value: 'regular' },
@@ -38,7 +32,6 @@ interface Props {
 const ConfigurationForm: React.FC<Props> = ({
   formValues,
   isValid,
-  onChange,
   onSubmit,
 }) => {
   const { language, verbset, tense } = formValues
@@ -48,6 +41,20 @@ const ConfigurationForm: React.FC<Props> = ({
     selected: string
   ): { value: string } => {
     return array.find((el) => el.value === selected)
+  }
+
+  const [tenses, setTenses] = useState([])
+
+  const handleChange = (ev: React.MouseEvent<HTMLInputElement>) => {
+    const tense = ev.currentTarget.value
+
+    const index = tenses.indexOf(tense)
+
+    if (index > -1) {
+      setTenses(removeItem(tenses, tense))
+    } else {
+      setTenses([...tenses, tense])
+    }
   }
 
   return (
@@ -70,8 +77,9 @@ const ConfigurationForm: React.FC<Props> = ({
               id={value}
               name={value}
               value={value}
-              onClick={onChange}
+              onClick={handleChange}
             />
+
             <label htmlFor={value}>{value}</label>
           </div>
         ))}
@@ -94,7 +102,7 @@ const ConfigurationForm: React.FC<Props> = ({
           text="Train"
           onClick={() => onSubmit(formValues)}
           type="button"
-          disabled={isValid}
+          disabled={!(tenses.length > 0)}
         />
       </div>
 
@@ -112,7 +120,6 @@ const ConfigurationForm: React.FC<Props> = ({
           height 60px;
           margin: 1rem;
           cursor: pointer;
-          background: #e0ff4f;
           color: #0b3954;
           font-family: 'Montserrat-Bold';
           transition: 0.2s ease-in-out 0s;
@@ -123,7 +130,7 @@ const ConfigurationForm: React.FC<Props> = ({
         }
 
         input:checked + label {
-          background: red;
+          opacity: 0.5;
         }
 
         .option label {
@@ -131,6 +138,7 @@ const ConfigurationForm: React.FC<Props> = ({
           height: 100%;
           padding: 1rem 0;
           position: relative;
+          background: #e0ff4f;
           text-align: center;
         }
 
