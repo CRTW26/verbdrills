@@ -1,7 +1,9 @@
+import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import Button from 'shared/components/Button'
 import { GameConfiguration } from 'shared/types'
 import { removeItem } from 'shared/utils/array'
+import { FormStep } from '../types'
 
 const VERBSETS = [
   { value: 'regular' },
@@ -10,7 +12,6 @@ const VERBSETS = [
 ]
 
 const TENSES = [
-  { value: 'Select tense' },
   { value: 'present' },
   { value: 'preterite' },
   { value: 'imperfect' },
@@ -34,6 +35,8 @@ const ConfigurationForm: React.FC<Props> = ({
   isValid,
   onSubmit,
 }) => {
+  const router = useRouter()
+
   const { language, verbset, tense } = formValues
 
   const findValue = (
@@ -44,65 +47,108 @@ const ConfigurationForm: React.FC<Props> = ({
   }
 
   const [tenses, setTenses] = useState([])
+  const [verbsets, setVerbsets] = useState([])
 
-  const handleChange = (ev: React.MouseEvent<HTMLInputElement>) => {
-    const tense = ev.currentTarget.value
+  const [formStep, setFormStep] = useState(FormStep.VERBSETS)
 
-    const index = tenses.indexOf(tense)
-
+  const updateFormValues = (values, valueToUpdate, valuesSetter, index) => {
     if (index > -1) {
-      setTenses(removeItem(tenses, tense))
+      valuesSetter(removeItem(values, valueToUpdate))
     } else {
-      setTenses([...tenses, tense])
+      valuesSetter([...values, valueToUpdate])
+    }
+  }
+
+  const handleChange = (ev: React.MouseEvent<HTMLInputElement>, category) => {
+    const selectionsToUpdate =
+      category === FormStep.VERBSETS ? verbsets : tenses
+
+    const selectionSetter =
+      category === FormStep.VERBSETS ? setVerbsets : setTenses
+
+    const { value } = ev.currentTarget
+
+    const index = selectionsToUpdate.indexOf(value)
+
+    console.log(selectionsToUpdate)
+    console.log(selectionSetter)
+    console.log(value)
+    console.log(index)
+
+    updateFormValues(selectionsToUpdate, value, selectionSetter, index)
+  }
+
+  const handleFormClick = () => {
+    if (formStep === FormStep.VERBSETS) {
+      setFormStep(FormStep.TENSES)
+
+      return
+    } else {
+      router.push({
+        pathname: `/${router.query.language}/train`,
+        query: {
+          tenses: tenses.join(','),
+          verbsets: verbsets.join(','),
+        },
+      })
     }
   }
 
   return (
     <form className="configuration-form">
-      <h3>What verbs would you like to train on?</h3>
+      {formStep === FormStep.VERBSETS && (
+        <>
+          <h3>What verbs would you like to train on?</h3>
 
-      <div className="configuration-form__field">
-        {/* <Select
-          options={VERBSETS}
-          name="verbset"
-          onChange={onChange}
-          value={
-            verbset ? findValue(VERBSETS, verbset).value : VERBSETS[0].value
-          }
-        /> */}
-        {VERBSETS.map(({ value }, index) => (
-          <div key={index} className="option">
-            <input
-              type="checkbox"
-              id={value}
-              name={value}
-              value={value}
-              onClick={handleChange}
-            />
+          <div className="configuration-form__field">
+            {VERBSETS.map(({ value }, index) => (
+              <div key={index} className="option">
+                <input
+                  type="checkbox"
+                  id={value}
+                  name={value}
+                  value={value}
+                  onClick={(ev) => handleChange(ev, FormStep.VERBSETS)}
+                />
 
-            <label htmlFor={value}>{value}</label>
+                <label htmlFor={value}>{value}</label>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      )}
 
-      {/* <div className="configuration-form__field">
-        <label>What tense would you like to train on?</label>
+      {formStep === FormStep.TENSES && (
+        <>
+          <h3>What tenses would you like to train on?</h3>
 
-        <Select
-          options={TENSES}
-          name="tense"
-          onChange={onChange}
-          value={tense ? findValue(TENSES, tense).value : TENSES[0].value}
-        />
-      </div> */}
+          <div className="configuration-form__field">
+            {TENSES.map(({ value }, index) => (
+              <div key={index} className="option">
+                <input
+                  type="checkbox"
+                  id={value}
+                  name={value}
+                  value={value}
+                  onClick={(ev) => handleChange(ev, FormStep.TENSES)}
+                />
+
+                <label htmlFor={value}>{value}</label>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
 
       <div className="configuration-form__field">
         <Button
           className="btn btn--primary"
           text="Train"
-          onClick={() => onSubmit(formValues)}
+          onClick={handleFormClick}
           type="button"
-          disabled={!(tenses.length > 0)}
+          disabled={
+            !((formStep === FormStep.VERBSETS ? verbsets : tenses).length > 0)
+          }
         />
       </div>
 
@@ -152,6 +198,7 @@ const ConfigurationForm: React.FC<Props> = ({
         @media screen and (min-width: 690px) {
           .configuration-form__field {
             flex-direction: row;
+            flex-wrap: wrap;
           }
         }
       `}</style>
