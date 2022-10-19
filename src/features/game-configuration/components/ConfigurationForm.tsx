@@ -109,7 +109,9 @@ const ConfigurationForm: React.FC<Props> = ({
       <style jsx>{`
         .configuration-form__field {
           display: flex;
+          flex-direction: column;
           justify-content: center;
+          align-items: center;
         }
 
         .option {
@@ -145,6 +147,12 @@ const ConfigurationForm: React.FC<Props> = ({
         .option input {
           visibility: hidden;
           position: absolute;
+        }
+
+        @media screen and (min-width: 690px) {
+          .configuration-form__field {
+            flex-direction: row;
+          }
         }
       `}</style>
     </form>
