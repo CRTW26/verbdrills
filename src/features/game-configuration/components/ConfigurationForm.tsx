@@ -178,13 +178,19 @@ const ConfigurationForm: React.FC = () => {
 
         .button-container {
           width: 300px;
-          margin-left: auto;
+          margin: 2rem auto;
         }
 
         @media screen and (min-width: 690px) {
           .configuration-form__field {
             flex-direction: row;
             flex-wrap: wrap;
+          }
+
+          .button-container {
+            margin-top: 4rem;
+            margin-left: auto;
+            margin-right: 0;
           }
         }
       `}</style>
