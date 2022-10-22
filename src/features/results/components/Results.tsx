@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from 'shared/components/Button'
 import { IncorrectAnswer, Score } from 'shared/types'
+import { useRouter } from 'next/router'
 
 interface Props {
   score: Score
@@ -14,13 +15,25 @@ const Results: React.FC<Props> = ({
   onClick,
   onShowIncorrectAnswers,
 }) => {
+  const router = useRouter()
+
   const { total, correct, incorrect } = score
 
   return (
     <>
       <h1>You scored:</h1>
       <h2>{correct}</h2>
-      <Button className="btn btn--primary" text="Train" onClick={onClick} />
+      <Button
+        className="btn btn--primary"
+        text="Train again"
+        onClick={onClick}
+      />
+
+      <Button
+        className="btn btn--primary"
+        text="Go back to start"
+        onClick={() => router.push(`/${router.query.language}/configure`)}
+      />
 
       <div className="stats">
         <h3>Stats</h3>

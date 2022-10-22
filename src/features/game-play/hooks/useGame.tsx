@@ -34,10 +34,11 @@ type GameVerb = {
   translation: string
   person: string
   answer: string
+  tense: string
 }
 
 type UseGame = {
-  getVerb: (tense: string, verbset: string) => GameVerb
+  getVerb: () => GameVerb
   validateInput: (input: string, answer: string, infinitive, person) => void
   resetGame: () => void
   score: Score
@@ -50,11 +51,10 @@ const getRandomNumber = (max: number): number => {
 
 const useGame = ({
   verbs,
+  tenses,
 }: {
-  verbs: {
-    regular: Array<Verb>
-    irregular: Array<Verb>
-  }
+  verbs: Array<Verb>
+  tenses: Array<string>
 }): UseGame => {
   const [score, setScore] = useState({
     total: 0,
@@ -63,23 +63,26 @@ const useGame = ({
   })
   const [incorrectAnswers, setIncorrectAnswers] = useState([])
 
-  const getVerb = (tense: string, verbset: string) => {
+  const getTense = () => tenses[getRandomNumber(tenses.length - 1)]
+
+  const getVerb = () => {
     const personOptions = Object.keys(PERSON)
     const personIndex = getRandomNumber(Object.keys(PERSON).length)
     const person = personOptions[personIndex]
-    const verbIndex = getRandomNumber(verbs[verbset]?.length - 1)
-    const verb = verbs[verbset]?.[verbIndex]
-
+    const verbIndex = getRandomNumber(verbs?.length - 1)
+    const verb = verbs[verbIndex]
+    const tense = getTense()
     const infinitive = verb?.infinitive
     const translation = verb?.translation
     const answer =
-      verbs[verbset]?.[verbIndex]?.[tense]?.[VerbPersonIndexes[PERSON[person]]]
+      verbs[verbIndex]?.[tense]?.[VerbPersonIndexes[PERSON[person]]]
 
     return {
       infinitive,
       person,
       translation,
       answer,
+      tense,
     }
   }
 

@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Button from 'shared/components/Button'
-import { GameConfiguration } from 'shared/types'
 import { removeItem } from 'shared/utils/array'
 import { FormStep } from '../types'
 
@@ -19,32 +18,8 @@ const TENSES = [
   { value: 'conditional' },
 ]
 
-interface Props {
-  formValues: GameConfiguration
-  isValid: boolean
-  onChange: (
-    ev:
-      | React.ChangeEvent<HTMLSelectElement>
-      | React.MouseEvent<HTMLInputElement>
-  ) => void
-  onSubmit: (formValues: GameConfiguration) => void
-}
-
-const ConfigurationForm: React.FC<Props> = ({
-  formValues,
-  isValid,
-  onSubmit,
-}) => {
+const ConfigurationForm: React.FC = () => {
   const router = useRouter()
-
-  const { language, verbset, tense } = formValues
-
-  const findValue = (
-    array: Array<{ value: string }>,
-    selected: string
-  ): { value: string } => {
-    return array.find((el) => el.value === selected)
-  }
 
   const [tenses, setTenses] = useState([])
   const [verbsets, setVerbsets] = useState([])
@@ -69,11 +44,6 @@ const ConfigurationForm: React.FC<Props> = ({
     const { value } = ev.currentTarget
 
     const index = selectionsToUpdate.indexOf(value)
-
-    console.log(selectionsToUpdate)
-    console.log(selectionSetter)
-    console.log(value)
-    console.log(index)
 
     updateFormValues(selectionsToUpdate, value, selectionSetter, index)
   }

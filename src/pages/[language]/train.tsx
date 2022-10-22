@@ -1,25 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import fs from 'fs'
-import { GameConfigurationForm } from 'features/game-configuration'
 import Head from 'next/head'
-import { TitleBar } from 'features/home'
-import { AppState, Verbs } from 'shared/types'
+import { AppState, Verb } from 'shared/types'
 import { GamePlay } from 'features/game-play'
 import { useGame } from 'features/game-play/hooks/useGame'
-import useForm from 'features/game-configuration/hooks/useForm'
 import { GetServerSideProps } from 'next'
 import Modal from 'shared/components/Modal'
 import { VscChromeClose, VscGear } from 'react-icons/vsc'
 import Settings from 'features/game-configuration/components/Settings'
 import { Results, IncorrectAnswers } from 'features/results'
 import Layout from 'shared/components/Layout'
+import { useRouter } from 'next/router'
 
 interface Props {
-  verbs: Verbs
+  verbs: Array<Verb>
+  tenses: Array<string>
 }
 
-export const Train: React.FC<Props> = ({ verbs }) => {
-  const [appState, setAppState] = useState(AppState.GAME_CONFIGURATION)
+export const Train: React.FC<Props> = ({ verbs, tenses }) => {
+  const router = useRouter()
+
+  const [appState, setAppState] = useState(AppState.GAME_PLAY)
   const [timerDuration, setTimerDuration] = useState(1)
   const [isTimerModalVisible, setIsTimerModalVisible] = useState(false)
   const [isIncorrectAnswersModalVisible, setIsIncorrectAnswersModalVisible] =
@@ -27,7 +28,8 @@ export const Train: React.FC<Props> = ({ verbs }) => {
 
   const { getVerb, validateInput, resetGame, score, incorrectAnswers } =
     useGame({
-      verbs: verbs,
+      verbs,
+      tenses,
     })
 
   const [currentVerb, setCurrentVerb] = useState({
@@ -35,13 +37,8 @@ export const Train: React.FC<Props> = ({ verbs }) => {
     person: '',
     translation: '',
     answer: '',
+    tense: '',
   })
-
-  const initiateGamePlay = () => {
-    resetGame()
-
-    setAppState(AppState.GAME_PLAY)
-  }
 
   const handleSaveSettings = (duration: number) => {
     setTimerDuration(duration)
@@ -50,12 +47,20 @@ export const Train: React.FC<Props> = ({ verbs }) => {
   }
 
   const handleGameCancel = () => {
-    setAppState(AppState.GAME_CONFIGURATION)
+    router.push(`/${router.query.language}/configure`)
   }
 
-  // useEffect(() => {
-  //   setCurrentVerb(getVerb(formValues.tense, formValues.verbset))
-  // }, [score.correct, score.incorrect, formValues])
+  const restartGame = () => {
+    resetGame()
+
+    setAppState(AppState.GAME_PLAY)
+
+    setTimerDuration(1)
+  }
+
+  useEffect(() => {
+    setCurrentVerb(getVerb())
+  }, [score.correct, score.incorrect])
 
   return (
     <Layout>
@@ -77,12 +82,6 @@ export const Train: React.FC<Props> = ({ verbs }) => {
             </button>
           )}
 
-          {appState === AppState.GAME_CONFIGURATION && (
-            <div className="content">
-              <TitleBar text="verbdrills" />
-            </div>
-          )}
-
           {appState === AppState.GAME_PLAY && (
             <div className="content">
               <GamePlay
@@ -99,7 +98,7 @@ export const Train: React.FC<Props> = ({ verbs }) => {
             <div className="content">
               <Results
                 score={score}
-                onClick={() => setAppState(AppState.GAME_CONFIGURATION)}
+                onClick={restartGame}
                 incorrectAnswers={incorrectAnswers}
                 onShowIncorrectAnswers={() =>
                   setIsIncorrectAnswersModalVisible(true)
@@ -160,7 +159,10 @@ export const Train: React.FC<Props> = ({ verbs }) => {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps = async ({
+  params,
+  query,
+}) => {
   const SUPPORTED_LANGUAGES = ['spanish']
 
   if (typeof params?.language !== 'string') {
@@ -183,11 +185,29 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 
   const data = fs.readFileSync(`public/verbs/${params?.language}.json`, 'utf8')
 
-  const verbs = JSON.parse(data)
+  const tenses = (query?.tenses as string).split(',')
+
+  const verbs =
+    query.verbsets === 'all'
+      ? JSON.parse(data)
+      : JSON.parse(data)[query.verbsets as string]
+
+  const sortedVerbs = verbs.map((verb) => {
+    const verbSortedWithTenses = tenses.reduce((acc, tense) => {
+      return { ...acc, [tense]: verb[tense] }
+    }, {})
+
+    return {
+      infinitive: verb.infinitive,
+      translation: verb.translation,
+      ...verbSortedWithTenses,
+    }
+  })
 
   return {
     props: {
-      verbs,
+      verbs: sortedVerbs,
+      tenses,
     },
   }
 }
