@@ -110,9 +110,9 @@ const ConfigurationForm: React.FC = () => {
         </>
       )}
 
-      <div className="configuration-form__field">
+      <div className="configuration-form__field button-container">
         <Button
-          className="btn btn--primary"
+          className="btn btn--secondary"
           text="Train"
           onClick={handleFormClick}
           type="button"
@@ -123,6 +123,16 @@ const ConfigurationForm: React.FC = () => {
       </div>
 
       <style jsx>{`
+        .configuration-form {
+          margin: 2rem 0;
+          text-align: center;
+        }
+
+        .configuration-form > h3 {
+          margin-bottom: 2rem;
+          font-size: 1.5rem;
+        }
+
         .configuration-form__field {
           display: flex;
           flex-direction: column;
@@ -158,11 +168,17 @@ const ConfigurationForm: React.FC = () => {
           position: relative;
           background: #e0ff4f;
           text-align: center;
+          border-radius: 15px;
         }
 
         .option input {
           visibility: hidden;
           position: absolute;
+        }
+
+        .button-container {
+          width: 300px;
+          margin-left: auto;
         }
 
         @media screen and (min-width: 690px) {
