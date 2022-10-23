@@ -1,10 +1,10 @@
 import React from 'react'
 import Layout from 'shared/components/Layout'
 
-const Error = () => {
+const Error: React.FC = () => {
   return (
     <Layout>
-      <h3>We're sorry an error has occurred.</h3>
+      <h3>Sorry, an error has occurred.</h3>
     </Layout>
   )
 }
