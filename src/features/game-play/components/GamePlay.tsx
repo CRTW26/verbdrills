@@ -9,6 +9,7 @@ interface Verb {
   person: string
   translation: string
   answer: string
+  tense: string
 }
 
 interface Props {
@@ -33,7 +34,7 @@ const GamePlay: React.FC<Props> = ({
 }) => {
   const [guess, setGuess] = useState('')
 
-  const { infinitive, person, translation, answer } = verb
+  const { infinitive, person, translation, answer, tense } = verb
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setGuess(e.target.value)
@@ -73,6 +74,7 @@ const GamePlay: React.FC<Props> = ({
       <div className="verb">
         <h2 className="infinitive">{infinitive}</h2>
         <h2 className="person">{person}</h2>
+        <h2 className="tense">{tense}</h2>
         <h3 className="translation">{translation}</h3>
       </div>
 

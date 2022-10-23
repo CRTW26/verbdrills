@@ -1,23 +1,12 @@
+import { useRouter } from 'next/router'
+import React, { useState } from 'react'
 import Button from 'shared/components/Button'
-import Select from 'shared/components/Select'
-import { GameConfiguration } from 'shared/types'
+import { removeItem } from 'shared/utils/array'
+import { FormStep } from '../types'
 
-const LANGUAGES = [
-  { value: 'Select a language' },
-  { value: 'Spanish' },
-  { value: 'German - coming soon' },
-  { value: 'French - coming soon' },
-]
-
-const VERBSETS = [
-  { value: 'Select verbset' },
-  { value: 'regular' },
-  { value: 'irregular' },
-  { value: 'all' },
-]
+const VERBSETS = [{ value: 'regular' }, { value: 'irregular' }]
 
 const TENSES = [
-  { value: 'Select tense' },
   { value: 'present' },
   { value: 'preterite' },
   { value: 'imperfect' },
@@ -25,77 +14,181 @@ const TENSES = [
   { value: 'conditional' },
 ]
 
-interface Props {
-  formValues: GameConfiguration
-  isValid: boolean
-  onChange: (ev: React.ChangeEvent<HTMLSelectElement>) => void
-  onSubmit: (formValues: GameConfiguration) => void
-}
+const ConfigurationForm: React.FC = () => {
+  const router = useRouter()
 
-const ConfigurationForm: React.FC<Props> = ({
-  formValues,
-  isValid,
-  onChange,
-  onSubmit,
-}) => {
-  const { language, verbset, tense } = formValues
+  const [tenses, setTenses] = useState([])
+  const [verbsets, setVerbsets] = useState([])
 
-  const findValue = (
-    array: Array<{ value: string }>,
-    selected: string
-  ): { value: string } => {
-    return array.find((el) => el.value === selected)
+  const [formStep, setFormStep] = useState(FormStep.VERBSETS)
+
+  const updateFormValues = (values, valueToUpdate, valuesSetter, index) => {
+    if (index > -1) {
+      valuesSetter(removeItem(values, valueToUpdate))
+    } else {
+      valuesSetter([...values, valueToUpdate])
+    }
+  }
+
+  const handleChange = (ev: React.MouseEvent<HTMLInputElement>, category) => {
+    const selectionsToUpdate =
+      category === FormStep.VERBSETS ? verbsets : tenses
+
+    const selectionSetter =
+      category === FormStep.VERBSETS ? setVerbsets : setTenses
+
+    const { value } = ev.currentTarget
+
+    const index = selectionsToUpdate.indexOf(value)
+
+    updateFormValues(selectionsToUpdate, value, selectionSetter, index)
+  }
+
+  const handleFormClick = () => {
+    if (formStep === FormStep.VERBSETS) {
+      setFormStep(FormStep.TENSES)
+
+      return
+    } else {
+      router.push({
+        pathname: `/${router.query.language}/train`,
+        query: {
+          tenses: tenses.join(','),
+          verbsets: verbsets.join(','),
+        },
+      })
+    }
   }
 
   return (
     <form className="configuration-form">
-      <div className="configuration-form__field">
-        <label>Select a language</label>
-        <Select
-          options={LANGUAGES}
-          name="language"
-          onChange={onChange}
-          value={
-            language ? findValue(LANGUAGES, language).value : LANGUAGES[0].value
-          }
-        />
-      </div>
+      {formStep === FormStep.VERBSETS && (
+        <>
+          <h3>What verbs would you like to train on?</h3>
 
-      <div className="configuration-form__field">
-        <label>Select a verb set</label>
-        <Select
-          options={VERBSETS}
-          name="verbset"
-          onChange={onChange}
-          value={
-            verbset ? findValue(VERBSETS, verbset).value : VERBSETS[0].value
-          }
-        />
-      </div>
+          <div className="configuration-form__field">
+            {VERBSETS.map(({ value }, index) => (
+              <div key={index} className="option">
+                <input
+                  type="checkbox"
+                  id={value}
+                  name={value}
+                  value={value}
+                  onClick={(ev) => handleChange(ev, FormStep.VERBSETS)}
+                />
 
-      <div className="configuration-form__field">
-        <label>Select a tense</label>
-        <Select
-          options={TENSES}
-          name="tense"
-          onChange={onChange}
-          value={tense ? findValue(TENSES, tense).value : TENSES[0].value}
-        />
-      </div>
+                <label htmlFor={value}>{value}</label>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
 
-      <div className="configuration-form__field">
+      {formStep === FormStep.TENSES && (
+        <>
+          <h3>What tenses would you like to train on?</h3>
+
+          <div className="configuration-form__field">
+            {TENSES.map(({ value }, index) => (
+              <div key={index} className="option">
+                <input
+                  type="checkbox"
+                  id={value}
+                  name={value}
+                  value={value}
+                  onClick={(ev) => handleChange(ev, FormStep.TENSES)}
+                />
+
+                <label htmlFor={value}>{value}</label>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
+
+      <div className="configuration-form__field button-container">
         <Button
-          className="btn btn--primary"
+          className="btn btn--secondary"
           text="Train"
-          onClick={() => onSubmit(formValues)}
+          onClick={handleFormClick}
           type="button"
-          disabled={isValid}
+          disabled={
+            !((formStep === FormStep.VERBSETS ? verbsets : tenses).length > 0)
+          }
         />
       </div>
 
       <style jsx>{`
+        .configuration-form {
+          margin: 2rem 0;
+          text-align: center;
+        }
+
+        .configuration-form > h3 {
+          margin-bottom: 2rem;
+          font-size: 1.5rem;
+        }
+
         .configuration-form__field {
-          margin: 0.5rem 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .option {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 200px;
+          height 60px;
+          margin: 1rem;
+          cursor: pointer;
+          color: #0b3954;
+          font-family: 'Montserrat-Bold';
+          transition: 0.2s ease-in-out 0s;
+        }
+
+        .option:hover {
+          transform: scale(1.1);
+        }
+
+        input:checked + label {
+          border: 3px solid #ff6663;
+          padding: calc(1rem - 3px) 0;
+        }
+
+        .option label {
+          width: 100%;
+          height: 100%;
+          padding: 1rem 0;
+          position: relative;
+          background: #e0ff4f;
+          text-align: center;
+          border-radius: 15px;
+        }
+
+        .option input {
+          visibility: hidden;
+          position: absolute;
+        }
+
+        .button-container {
+          width: 300px;
+          margin: 2rem auto;
+        }
+
+        @media screen and (min-width: 690px) {
+          .configuration-form__field {
+            flex-direction: row;
+            flex-wrap: wrap;
+          }
+
+          .button-container {
+            margin-top: 4rem;
+            margin-left: auto;
+            margin-right: 0;
+          }
         }
       `}</style>
     </form>
