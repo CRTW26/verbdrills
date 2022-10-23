@@ -154,7 +154,8 @@ const ConfigurationForm: React.FC = () => {
         }
 
         input:checked + label {
-          opacity: 0.5;
+          border: 3px solid #ff6663;
+          padding: calc(1rem - 3px) 0;
         }
 
         .option label {
