@@ -44,6 +44,7 @@ const Layout: React.FC<Props> = ({ children }) => {
 
         .header > h1 {
           font-family: 'Montserrat-BoldItalic';
+          text-align: left;
         }
 
         .header > h3 {
