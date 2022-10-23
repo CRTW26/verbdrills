@@ -22,7 +22,12 @@ const ConfigurationForm: React.FC = () => {
 
   const [formStep, setFormStep] = useState(FormStep.VERBSETS)
 
-  const updateFormValues = (values, valueToUpdate, valuesSetter, index) => {
+  const updateFormValues = (
+    values: Array<string>,
+    valueToUpdate: string,
+    valuesSetter: (values: Array<string>) => void,
+    index: number
+  ) => {
     if (index > -1) {
       valuesSetter(removeItem(values, valueToUpdate))
     } else {
@@ -30,7 +35,10 @@ const ConfigurationForm: React.FC = () => {
     }
   }
 
-  const handleChange = (ev: React.MouseEvent<HTMLInputElement>, category) => {
+  const handleChange = (
+    ev: React.MouseEvent<HTMLInputElement>,
+    category: FormStep
+  ) => {
     const selectionsToUpdate =
       category === FormStep.VERBSETS ? verbsets : tenses
 
