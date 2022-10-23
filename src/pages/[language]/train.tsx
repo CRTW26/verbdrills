@@ -187,9 +187,14 @@ export const getServerSideProps: GetServerSideProps = async ({
 
   const tenses = (query?.tenses as string).split(',')
 
+  const getAllVerbs = (separatedVerbs) => [
+    ...separatedVerbs.regular,
+    ...separatedVerbs.irregular,
+  ]
+
   const verbs =
-    query.verbsets === 'all'
-      ? JSON.parse(data)
+    (query.verbsets as string).split(',').length > 1
+      ? getAllVerbs(JSON.parse(data))
       : JSON.parse(data)[query.verbsets as string]
 
   const sortedVerbs = verbs.map((verb) => {

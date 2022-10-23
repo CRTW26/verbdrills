@@ -4,11 +4,7 @@ import Button from 'shared/components/Button'
 import { removeItem } from 'shared/utils/array'
 import { FormStep } from '../types'
 
-const VERBSETS = [
-  { value: 'regular' },
-  { value: 'irregular' },
-  { value: 'all' },
-]
+const VERBSETS = [{ value: 'regular' }, { value: 'irregular' }]
 
 const TENSES = [
   { value: 'present' },
