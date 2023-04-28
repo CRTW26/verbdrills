@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import fs from 'fs'
 import Head from 'next/head'
 import { AppState, Verb } from 'shared/types'
 import { GamePlay } from 'features/game-play'
@@ -163,6 +162,8 @@ export const getServerSideProps: GetServerSideProps = async ({
   params,
   query,
 }) => {
+  const { SERVICE_URL } = process.env
+
   const SUPPORTED_LANGUAGES = ['spanish']
 
   if (typeof params?.language !== 'string') {
@@ -183,7 +184,22 @@ export const getServerSideProps: GetServerSideProps = async ({
     }
   }
 
-  const data = fs.readFileSync(`public/verbs/${params?.language}.json`, 'utf8')
+  let data
+
+  try {
+    const res = await fetch(SERVICE_URL)
+
+    data = await res.json()
+  } catch (error) {
+    console.error(error)
+
+    return {
+      redirect: {
+        destination: '/error',
+        permanent: false,
+      },
+    }
+  }
 
   const tenses = (query?.tenses as string).split(',')
 
@@ -194,8 +210,8 @@ export const getServerSideProps: GetServerSideProps = async ({
 
   const verbs =
     (query.verbsets as string).split(',').length > 1
-      ? getAllVerbs(JSON.parse(data))
-      : JSON.parse(data)[query.verbsets as string]
+      ? getAllVerbs(data)
+      : data[query.verbsets as string]
 
   const sortedVerbs = verbs.map((verb) => {
     const verbSortedWithTenses = tenses.reduce((acc, tense) => {

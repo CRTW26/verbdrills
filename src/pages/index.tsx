@@ -35,18 +35,18 @@ export const Index: React.FC<Props> = () => {
                 <h3>What is verbdrills?</h3>
 
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                  tincidunt rutrum risus sit amet bibendum. Nulla purus nisl,
-                  porta sodales augue ut, malesuada dictum felis. Curabitur sit
-                  amet molestie ligula, a hendrerit odio. Praesent et tellus
-                  quam. In hac habitasse platea dictumst. Suspendisse consequat
-                  feugiat tempus.
+                  Learning a language is hard. Verb conjugation can be
+                  confusing. Verbdrills is a tool to help try and make that
+                  process easier, by making practicing as easy as possible.
                 </p>
 
                 <p>
-                  Donec ullamcorper arcu sit amet ullamcorper tincidunt. Quisque
-                  tincidunt volutpat dolor. Cras ultrices accumsan tellus, eget
-                  iaculis ante tincidunt consectetur.
+                  Simply choose your language, the verbs you want to try on and
+                  you&apos;re set. The training will be begin and you&apos;ll be
+                  prompted to enter the correct conjugation given a verb and
+                  person. Once the timer is up, you&apos;ll see how many you got
+                  correct and which verbs you didn&apos;t so that you can keep
+                  track and improve!
                 </p>
               </div>
 
